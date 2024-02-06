@@ -1,5 +1,6 @@
 :root {
     --image-scale: 256px;
+    overflow-x: hidden;
 }
 
 * {
@@ -23,8 +24,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
     background-color: rgb(30, 30, 30);
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
@@ -359,7 +361,6 @@ body {
 
 #notice {
     width: 100vw;
-    max-width: 95vw;
     font-size: 2rem;
     display: block;
     margin-top: 1em;
