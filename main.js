@@ -224,14 +224,6 @@ class Scp914Recipe {
 
     /**
      * @param mode {String}
-     * @param recipe {RecipeOutput}
-     * */
-    addRecipe(mode = "", recipe) {
-        this.addRecipes(mode, [ recipe ]);
-    }
-
-    /**
-     * @param mode {String}
      * @param recipes {Array<RecipeOutput>}
      * */
     addRecipes(mode = "", recipes) {
@@ -304,37 +296,11 @@ function parseRecipes(json) {
                     const result = outputMapper(output);
                     if (result != null)
                         o.push(result);
-                    // if (typeof output === "string")
-                    //     o.push(new Scp914Recipe([output], 1, null));
-                    // else if ("Item" in output)
-                    //     o.push(new Scp914Recipe(output.Item, output.Chance ?? 1, output.Action ?? null));
-                    // else if ("Items" in output)
-                    //     o.push(new Scp914Recipe(output.Items, output.Chance ?? 1, output.Action ?? null));
-                    // else if ("Action" in output)
-                    //     o.push(new Scp914Recipe([], output.Chance ?? 1, output.Action));
                 }
             } else {
                 const result = outputMapper(settingOutput);
                 if (result != null)
                     o.push(result);
-                // if ("Output" in settingOutput)
-                //     o.push(new Scp914Recipe(
-                //         [settingOutput.Output],
-                //         settingOutput.Chance ?? 1,
-                //         settingOutput.Action ?? null
-                //     ));
-                // else if ("Outputs" in settingOutput)
-                //     o.push(new Scp914Recipe(
-                //         settingOutput.Outputs.map(outputMapper),
-                //         settingOutput.Chance ?? 1,
-                //         settingOutput.Action ?? null
-                //     ));
-                // else if ("Action" in settingOutput)
-                //     o.push(new Scp914Recipe(
-                //         [],
-                //         settingOutput.Chance ?? 1,
-                //         settingOutput.Action
-                //     ));
                 if (typeof settingOutput === "object" && "Action" in settingOutput)
                     for (const output of o)
                         output.Action = settingOutput.Action;
@@ -355,7 +321,7 @@ function loadAtlas(image) {
     const atlas = document.createElement("canvas");
     atlas.width = atlasSize;
     atlas.height = atlasSize;
-    const ctx = atlas.getContext("2d");
+    const ctx = atlas.getContext("2d", { willReadFrequently: true });
     ctx.drawImage(image, 0, 0);
     const img = document.createElement("canvas");
     const ict = img.getContext("2d");
@@ -404,9 +370,9 @@ function createItemList() {
         info.innerText = translate(item.name);
         info.classList.add("itemInfo");
         infoCont.append(info);
-        div.setAttribute("item-name", item.name);
-        div.setAttribute("item-category", item.category ?? "zMisc");
-        div.setAttribute("item-id", i.toString());
+        div.setAttribute("data-item-name", item.name);
+        div.setAttribute("data-item-category", item.category ?? "zMisc");
+        div.setAttribute("data-item-id", i.toString());
         div.append(infoCont);
         list.push(div);
     }
@@ -415,7 +381,6 @@ function createItemList() {
 }
 
 function loadGraph() {
-    // converts the ammo unit prices to a table
     $("#unitGraphTable").remove();
     const ammo = items.filter(e => e.category === "ammo");
     const table = document.createElement("table");
@@ -433,7 +398,7 @@ function loadGraph() {
         header.append(top);
         const row = document.createElement("tr");
         row.classList.add("graphRow");
-        row.setAttribute("ammo-type", item.name);
+        row.setAttribute("data-ammo-type", item.name);
         const input = document.createElement("td");
         input.innerText = translate(item.name);
         input.classList.add("graphInput");
@@ -509,14 +474,11 @@ function loadApp() {
 function getScale() {
     const w = window.innerWidth;
     const h = window.innerHeight;
-    return 256 * (w > h ? h / 1080 : w / 1920); // use 1080p as reference, get the smaller value (width or height)
+    return 256 * (w > h ? h / 1080 : w / 1920);
 }
 
 function onResize() {
-    // scale and position objects depending on window size
     const scale = getScale();
-    const sp = resizeImages(scale);
-    $("#primaryItem, #secondaryItem").css("width", sp).css("max-width", sp).css("height", sp).css("max-height", sp);
     $("#langToggle, #settingsBtn").css("font-size", `${scale * 0.15}px`).css("padding", `${scale * 0.03}px`);
     $("#appInfoBtn").css("font-size", `${scale * 0.15}px`).css("width", `${scale * 0.25}px`)
     .css("height", `${scale * 0.25}px`).css("border-width", `${scale * 0.02}px`);
@@ -524,20 +486,8 @@ function onResize() {
 }
 
 function resizeImages(scale) {
-    // resize images and tooltips
-    for (const img of $(".basicIcon").get()) {
-        const multiplier = parseFloat(img.getAttribute("icon-scale"));
-        img.width = img.height = scale * (isNaN(multiplier) ? 1 : multiplier); // if multiplier is not set, default to 1
-    }
-    for (const img of $(".accessLevel").get())
-        img.width = img.height = scale * 0.25;
     const sp = `${scale}px`;
-    for (const info of $(".itemInfo").css("width", sp).css("max-width", sp).css("padding", `${scale / 50}px`).get()) {
-        const multiplier = parseFloat(info.parentElement.parentElement.querySelector(".basicIcon")?.getAttribute("icon-scale"));
-        info.style.transform = `translateY(-${scale * (isNaN(multiplier) ? 0.5 : multiplier * 0.5)}px)`;
-        info.style.padding = `translateY(-${scale * (isNaN(multiplier) ? 0.02 : multiplier * 0.02)}px)`;
-        info.style.width = `${scale}px`;
-    }
+    document.documentElement.style.setProperty("--image-scale", sp);
     return sp;
 }
 
@@ -555,7 +505,7 @@ let secondary = null;
 
 function selectItem(div) {
     const s = targetIsSecondary;
-    const item = div.getAttribute("item-name");
+    const item = div.getAttribute("data-item-name");
     if (item == null)
         return;
     if (s)
@@ -563,12 +513,9 @@ function selectItem(div) {
     else
         primary = item;
     $("#secondaryItem").css("display", "flex");
-    // find path and display it
     if (primary != null && secondary != null) {
         const unused = [];
         const score = [];
-        const used = [];
-        const paths = [];
         const path = findPath(primary, secondary, [], unused, score);
         // TODO: sort paths
         /*if (path != null)
@@ -588,11 +535,10 @@ function selectItem(div) {
     }
     targetIsSecondary = false;
     const clone = div.cloneNode(true);
-    clone.setAttribute("item-name", item);
+    clone.setAttribute("data-item-name", item);
     const cont = $(s ? "#secondaryItem" : "#primaryItem").html("").append(clone);
     clone.addEventListener("click", () => {
         const t = new Date().getTime();
-        // double click only with 500ms tolerance
         if ((s ? secondaryClickTimer : primaryClickTimer) + 500 > t) {
             if ((s ? ++secondaryClicks : ++primaryClicks) > 0) {
                 if (s) {
@@ -691,34 +637,16 @@ function getPath(tree, from) {
             }
         }
     }
-    // path.push({Item: from});
     return path;
-    // for (let treeKey in tree) {
-    //     let e = tree[treeKey];
-    //     if (e == null)
-    //         continue;
-    //     if (e instanceof Object) {
-    //         if (Object.keys(e).length < 1) {
-    //             tree[treeKey] = undefined;
-    //             continue;
-    //         }
-    //         array.push(treeKey);
-    //         getPath(e, from, array, compareFn);
-    //     } else if (compareFn && !compareFn(from, e) || e !== from)
-    //         tree[treeKey] = undefined;
-    //     else
-    //         array.push(treeKey);
-    // }
-    // return array;
 }
 
 function swapItems() {
     const p = primary;
     const s = secondary;
     targetIsSecondary = false;
-    selectItem(document.querySelector(`div[item-name="${s}"]`));
+    selectItem(document.querySelector(`div[data-item-name="${s}"]`));
     targetIsSecondary = true;
-    selectItem(document.querySelector(`div[item-name="${p}"]`));
+    selectItem(document.querySelector(`div[data-item-name="${p}"]`));
 }
 
 // TODO: sort paths
@@ -775,10 +703,7 @@ function clearEmpties(array) {
         const item = array[i];
         if (typeof item !== "object")
             continue;
-        // for (let mode of allModes)
-        //     clearEmpties(item[mode]);
         for (const key in item) {
-            //console.log(item[key])
             if (item[key] instanceof Array) {
                 if (item[key].length < 1)
                     delete item[key];
@@ -787,14 +712,6 @@ function clearEmpties(array) {
             }
         }
     }
-    // for (let item of array) {
-    //     if (!(item instanceof Array))
-    //         continue;
-    //     for (let mode of allModes)
-    //         clearEmpties(item[mode]);
-    //     if (Object.keys(item).every(e => !(item[e] instanceof Array) || item[e].length < 1))
-    //         delete array[item];
-    // }
     return array;
 }
 
@@ -804,10 +721,9 @@ function removeBadPath(tree, find) {
     let empty = 0;
     let i = 0;
     for (const item of tree) {
-        let key;
         const prevEmpty = empty;
         const remove = [];
-        for (let key in item) {
+        for (const key in item) {
             if (item[key] instanceof Array) {
                 i++;
                 if (item[key].length < 1) {
@@ -821,47 +737,10 @@ function removeBadPath(tree, find) {
         }
         if (prevEmpty !== empty && item.Item !== find)
             return true;
-        for (key of remove) {
+        for (const key of remove)
             delete item[key];
-        }
     }
-    // for (let key of Object.keys(tree)) {
-    //     i++;
-    //     let e = tree[key];
-    //     if (e == null)
-    //         continue;
-    //     if (e instanceof Object) {
-    //         if (Object.keys(e).length < 1) {
-    //             delete tree[key];
-    //             empty++;
-    //             continue;
-    //         }
-    //         if (removeBadPath(e, find))
-    //             delete tree[key];
-    //     } else if (e !== find) {
-    //         delete tree[key];
-    //         empty++;
-    //     }
-    // }
     return i === empty;
-}
-
-
-function findParent(obj, find) {
-    for (const key in obj) {
-        if (obj[key] === find)
-            return obj;
-        if (obj[key] instanceof Object)
-            return findParent(obj[key], find);
-    }
-    return null;
-}
-
-function getKey(obj, find) {
-    for (const key in obj)
-        if (obj[key] === find)
-            return key;
-    return null;
 }
 
 let x;
@@ -903,7 +782,6 @@ function doExpand(array, unused, to, outScore) {
         for (mode of allModes) {
             unused.delete(`${obj.Item}${mode}`);
         }
-        // doExpand(obj.Outputs, unused, to, outScore);
     }
     return found;
 }
@@ -972,17 +850,7 @@ function getPathInTree(tree, to) {
     const lastItem = getItem(to);
     path.push(`${lastItem.name}*${lastItem.category === "ammo" ? prevItem.category === "ammo" ? calculateExchangedAmmo(carryAmmo, prevItem.unitPrice, lastItem.unitPrice) : lastItem.defaultAmount : getRecipe(prevItem.name)
     .findRecipeWithOutput(lastItem.name, lastMode).items.find(x => x.item === to)?.count ?? 1}`);
-    // while (!cur.some(e => e.Outputs.some(x => x.Item === to)));
-    // cur = [...(cur?.[0]?.Outputs ?? [])];
-    // path.push(`${cur[0]?.Mode}/${cur[0]?.Chance}`);
     return path;
-}
-
-function findDirectUpgradeMode(from, to) {
-    const f = getRecipe(from);
-    if (f == null)
-        return null;
-    return from.getRecipeMode(from.allRecipes.find(e => e.items.some(x => x.item === to)));
 }
 
 /**
@@ -997,27 +865,9 @@ function findPath(from, to, used = [], outUnused = [], outScore = [ 0 ]) {
         return null;
     const o = { Item: recipe.name, Outputs: [], Chance: 1, Destroy: 0 };
     const tree = [ o ];
-    // tree[recipe.name] = {};
     if (outScore[0] == null)
         outScore[0] = 0;
-    // for (let r of recipe.allRecipes) {
-    //     const mode = `${recipe.getRecipeMode(r)}/${r.chance}`;
-    //     for (let item of r.items) {
-    //         tree[recipe.name][mode] ??= {};
-    //         tree[recipe.name][mode][item.item] = {};
-    //     }
-    // }
     const unused = new Set(Array.from(allUpgradeCombinations).filter(e => !used.includes(e)));
-    // console.log(Array.from(unused).join(", "))
-    // for (let recipe of recipes) {
-    //     for (let r of recipe.allRecipes) {
-    //         const mode = recipe.getRecipeMode(r);
-    //         const v = `${recipe.name}${mode}`;
-    //         if (!used.includes(v))
-    //             unused.add(v);
-    //     }
-    // }
-    console.log(tree);
     let i = 0;
     x = tree;
     while (unused.size > 0) {
@@ -1032,156 +882,6 @@ function findPath(from, to, used = [], outUnused = [], outScore = [ 0 ]) {
     outScore[0] = 0;
     outUnused[0] = unused;
     return null;
-}
-
-function expandList(tree, unused, find) {
-    let found = false;
-    for (const item of tree) {
-        if (!("Item" in item))
-            continue;
-        let destroy = 0;
-        let count = 0;
-        const recipe = getRecipe(item.Item);
-        for (const mode of allModes) {
-            const st = `${item.Item}${mode}`;
-            if (!unused.has(st))
-                continue;
-            unused.delete(st);
-            // if (!(mode in item)) {
-            //     item[mode] = [];
-            //     for (let r of recipe.getRecipes(mode)) {
-            //         for (let i of r.items) {
-            //             let o = {Item: i.item};
-            //             for (let m of allModes) {
-            //                 o[m] = [];
-            //             }
-            //             item[mode].push(o);
-            //             if (i.item === find)
-            //                 found = true;
-            //         }
-            //     }
-            //     if (expandList(item[mode], unused, find, outScore))
-            //         found = true;
-            //     continue;
-            // }
-            // if (!((arr = item[mode]) instanceof Array))
-            //     continue;
-            if ((item[mode] ?? []).length < 1) {
-                item[mode] = [];
-                for (const r of recipe.getRecipes(mode)) {
-                    count++;
-                    if (r.action === "Destroys the Item")
-                        destroy++;
-                    for (const i of r.items) {
-                        const o = { Item: i.item, Chance: r.chance, Destroy: 0, Mode: mode };
-                        for (const m of allModes) {
-                            o[m] = [];
-                        }
-                        item[mode].push(o);
-                        if (i.item === find)
-                            found = true;
-                    }
-                }
-            } else {
-                expandList(item[mode], unused, find);
-                // found = true;
-            }
-        }
-        if (count > 0)
-            item.Destroy = destroy / count;
-        for (mode of allModes) {
-            expandList(item[mode], unused, find);
-        }
-        // if (found)
-        //     return true;
-    }
-    return found;
-}
-
-function expandTree(tree, unused, find, outScore) {
-    for (const treeKey in tree) {
-        const e = tree[treeKey];
-        const keys = Object.keys(e);
-        if (keys.length > 0) {
-            for (const x in e) {
-                if (expandTree(e[x], unused, find, outScore))
-                    return true;
-            }
-        } else {
-            const recipe = getRecipe(treeKey);
-            if (recipe == null)
-                continue;
-            if (outScore[0] == null)
-                outScore[0] = 0;
-            outScore[0]--;
-            for (const r of recipe.allRecipes) {
-                const mode = recipe.getRecipeMode(r);
-                const string = `${recipe.name}${mode}`;
-                // console.log(string, Array.from(unused))
-                if (!unused.has(string))
-                    continue;
-                unused.delete(string);
-                for (const i of r.items) {
-                    // e[recipe.name] ??= {};
-                    const modeChance = `${mode}/${r.chance}`;
-                    e[modeChance] ??= {};
-                    e[modeChance][i.item] ??= {};
-                    if (i.item === find) {
-                        if (sortMode.hasFlag(sortModes.safest))
-                            outScore[0] += r.chance;
-                        e[modeChance][i.item] = find;
-                        return true;
-                    }
-                }
-            }
-            tree[treeKey] = e;
-        }
-    }
-    return false;
-}
-
-function pathExists(from, to) {
-    return findPath(from, to) != null;
-}
-
-function addAllItems(obj, recipe) {
-    for (const r of recipe.allRecipes)
-        for (const item of r.items)
-            obj[item.item] = {};
-}
-
-function loopThroughTree(tree, unused, find) {
-    for (const key of Object.keys(tree)) {
-        // console.log(key)
-        if (key === find) {
-            tree[key] = find;
-            return true;
-        }
-        const element = tree[key];
-        const keys = element == null ? null : Object.keys(element);
-        if (keys?.length ?? 0 > 0) {
-            // console.log("looping through " + key)
-            if (loopThroughTree(element, unused, find))
-                return true;
-        } else {
-            // console.log(unused)
-            const recipes = unused.get(key);
-            if (recipes == null)
-                return false;
-            for (const recipe of recipes) {
-                // console.log(key,"checking recipe " + recipe.name)
-                if (recipe.allRecipes.some(e => e.items.some(i => i.item === find))) {
-                    // console.log(tree, key)
-                    tree[key][recipe.name] = find;
-                    return true;
-                }
-                addAllItems(element, recipe);
-            }
-            tree[key] = element;
-            unused.delete(key);
-        }
-    }
-    return false;
 }
 
 let ctxItemName = null;
@@ -1202,7 +902,7 @@ const itemSorting = {
         return this.all[increaseIndexAndWrap(this.index, this.all)];
     },
     getData(element, data) {
-        return element.getAttribute(`item-${data}`);
+        return element.getAttribute(`data-item-${data}`);
     },
     byId(a, b) {
         const id1 = parseInt(itemSorting.getData(a, "id"));
@@ -1277,7 +977,7 @@ function showContextMenu(element, showListOptions = false) {
         duration: 200,
         easing: "cubic-bezier(0.215, 0.61, 0.355, 1)"
     });
-    ctxItemName = (element.hasAttribute("item-name") ? element : element.getElementsByClassName("iconCont")?.[0])?.getAttribute("item-name");
+    ctxItemName = (element.hasAttribute("data-item-name") ? element : element.getElementsByClassName("iconCont")?.[0])?.getAttribute("data-item-name");
     ctxActive = true;
     return false;
 }
@@ -1285,7 +985,7 @@ function showContextMenu(element, showListOptions = false) {
 function setAsSecondary() {
     const was = targetIsSecondary;
     targetIsSecondary = true;
-    selectItem($(`.iconCont[item-name='${ctxItemName}']`).get(0));
+    selectItem($(`.iconCont[data-item-name='${ctxItemName}']`).get(0));
     closeContextMenu();
     targetIsSecondary = was;
 }
@@ -1316,7 +1016,6 @@ let preventGuiFromClosing = false;
 let outputMouseDownTime = 0;
 let outputActive = false;
 
-// closes the output container after a double click (400ms tolerance) or if forced
 function closeOutput(override = false) {
     if (ctxActive && !override)
         return;
@@ -1332,7 +1031,6 @@ function closeOutput(override = false) {
     preventGuiFromClosing = false;
 }
 
-// closes the price graph container after a double click (400ms tolerance) or if forced
 function unitPriceGraph() {
     preventGuiFromClosing = true;
     closeContextMenu();
@@ -1377,8 +1075,7 @@ function createInfo(i) {
                 const img = document.createElement("img");
                 img.src = acc.img;
                 img.draggable = false;
-                img.classList.add("basicIcon");
-                img.setAttribute("icon-scale", "0.35");
+                img.classList.add("basicIcon, scale-035");
                 img.alt = level;
                 accessCont.append(img);
             }
@@ -1393,7 +1090,7 @@ function createInfo(i) {
             if ("ammo" in i) {
                 infoCont.append(document.createElement("br"));
                 infoCont.append(translate("ammo"));
-                clone.querySelector(".basicIcon").setAttribute("icon-scale", "0.5");
+                clone.querySelector(".basicIcon").classList.add("scale-05");
                 infoCont.append(clone);
             }
             break;
@@ -1409,7 +1106,7 @@ function createInfo(i) {
             unit.innerText = `${translate("unitPrice")} ${i.unitPrice}`;
             unit.addEventListener("click", () => {
                 unitPriceGraph();
-                highlight(document.querySelector(`.graphRow[ammo-type="${i.name}"]`));
+                highlight(document.querySelector(`.graphRow[data-ammo-type="${i.name}"]`));
             });
             infoCont.append(unit);
             infoCont.append(document.createElement("br"));
@@ -1449,7 +1146,6 @@ function itemInfo() {
     cont.append(icon);
     cont.append(document.createElement("br"));
     const i = getItem(ctxItemName);
-    // append description, if exists
     if (descKey in translations) {
         const desc = document.createElement("div");
         desc.innerText = translate("inGameDesc", translate(descKey));
@@ -1460,7 +1156,7 @@ function itemInfo() {
     cont.append(infoCont);
     if (!infoSet)
         infoCont.innerText = translate("noInfo");
-    resizeImages(getScale()); // fix size of images
+    resizeImages(getScale());
 }
 
 function obtaining() {
@@ -1489,7 +1185,7 @@ function obtaining() {
             div.setAttribute("upgrade-mode", recipeMode);
             div.append(translate("obtaining-from"));
             const clone = interactableItemClone(recipe.name, recipeMode, "obtain");
-            clone.querySelector(".basicIcon").setAttribute("icon-scale", "0.5");
+            clone.querySelector(".basicIcon").classList.add("scale-05");
             div.append(clone);
             div.append(translate("obtaining-on"));
             const mode = document.createElement("span");
@@ -1504,7 +1200,7 @@ function obtaining() {
         }
     }
     if (success)
-        resizeImages(getScale()); // fix size of small images
+        resizeImages(getScale());
     else
         cont.innerHTML = translate("cannotBeMade", translate(ctxItemName));
 }
@@ -1573,7 +1269,7 @@ function outputAppendModeArray(cont, fromItem, recipes = [], mode) {
             const output = items[i];
             const item = getItem(output?.item);
             const clone = interactableItemClone(output?.item, mode, "output");
-            clone?.querySelector(".basicIcon")?.setAttribute("icon-scale", "0.5");
+            clone?.querySelector(".basicIcon")?.classList.add("scale-05");
             (len < 2 ? div : outputs).append(clone);
             let count = output.count ?? 1;
             if (item?.category === "ammo")
@@ -1588,9 +1284,6 @@ function outputAppendModeArray(cont, fromItem, recipes = [], mode) {
             div.append(outputs);
         } else
             chance.style.flexDirection = "column";
-        // s += translate("outputRow", result.chance * 100, result.action != null
-        //     ? translate(result.action)
-        //     : result.items.map(e => `${translate(e.item)} x${e.count}`).join(" + "));
     }
     return true;
 }
@@ -1617,7 +1310,7 @@ function reloadLanguage() {
     $("#graphInfo").html(translate("ammoProcessing"));
     $("#appInfoCont").html(translate("appInfo"));
     for (const cont of $(".iconCont").get())
-        cont.getElementsByClassName("itemInfo")[0].innerText = translate(cont.getAttribute("item-name"));
+        cont.getElementsByClassName("itemInfo")[0].innerText = translate(cont.getAttribute("data-item-name"));
     const out = $("#outputCont");
     const scroll = out.scrollTop();
     if (ctxItemName != null && out.hasClass("visible"))
@@ -1635,10 +1328,10 @@ function reloadLanguage() {
     const s = targetIsSecondary;
     targetIsSecondary = false;
     if (primary != null)
-        selectItem(document.querySelector(`.iconCont[item-name='${primary}']`));
+        selectItem(document.querySelector(`.iconCont[data-item-name='${primary}']`));
     targetIsSecondary = true;
     if (secondary != null)
-        selectItem(document.querySelector(`.iconCont[item-name='${secondary}']`));
+        selectItem(document.querySelector(`.iconCont[data-item-name='${secondary}']`));
     targetIsSecondary = s;
     out.scroll(0, scroll);
     loadGraph();
@@ -1656,7 +1349,7 @@ function translate(key, ...args) {
 }
 
 function createItemClone(item) {
-    const div = document.querySelector(`.iconCont[item-name='${item}']`);
+    const div = document.querySelector(`.iconCont[data-item-name='${item}']`);
     if (div == null)
         return null;
     return div.cloneNode(true);
@@ -1698,7 +1391,7 @@ function executeDoubleClick(element, item, mode, action) {
             const recipe = getRecipe(item)?.findRecipeWithOutput(cur, mode);
             for (const e of $(`#outputCont [upgrade-mode='${mode}']`).get())
                 for (const i of e.querySelectorAll(".iconCont")) {
-                    if (!recipe.containsItem(i.getAttribute("item-name")))
+                    if (!recipe.containsItem(i.getAttribute("data-item-name")))
                         continue;
                     highlight(e);
                     return;
@@ -1708,7 +1401,7 @@ function executeDoubleClick(element, item, mode, action) {
         case "output": {
             ctxItemName = item;
             obtaining();
-            highlight($(`#outputCont [upgrade-mode="${mode}"] .iconCont[item-name="${cur}"]`).get(0)?.parentElement);
+            highlight($(`#outputCont [upgrade-mode="${mode}"] .iconCont[data-item-name="${cur}"]`).get(0)?.parentElement);
             break;
         }
     }
@@ -1755,12 +1448,6 @@ function exchangeAmmo(ammoTypeToExchange, targetAmmoType, amount) {
     return [ num2, num1 ];
 }
 
-function leastCommonMultiple(x, y) {
-    if (typeof x !== "number" || typeof y !== "number")
-        return false;
-    return !x || !y ? 0 : Math.abs((x * y) / greatestCommonDivisor(x, y));
-}
-
 function greatestCommonDivisor(x, y) {
     if (isNaN(x) || isNaN(y))
         return NaN;
@@ -1772,10 +1459,6 @@ function greatestCommonDivisor(x, y) {
         x = t;
     }
     return x;
-}
-
-function calculateRemainingAmmo(amount, fromPrice, toPrice) {
-    return amount - calculateExchangedAmmo(amount, fromPrice, toPrice) * (toPrice / fromPrice);
 }
 
 function calculateExchangedAmmo(amount, fromPrice, toPrice) {

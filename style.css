@@ -1,5 +1,6 @@
 :root {
     --ctx-btn-width: auto;
+    --image-scale: 256px;
 }
 
 * {
@@ -144,7 +145,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    overflow-y: auto;
+    overflow: hidden auto;
 }
 
 #overlaysBackground {
@@ -182,6 +183,7 @@ body {
     align-items: center;
     flex-direction: column;
     cursor: pointer;
+    position: relative;
 }
 
 .iconCont:hover > .basicIcon {
@@ -193,12 +195,9 @@ body {
 }
 
 .infoCont {
-    position: relative;
-    width: 0;
-    height: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    width: 100%;
+    min-height: 2em;
 }
 
 .itemInfo {
@@ -209,7 +208,6 @@ body {
     font-size: 2.5vh;
     text-align: center;
     pointer-events: none;
-    position: absolute;
 }
 
 .basicIcon {
@@ -217,6 +215,17 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    --icon-scale: 1;
+    width: calc(var(--image-scale) * var(--icon-scale));
+    height: calc(var(--image-scale) * var(--icon-scale));
+}
+
+.scale-035 {
+    --icon-scale: 0.35;
+}
+
+.scale-05 {
+    --icon-scale: 0.5;
 }
 
 .accessCont {
