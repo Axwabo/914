@@ -1,5 +1,4 @@
 :root {
-    --ctx-btn-width: auto;
     --image-scale: 256px;
 }
 
@@ -32,7 +31,7 @@ body {
 }
 
 #logo {
-    height: 10vh;
+    max-width: 20vw;
     animation: logoSpin 3s linear infinite;
     transform-origin: center;
     filter: hue-rotate(120deg) saturate(0) brightness(3);
@@ -61,7 +60,7 @@ body {
 #langToggle {
     visibility: hidden;
     border: none;
-    font-size: 3rem;
+    font-size: 40px;
     background-color: rgba(0, 0, 0, 0.5);
     color: rgb(200, 200, 200);
     user-select: none;
@@ -82,7 +81,7 @@ body {
 
 #appInfoBtn {
     visibility: hidden;
-    font-size: 3em;
+    font-size: 40px;
     background-color: transparent;
     width: 1.5em;
     height: 1.5em;
@@ -95,7 +94,7 @@ body {
     transition-property: color, background-color;
 }
 
-#app:has(#appInfoCont.visible) #appInfoBtn {
+#app:has(#appInfoCont.visible, #unitGraphCont.visible) #appInfoBtn {
     background-color: rgba(50, 50, 200, 0.4);
     color: rgb(200, 50, 100);
 }
@@ -123,16 +122,6 @@ body {
     fill: rgb(120, 50, 255);
 }
 
-#loadingData {
-    font-size: 5vw;
-    text-align: center;
-    font-weight: bold;
-}
-
-#loadingProgress {
-    font-size: 3vw;
-}
-
 #itemsContainer {
     min-height: 0;
     display: grid;
@@ -152,8 +141,8 @@ body {
     background-color: rgba(10, 10, 10, 0.8);
     position: absolute;
     width: calc(100% - 3rem);
-    height: 100%;
-    padding-left: 3rem;
+    height: 95%;
+    padding: 2.5% 3rem 2.5% 3rem;
     visibility: hidden;
 }
 
@@ -187,7 +176,7 @@ body {
 }
 
 .iconCont:hover > .basicIcon {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .iconCont:hover .itemInfo {
@@ -205,7 +194,7 @@ body {
     transition: 0.3s;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 5;
-    font-size: 2.5vh;
+    font-size: 1.5rem;
     text-align: center;
     pointer-events: none;
 }
@@ -241,14 +230,17 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+    padding: 0 1em;
+}
+
+#inputContainer:not(.pathCont:has(.pathItem)) {
+    gap: 1rem;
 }
 
 #primaryItem, #secondaryItem {
-    font-size: 2.5vh;
-    width: 256px;
-    max-width: 256px;
-    height: 256px;
-    max-height: 256px;
+    font-size: 1.5rem;
+    min-height: 5em;
+    max-width: calc(var(--image-scale) * 1.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -260,14 +252,15 @@ body {
 }
 
 #pathCont {
-    font-size: 2.5vh;
+    font-size: 1.5rem;
     text-align: center;
-    max-width: 50vw;
+    height: 100%;
     justify-content: center;
     align-items: center;
     align-content: center;
     word-wrap: break-word;
     flex-wrap: wrap;
+    margin: 0 0.3rem;
 }
 
 .pathItem {
@@ -303,7 +296,7 @@ body {
     background-color: rgb(10, 10, 10);
     position: absolute;
     z-index: 10;
-    padding: 0.5vh;
+    padding: 0.3rem;
     overflow: hidden;
 }
 
@@ -312,17 +305,16 @@ body {
     background-color: rgb(30, 30, 30);
     color: white;
     cursor: pointer;
-    font-size: 2vh;
-    width: var(--ctx-btn-width);
+    font-size: 1.5rem;
+    width: 100%;
     transition-duration: 0.2s;
     transition-property: background-color, color, outline-color;
     white-space: nowrap;
     outline: 0.1em solid transparent;
 }
 
-.ctxButton:not(:first-child, :last-child) {
-    border-top: 0.1vh solid gray;
-    border-bottom: 0.1vh solid gray;
+.ctxButton:not(:first-child) {
+    border-top: 0.1em solid gray;
 }
 
 .ctxButton:hover {
@@ -366,9 +358,11 @@ body {
 }
 
 #notice {
-    width: 0;
-    white-space: nowrap;
-    z-index: 1;
+    width: 100vw;
+    max-width: 95vw;
+    font-size: 2rem;
+    display: block;
+    margin-top: 1em;
 }
 
 .chanceCont {

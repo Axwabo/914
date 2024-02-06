@@ -1,3 +1,5 @@
+// noinspection JSUnresolvedReference
+
 /**
  * @return {RecipeOutput}
  * */
@@ -35,7 +37,7 @@ const outputMapper = x => {
                 items.push(new OutputItem(item.Item, item.Count ?? 1));
         }
         action = x.Action;
-        chance = parseFloat(x.Chance ?? chance);
+        chance = parseFloat(x.Chance ?? chance.toString());
     }
     return items.length < 1 && action == null ? null : new RecipeOutput(items, chance, action);
 };
@@ -426,11 +428,6 @@ function loadApp() {
     $("#loading").css("animation-name", "fadeOut");
     $("#app").css("animation-name", "fadeIn").css("display", "grid");
     const cont = $("#itemListContainer").get(0);
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const scale = 256 * (w > h ? h / 1080 : w / 1920);
-    $("#primaryItem, #secondaryItem").css("width", `${scale}px`).css("max-width", `${scale}px`)
-    .css("height", `${scale}px`).css("max-height", `${scale}px`);
     for (const e of createItemList().sort(itemSorting.currentFunction))
         cont.appendChild(e);
     loadGraph();
@@ -474,19 +471,17 @@ function loadApp() {
 function getScale() {
     const w = window.innerWidth;
     const h = window.innerHeight;
-    return 256 * (w > h ? h / 1080 : w / 1920);
+    return Math.max(0.7, w > h ? h / 1080 : w / 1920);
 }
 
 function onResize() {
     const scale = getScale();
-    $("#langToggle, #settingsBtn").css("font-size", `${scale * 0.15}px`).css("padding", `${scale * 0.03}px`);
-    $("#appInfoBtn").css("font-size", `${scale * 0.15}px`).css("width", `${scale * 0.25}px`)
-    .css("height", `${scale * 0.25}px`).css("border-width", `${scale * 0.02}px`);
+    resizeImages(scale);
     $("#settingsBtn svg").attr("width", scale * 0.25).attr("height", scale * 0.25);
 }
 
 function resizeImages(scale) {
-    const sp = `${scale}px`;
+    const sp = `${scale * 256}px`;
     document.documentElement.style.setProperty("--image-scale", sp);
     return sp;
 }
@@ -609,37 +604,6 @@ function canBeMade(item) {
     return recipes.filter(i => i.allRecipes.some(r => r.items.some(e => e.item === item))).some(i => i.name !== item);
 }
 
-function getPath(tree, from) {
-    clearEmpties(tree);
-    removeBadPath(tree, from);
-    removeBadPath(tree, from);
-    const path = [];
-    let cur = tree;
-    outer: while (true) {
-        const paths = cur[0] ?? cur;
-        if (typeof paths !== "object")
-            return null;
-        for (const mode of allModes) {
-            if (!(mode in paths))
-                continue;
-            cur = paths[mode];
-            if (cur == null)
-                return null;
-            for (let i = 0; i < cur.length; i++) {
-                const e = cur[i];
-                console.log(e);
-                if (e.Item === from) {
-                    path.push(e);
-                    break outer;
-                }
-                if (i === 0)
-                    path.push(e);
-            }
-        }
-    }
-    return path;
-}
-
 function swapItems() {
     const p = primary;
     const s = secondary;
@@ -655,14 +619,6 @@ const sortModes = {
     first: 1,
     shortest: 2,
     safest: 4
-};
-
-Number.prototype.hasFlag = function(flag) {
-    return this & flag === flag;
-};
-
-Number.prototype.setFlag = function(flag, state) {
-    return !state ? this & ~flag : this | flag;
 };
 
 Number.prototype.toPercent = function(precision) {
@@ -694,53 +650,6 @@ function pathToHTML(path) {
     }
     s.push(`<span class="pathItem">${translate(last[0])}${last[1] === "1" ? "" : ` x${last[1]}`}</span>`);
     return s.join(" →<br> ");
-}
-
-function clearEmpties(array) {
-    if (array == null)
-        return null;
-    for (let i = 0; i < array.length; i++) {
-        const item = array[i];
-        if (typeof item !== "object")
-            continue;
-        for (const key in item) {
-            if (item[key] instanceof Array) {
-                if (item[key].length < 1)
-                    delete item[key];
-                else
-                    clearEmpties(item[key]);
-            }
-        }
-    }
-    return array;
-}
-
-function removeBadPath(tree, find) {
-    if (tree == null)
-        return false;
-    let empty = 0;
-    let i = 0;
-    for (const item of tree) {
-        const prevEmpty = empty;
-        const remove = [];
-        for (const key in item) {
-            if (item[key] instanceof Array) {
-                i++;
-                if (item[key].length < 1) {
-                    empty++;
-                    delete item[key];
-                } else {
-                    empty++;
-                    remove.push(key);
-                }
-            }
-        }
-        if (prevEmpty !== empty && item.Item !== find)
-            return true;
-        for (const key of remove)
-            delete item[key];
-    }
-    return i === empty;
 }
 
 let x;
@@ -887,12 +796,6 @@ function findPath(from, to, used = [], outUnused = [], outScore = [ 0 ]) {
 let ctxItemName = null;
 let ctxActive = null;
 
-function resizeCtxButtons(buttons) {
-    document.documentElement.style.setProperty("--ctx-btn-width", "auto");
-    document.documentElement.style.setProperty("--ctx-btn-width",
-        `${Math.max(...buttons.map(e => e.scrollWidth))}px`);
-}
-
 const itemSorting = {
     index: 0,
     get currentFunction() {
@@ -957,7 +860,6 @@ function showContextMenu(element, showListOptions = false) {
     $("#ctxSortByButton, #ctxSetAsSecondary").css("display", showListOptions ? "block" : "none");
     const buttons = $(".ctxButton");
     buttons.get(2).style.borderTopStyle = showListOptions ? "solid" : "none";
-    resizeCtxButtons(buttons.get());
     const query = $("#contextMenuList");
     const list = query.get(0);
     const verticalOverflow = my + list.scrollHeight > window.innerHeight;
@@ -1035,6 +937,8 @@ function unitPriceGraph() {
     preventGuiFromClosing = true;
     closeContextMenu();
     $("#unitGraphCont").addClass("visible");
+    if ($("#appInfoCont.visible").get(0))
+        $("#appInfoCont").removeClass("visible");
 }
 
 function closeGraph(overrideClicks = false) {
@@ -1051,81 +955,94 @@ function closeGraph(overrideClicks = false) {
     preventGuiFromClosing = false;
 }
 
+function addKeycard(infoCont, i) {
+    infoCont.append(translate("typeKeycard"));
+    infoCont.append(document.createElement("br"));
+    infoCont.append(translate("accessLevels"));
+    const accessCont = document.createElement("div");
+    accessCont.classList.add("accessCont");
+    for (const level of i.access) {
+        const acc = access.find(e => e.id === level);
+        if (acc == null || !acc.img) {
+            accessCont.append(level);
+            continue;
+        }
+        const img = document.createElement("img");
+        img.src = acc.img;
+        img.draggable = false;
+        img.classList.add("basicIcon, scale-035");
+        img.alt = level;
+        accessCont.append(img);
+    }
+    infoCont.append(accessCont);
+}
+
+function addFirearm(infoSet, infoCont, i, clone) {
+    infoCont.append(translate("typeFirearm"));
+    infoCont.append(document.createElement("br"));
+    infoCont.append(translate("magSize", i.magazineSize));
+    if ("ammo" in i) {
+        infoCont.append(document.createElement("br"));
+        infoCont.append(translate("ammo"));
+        clone.querySelector(".basicIcon").classList.add("scale-05");
+        infoCont.append(clone);
+    }
+}
+
+function addAmmo(infoCont, i) {
+    infoCont.append(translate("typeAmmo"));
+    infoCont.append(document.createElement("br"));
+    infoCont.append(`${translate("ammoPerClip")} ${i.defaultAmount}`);
+    infoCont.append(document.createElement("br"));
+    const unit = document.createElement("span");
+    unit.classList.add("ammoUnit");
+    unit.innerText = `${translate("unitPrice")} ${i.unitPrice}`;
+    unit.addEventListener("click", () => {
+        unitPriceGraph();
+        highlight(document.querySelector(`.graphRow[data-ammo-type="${i.name}"]`));
+    });
+    infoCont.append(unit);
+    infoCont.append(document.createElement("br"));
+    infoCont.append(translate("usingAmmo"));
+    const firearmsCont = document.createElement("div");
+    firearmsCont.classList.add("outputRow");
+    for (const item of items) {
+        if (item.category !== "firearm" || item.ammo !== i.name)
+            continue;
+        const clone = interactableItemClone(item.name, null, "info");
+        firearmsCont.append(clone);
+    }
+    infoCont.append(firearmsCont);
+}
+
+function addOther(i, infoCont, infoSet) {
+    if (i.name !== "SCP-2536-2")
+        return infoSet;
+    infoCont.append(translate("funnyCoal"));
+    return true;
+}
+
 function createInfo(i) {
     const clone = interactableItemClone(i.ammo, null, "info");
     let infoSet = false;
     const infoCont = document.createElement("div");
-    if (i == null)
+    if (!i)
         return { infoCont, infoSet };
     switch (i.category) {
-        case "keycard": {
+        case "keycard":
+            addKeycard(infoCont, i);
             infoSet = true;
-            infoCont.append(translate("typeKeycard"));
-            infoCont.append(document.createElement("br"));
-            infoCont.append(translate("accessLevels"));
-            const accessCont = document.createElement("div");
-            accessCont.classList.add("accessCont");
-            // access levels
-            for (const level of i.access) {
-                const acc = access.find(e => e.id === level);
-                if (acc == null || !acc.img) {
-                    accessCont.append(level); // fallback to raw value if the image is not loaded
-                    continue;
-                }
-                const img = document.createElement("img");
-                img.src = acc.img;
-                img.draggable = false;
-                img.classList.add("basicIcon, scale-035");
-                img.alt = level;
-                accessCont.append(img);
-            }
-            infoCont.append(accessCont);
             break;
-        }
-        case "firearm": {
+        case "firearm":
+            addFirearm(infoSet, infoCont, i, clone);
             infoSet = true;
-            infoCont.append(translate("typeFirearm"));
-            infoCont.append(document.createElement("br"));
-            infoCont.append(translate("magSize", i.magazineSize));
-            if ("ammo" in i) {
-                infoCont.append(document.createElement("br"));
-                infoCont.append(translate("ammo"));
-                clone.querySelector(".basicIcon").classList.add("scale-05");
-                infoCont.append(clone);
-            }
             break;
-        }
         case "ammo":
+            addAmmo(infoCont, i);
             infoSet = true;
-            infoCont.append(translate("typeAmmo"));
-            infoCont.append(document.createElement("br"));
-            infoCont.append(`${translate("ammoPerClip")} ${i.defaultAmount}`);
-            infoCont.append(document.createElement("br"));
-            const unit = document.createElement("span");
-            unit.classList.add("ammoUnit");
-            unit.innerText = `${translate("unitPrice")} ${i.unitPrice}`;
-            unit.addEventListener("click", () => {
-                unitPriceGraph();
-                highlight(document.querySelector(`.graphRow[data-ammo-type="${i.name}"]`));
-            });
-            infoCont.append(unit);
-            infoCont.append(document.createElement("br"));
-            infoCont.append(translate("usingAmmo"));
-            const firearmsCont = document.createElement("div");
-            firearmsCont.classList.add("outputRow");
-            for (const item of items) {
-                if (item.category !== "firearm" || item.ammo !== i.name)
-                    continue;
-                const clone = interactableItemClone(item.name, null, "info");
-                firearmsCont.append(clone);
-            }
-            infoCont.append(firearmsCont);
             break;
         default:
-            if (i.name !== "SCP-2536-2")
-                break;
-            infoCont.append(translate("funnyCoal"));
-            infoSet = true;
+            infoSet = addOther(i, infoCont, infoSet);
             break;
     }
     return { infoCont, infoSet };
@@ -1227,7 +1144,7 @@ function outputs() {
         | outputAppendModeArray(cont, recipe.name, recipe.fine, "Fine")
         | outputAppendModeArray(cont, recipe.name, recipe.veryFine, "Very Fine")
     )
-        resizeImages(getScale()); // fix size of small images
+        resizeImages(getScale());
     else
         cont.innerHTML = translate("noOutputs", translate(ctxItemName));
     cont.scrollTo(0, 0);
@@ -1335,7 +1252,6 @@ function reloadLanguage() {
     targetIsSecondary = s;
     out.scroll(0, scroll);
     loadGraph();
-    resizeCtxButtons($(".ctxButton").get());
 }
 
 function translate(key, ...args) {
@@ -1385,7 +1301,7 @@ function executeDoubleClick(element, item, mode, action) {
             ctxItemName = item;
             itemInfo();
             break;
-        case "obtain": {
+        case "obtain":
             ctxItemName = item;
             outputs();
             const recipe = getRecipe(item)?.findRecipeWithOutput(cur, mode);
@@ -1397,13 +1313,11 @@ function executeDoubleClick(element, item, mode, action) {
                     return;
                 }
             break;
-        }
-        case "output": {
+        case "output":
             ctxItemName = item;
             obtaining();
             highlight($(`#outputCont [upgrade-mode="${mode}"] .iconCont[data-item-name="${cur}"]`).get(0)?.parentElement);
             break;
-        }
     }
 }
 
@@ -1466,6 +1380,9 @@ function calculateExchangedAmmo(amount, fromPrice, toPrice) {
 }
 
 function toggleInfo() {
-    $("#appInfoCont").toggleClass("visible");
+    if ($("#unitGraphCont.visible").get(0))
+        $("#unitGraphCont").removeClass("visible");
+    else
+        $("#appInfoCont").toggleClass("visible");
     preventGuiFromClosing = false;
 }
