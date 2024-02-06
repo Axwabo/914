@@ -1,0 +1,327 @@
+[
+    {
+        "name": "Janitor Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1"
+        ]
+    },
+    {
+        "name": "Scientist Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2"
+        ]
+    },
+    {
+        "name": "Research Supervisor Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "Zone Manager Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "Guard Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "Armory1",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "MTF Private Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "Armory1",
+            "Armory2",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "Containment Engineer Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "SCP3",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "MTF Operative Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "Armory1",
+            "Armory2",
+            "Checkpoint",
+            "Gate"
+        ]
+    },
+    {
+        "name": "MTF Captain Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "Armory1",
+            "Armory2",
+            "Armory3",
+            "Checkpoint",
+            "Gate"
+        ]
+    },
+    {
+        "name": "Facility Manager Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "SCP3",
+            "Nuke",
+            "Gate",
+            "Intercom",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "Chaos Insurgency Access Device",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "Armory1",
+            "Armory2",
+            "Armory3",
+            "Checkpoint",
+            "Gate"
+        ]
+    },
+    {
+        "name": "O5-Level Keycard",
+        "category": "keycard",
+        "access": [
+            "SCP1",
+            "SCP2",
+            "SCP3",
+            "Armory1",
+            "Armory2",
+            "Armory3",
+            "Nuke",
+            "Gate",
+            "Intercom",
+            "Checkpoint"
+        ]
+    },
+    {
+        "name": "Radio",
+        "category": "radio"
+    },
+    {
+        "name": "COM-15",
+        "category": "firearm",
+        "ammo": "9x19mm Ammo",
+        "magazineSize": 12
+    },
+    {
+        "name": "First-Aid Kit",
+        "category": "medical"
+    },
+    {
+        "name": "Flashlight"
+    },
+    {
+        "name": "Micro H.I.D.",
+        "category": "micro"
+    },
+    {
+        "name": "SCP-500",
+        "category": "SCP"
+    },
+    {
+        "name": "SCP-207",
+        "category": "SCP"
+    },
+    {
+        "name": "12/7 Buckshot Ammo",
+        "category": "ammo",
+        "unitPrice": 5,
+        "defaultAmount": 14
+    },
+    {
+        "name": "MTF-E11-SR",
+        "category": "firearm",
+        "ammo": "5.56x45mm Ammo",
+        "magazineSize": 40
+    },
+    {
+        "name": "Crossvec",
+        "category": "firearm",
+        "ammo": "9x19mm Ammo",
+        "magazineSize": 40
+    },
+    {
+        "name": "5.56x45mm Ammo",
+        "category": "ammo",
+        "unitPrice": 3,
+        "defaultAmount": 40
+    },
+    {
+        "name": "FSP-9",
+        "category": "firearm",
+        "ammo": "9x19mm Ammo",
+        "magazineSize": 30
+    },
+    {
+        "name": "Logicer",
+        "category": "firearm",
+        "ammo": "7.62x39mm Ammo",
+        "magazineSize": 100
+    },
+    {
+        "name": "High-Explosive Grenade",
+        "category": "grenade"
+    },
+    {
+        "name": "Flashbang",
+        "category": "grenade"
+    },
+    {
+        "name": ".44mag Ammo",
+        "category": "ammo",
+        "unitPrice": 7,
+        "defaultAmount": 6
+    },
+    {
+        "name": "7.62x39mm Ammo",
+        "category": "ammo",
+        "unitPrice": 3,
+        "defaultAmount": 30
+    },
+    {
+        "name": "9x19mm Ammo",
+        "category": "ammo",
+        "unitPrice": 2,
+        "defaultAmount": 15
+    },
+    {
+        "name": "COM-18",
+        "category": "firearm",
+        "ammo": "9x19mm Ammo",
+        "magazineSize": 15
+    },
+    {
+        "name": "SCP-018",
+        "category": "SCP"
+    },
+    {
+        "name": "SCP-268",
+        "category": "SCP"
+    },
+    {
+        "name": "Adrenaline",
+        "category": "medical"
+    },
+    {
+        "name": "Painkillers",
+        "category": "medical"
+    },
+    {
+        "name": "Coin"
+    },
+    {
+        "name": "Light Armor",
+        "category": "armor"
+    },
+    {
+        "name": "Combat Armor",
+        "category": "armor"
+    },
+    {
+        "name": "Heavy Armor",
+        "category": "armor"
+    },
+    {
+        "name": ".44 Revolver",
+        "category": "firearm",
+        "ammo": ".44mag Ammo",
+        "magazineSize": 6
+    },
+    {
+        "name": "AK",
+        "category": "firearm",
+        "ammo": "7.62x39mm Ammo",
+        "magazineSize": 30
+    },
+    {
+        "name": "Shotgun",
+        "category": "firearm",
+        "ammo": "12/7 Buckshot Ammo",
+        "magazineSize": 14
+    },
+    {
+        "name": "SCP-2176",
+        "category": "SCP"
+    },
+    {
+        "name": "SCP-244-A",
+        "category": "SCP"
+    },
+    {
+        "name": "SCP-244-B",
+        "category": "SCP"
+    },
+    {
+        "name": "SCP-1853",
+        "category": "SCP"
+    },
+    {
+        "name": "3-X Particle Disruptor",
+        "category": "firearm",
+        "magazineSize": 5
+    },
+    {
+        "name": "COM-45",
+        "category": "firearm",
+        "ammo": "9x19mm Ammo",
+        "magazineSize": 36
+    },
+    {
+        "name": "SCP-1576",
+        "category": "SCP"
+    },
+    {
+        "name": "Jailbird"
+    },
+    {
+        "name": "SCP-207?",
+        "category": "SCP"
+    },
+    {
+        "name": "FR-MG-0",
+        "category": "firearm",
+        "ammo": "5.56x45mm Ammo",
+        "magazineSize": 100
+    },
+    {
+        "name": "A7",
+        "category": "firearm",
+        "ammo": "7.62x39mm Ammo",
+        "magazineSize": 30
+    }
+]

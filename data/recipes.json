@@ -1,0 +1,1207 @@
+{
+    "Janitor Keycard": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": {
+            "Action": "Destroys the Item"
+        },
+        "1:1": "Zone Manager Keycard",
+        "Fine": "Scientist Keycard",
+        "Very Fine": [
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Research Supervisor Keycard",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "Scientist Keycard": {
+        "Rough": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Janitor Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Janitor Keycard",
+        "1:1": "Zone Manager Keycard",
+        "Fine": "Research Supervisor Keycard",
+        "Very Fine": [
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "Research Supervisor Keycard",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "Facility Manager Keycard",
+                "Chance": 0.333333343
+            }
+        ]
+    },
+    "Research Supervisor Keycard": {
+        "Rough": [
+            {
+                "Item": "Janitor Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Scientist Keycard",
+        "1:1": "Guard Keycard",
+        "Fine": "Facility Manager Keycard",
+        "Very Fine": [
+            {
+                "Item": "Research Supervisor Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Facility Manager Keycard",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "Zone Manager Keycard": {
+        "Rough": [
+            {
+                "Item": "Janitor Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Scientist Keycard",
+        "1:1": "Guard Keycard",
+        "Fine": "Facility Manager Keycard",
+        "Very Fine": [
+            {
+                "Item": "Facility Manager Keycard",
+                "Chance": 0.4
+            },
+            {
+                "Item": "Zone Manager Keycard",
+                "Chance": 0.4
+            },
+            {
+                "Item": "Chaos Insurgency Access Device",
+                "Chance": 0.2
+            }
+        ]
+    },
+    "Guard Keycard": {
+        "Rough": [
+            {
+                "Item": "Janitor Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Scientist Keycard",
+        "1:1": "Research Supervisor Keycard",
+        "Fine": "MTF Operative Keycard",
+        "Very Fine": [
+            {
+                "Item": "Guard Keycard",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "MTF Operative Keycard",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "MTF Captain Keycard",
+                "Chance": 0.333333343
+            }
+        ]
+    },
+    "MTF Private Keycard": {
+        "Rough": [
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Research Supervisor Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Research Supervisor Keycard",
+        "1:1": "Facility Manager Keycard",
+        "Fine": "MTF Operative Keycard",
+        "Very Fine": [
+            {
+                "Item": "MTF Operative Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "MTF Captain Keycard",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "Containment Engineer Keycard": {
+        "Rough": [
+            {
+                "Item": "Scientist Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Research Supervisor Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Research Supervisor Keycard",
+        "1:1": "Facility Manager Keycard",
+        "Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "MTF Captain Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Very Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.6666667
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.333333343
+            }
+        ]
+    },
+    "MTF Operative Keycard": {
+        "Rough": [
+            {
+                "Item": "Guard Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "MTF Private Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "MTF Private Keycard",
+        "1:1": "Facility Manager Keycard",
+        "Fine": "MTF Captain Keycard",
+        "Very Fine": [
+            {
+                "Item": "MTF Captain Keycard",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "MTF Operative Keycard",
+                "Chance": 0.333333343
+            }
+        ]
+    },
+    "MTF Captain Keycard": {
+        "Rough": "Guard Keycard",
+        "Coarse": "MTF Operative Keycard",
+        "1:1": "Chaos Insurgency Access Device",
+        "Fine": "O5-Level Keycard",
+        "Very Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.75
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.25
+            }
+        ]
+    },
+    "Facility Manager Keycard": {
+        "Rough": "Zone Manager Keycard",
+        "Coarse": "MTF Captain Keycard",
+        "1:1": "Chaos Insurgency Access Device",
+        "Fine": "O5-Level Keycard",
+        "Very Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.75
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.25
+            }
+        ]
+    },
+    "Chaos Insurgency Access Device": {
+        "Rough": "Guard Keycard",
+        "Coarse": "MTF Operative Keycard",
+        "1:1": "MTF Captain Keycard",
+        "Fine": "O5-Level Keycard",
+        "Very Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.75
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.25
+            }
+        ]
+    },
+    "O5-Level Keycard": {
+        "Rough": "Guard Keycard",
+        "Coarse": [
+            {
+                "Item": "Facility Manager Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Item": "MTF Captain Keycard",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": "O5-Level Keycard",
+        "Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.5
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            }
+        ],
+        "Very Fine": [
+            {
+                "Item": "O5-Level Keycard",
+                "Chance": 0.25
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.75
+            }
+        ]
+    },
+    "Radio": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": {
+            "Action": "Destroys the Item"
+        },
+        "1:1": "Radio",
+        "Fine": "Radio",
+        "Very Fine": [
+            {
+                "Item": "Flashlight",
+                "Chance": 0.75
+            },
+            {
+                "Item": "SCP-1576",
+                "Chance": 0.25
+            }
+        ]
+    },
+    "COM-15": {
+        "Rough": [
+            {
+                "Output": {
+                    "Action": "Destroys the Item"
+                },
+                "Chance": 0.5
+            },
+            {
+                "Output": "9x19mm Ammo",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "Output": "COM-15",
+                "Chance": 0.5
+            },
+            {
+                "Output": "9x19mm Ammo",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "COM-18",
+        "Very Fine": [
+            {
+                "Output": ".44 Revolver",
+                "Chance": 0.295
+            },
+            {
+                "Output": "FSP-9",
+                "Chance": 0.555
+            },
+            {
+                "Output": "COM-45",
+                "Chance": 0.15
+            }
+        ]
+    },
+    "First-Aid Kit": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "Painkillers",
+        "1:1": "First-Aid Kit",
+        "Fine": "Adrenaline",
+        "Very Fine": [
+            {
+                "Item": "First-Aid Kit",
+                "Chance": 0.333333343
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.333333343
+            },
+            {
+                "Item": "SCP-500",
+                "Chance": 0.333333343
+            }
+        ]
+    },
+    "Flashlight": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": [
+            {
+                "Item": "Flashlight",
+                "Chance": 0.5
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": "Flashlight",
+        "Fine": "Radio",
+        "Very Fine": [
+            {
+                "Item": "Flashbang",
+                "Chance": 0.9
+            },
+            {
+                "Item": "SCP-2176",
+                "Chance": 0.1
+            }
+        ]
+    },
+    "Micro H.I.D.": {
+        "Rough": "MTF-E11-SR",
+        "Coarse / 1:1 / Fine": {
+            "Action": "Recharges the Micro H.I.D."
+        },
+        "Very Fine": [
+            {
+                "Output": "3-X Particle Disruptor",
+                "Chance": 0.5
+            },
+            {
+                "Output": "Jailbird",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "SCP-500": {
+        "Rough": [
+            {
+                "Item": "Painkillers",
+                "Chance": 0.5
+            },
+            {
+                "Item": "First-Aid Kit",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Adrenaline",
+        "1:1": "SCP-500",
+        "Fine": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            },
+            {
+                "Item": "SCP-500",
+                "Chance": 0.5
+            }
+        ],
+        "Very Fine": {
+            "Action": "Destroys the Item"
+        }
+    },
+    "SCP-207": {
+        "Rough": "Painkillers",
+        "Coarse": "Adrenaline",
+        "1:1": "SCP-207?",
+        "Fine": "SCP-1853",
+        "Very Fine": {
+            "Action": "Destroys the Item"
+        }
+    },
+    "12/7 Buckshot Ammo": {
+        "Info": "Only works on dropped items regardless of 914mode!",
+        "Rough / Coarse": "7.62x39mm Ammo",
+        "1:1": "9x19mm Ammo",
+        "Fine / Very Fine": ".44mag Ammo"
+    },
+    "MTF-E11-SR": {
+        "Rough": [
+            {
+                "Output": "COM-15",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "5.56x45mm Ammo",
+                    "Count": 2
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Crossvec",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "FR-MG-0",
+        "Very Fine": [
+            {
+                "Output": "Micro H.I.D.",
+                "Chance": 0.05
+            },
+            {
+                "Output": "Logicer",
+                "Chance": 0.25
+            },
+            {
+                "Output": "Shotgun",
+                "Chance": 0.1
+            },
+            {
+                "Output": "AK",
+                "Chance": 0.3
+            },
+            {
+                "Output": "Crossvec",
+                "Chance": 0.3
+            }
+        ]
+    },
+    "Crossvec": {
+        "Rough": [
+            {
+                "Output": {
+                    "Action": "Destroys the Item"
+                },
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "9x19mm Ammo",
+                    "Count": 4
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "FSP-9",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": [
+            {
+                "Output": "MTF-E11-SR",
+                "Chance": 0.6
+            },
+            {
+                "Output": "AK",
+                "Chance": 0.4
+            }
+        ],
+        "Very Fine": [
+            {
+                "Output": "Shotgun",
+                "Chance": 0.3
+            },
+            {
+                "Output": "MTF-E11-SR",
+                "Chance": 0.7
+            }
+        ]
+    },
+    "5.56x45mm Ammo": {
+        "Info": "Only works on dropped items regardless of 914mode!",
+        "Rough / Coarse": "9x19mm Ammo",
+        "1:1": "7.62x39mm Ammo",
+        "Fine / Very Fine": "9x19mm Ammo"
+    },
+    "FSP-9": {
+        "Rough": [
+            {
+                "Output": {
+                    "Action": "Destroys the Item"
+                },
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "9x19mm Ammo",
+                    "Count": 3
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "Output": "COM-18",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "9x19mm Ammo",
+                    "Count": 2
+                },
+                "Chance": 0.5
+            }
+        ],
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "Crossvec",
+        "Very Fine": [
+            {
+                "Output": "Crossvec",
+                "Chance": 0.7
+            },
+            {
+                "Output": "MTF-E11-SR",
+                "Chance": 0.3
+            }
+        ]
+    },
+    "Logicer": {
+        "Rough": [
+            {
+                "Output": "AK",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "7.62x39mm Ammo",
+                    "Count": 4
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "FR-MG-0",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "Shotgun",
+        "Very Fine": [
+            {
+                "Output": "Micro H.I.D.",
+                "Chance": 0.1
+            },
+            {
+                "Outputs": [
+                    "AK",
+                    {
+                        "Item": "High-Explosive Grenade",
+                        "Count": 2
+                    }
+                ],
+                "Chance": 0.6
+            },
+            {
+                "Outputs": [
+                    ".44 Revolver",
+                    "Shotgun"
+                ],
+                "Chance": 0.3
+            }
+        ]
+    },
+    "High-Explosive Grenade": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "Flashbang",
+        "1:1": "Flashbang",
+        "Fine": "High-Explosive Grenade",
+        "Very Fine": [
+            {
+                "Item": "High-Explosive Grenade",
+                "Chance": 0.25
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            },
+            {
+                "Item": "SCP-018",
+                "Chance": 0.25
+            }
+        ]
+    },
+    "Flashbang": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "Flashlight",
+        "1:1": "High-Explosive Grenade",
+        "Fine": "High-Explosive Grenade",
+        "Very Fine": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.75
+            },
+            {
+                "Item": "SCP-207",
+                "Chance": 0.25
+            }
+        ]
+    },
+    ".44mag Ammo": {
+        "Info": "Only works on dropped items regardless of 914mode!",
+        "Rough / Coarse": "12/7 Buckshot Ammo",
+        "1:1": "9x19mm Ammo",
+        "Fine / Very Fine": "7.62x39mm Ammo"
+    },
+    "7.62x39mm Ammo": {
+        "Info": "Only works on dropped items regardless of 914mode!",
+        "Rough / Coarse": ".44mag Ammo",
+        "1:1": "5.56x45mm Ammo",
+        "Fine / Very Fine": "12/7 Buckshot Ammo"
+    },
+    "9x19mm Ammo": {
+        "Info": "Only works on dropped items regardless of 914mode!",
+        "Rough / Coarse": "5.56x45mm Ammo",
+        "1:1": ".44mag Ammo",
+        "Fine / Very Fine": "5.56x45mm Ammo"
+    },
+    "COM-18": {
+        "Rough": [
+            {
+                "Output": "9x19mm Ammo",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "9x19mm Ammo",
+                    "Count": 2
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "COM-15",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "FSP-9",
+        "Very Fine": [
+            {
+                "Output": ".44 Revolver",
+                "Chance": 0.45
+            },
+            {
+                "Output": "Crossvec",
+                "Chance": 0.55
+            }
+        ]
+    },
+    "SCP-018": {
+        "Rough": "Flashbang",
+        "Coarse": "Flashbang",
+        "1:1": "SCP-018",
+        "Fine": "High-Explosive Grenade",
+        "Very Fine": "Coin"
+    },
+    "SCP-268": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "SCP-268",
+        "1:1": "SCP-268",
+        "Fine": "SCP-268",
+        "Very Fine": "SCP-268"
+    },
+    "Adrenaline": {
+        "Rough": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Painkillers",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "Item": "First-Aid Kit",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Painkillers",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": "Adrenaline",
+        "Fine": "SCP-500",
+        "Very Fine": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.6666667
+            },
+            {
+                "Item": "SCP-1853",
+                "Chance": 0.333333343
+            }
+        ]
+    },
+    "Painkillers": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": [
+            {
+                "Item": "Painkillers",
+                "Chance": 0.5
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "Item": "First-Aid Kit",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Painkillers",
+                "Chance": 0.5
+            }
+        ],
+        "Fine": "First-Aid Kit",
+        "Very Fine": [
+            {
+                "Item": "First-Aid Kit",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Adrenaline",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "Coin": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "Coin",
+        "1:1": "Coin",
+        "Fine": "Coin",
+        "Very Fine": "Coin"
+    },
+    "Light Armor": {
+        "Rough": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Radio",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Flashlight",
+        "1:1": "Light Armor",
+        "Fine": "Combat Armor",
+        "Very Fine": [
+            {
+                "Item": "Combat Armor",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Heavy Armor",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "Combat Armor": {
+        "Rough": [
+            {
+                "Item": "Light Armor",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Flashlight",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Light Armor",
+        "1:1": "Combat Armor",
+        "Fine": "Heavy Armor",
+        "Very Fine": "Heavy Armor"
+    },
+    "Heavy Armor": {
+        "Rough": [
+            {
+                "Item": "Combat Armor",
+                "Chance": 0.5
+            },
+            {
+                "Item": "Light Armor",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "Combat Armor",
+        "1:1": "Heavy Armor",
+        "Fine": "Coin",
+        "Very Fine": "Coin"
+    },
+    ".44 Revolver": {
+        "Rough": [
+            {
+                "Output": {
+                    "Action": "Destroys the Item"
+                },
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": ".44mag Ammo",
+                    "Count": 2
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "Output": "COM-18",
+                "Chance": 0.8
+            },
+            {
+                "Output": "High-Explosive Grenade",
+                "Chance": 0.2
+            }
+        ],
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "Crossvec",
+        "Very Fine": [
+            {
+                "Output": {
+                    "Item": "High-Explosive Grenade",
+                    "Count": 2
+                },
+                "Chance": 0.5
+            },
+            {
+                "Outputs": [
+                    "Zone Manager Keycard",
+                    "COM-15",
+                    "Painkillers",
+                    "First-Aid Kit"
+                ],
+                "Chance": 0.5
+            }
+        ]
+    },
+    "AK": {
+        "Rough": [
+            {
+                "Output": "COM-15",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "7.62x39mm Ammo",
+                    "Count": 3
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "Output": "Crossvec",
+                "Chance": 0.5
+            },
+            {
+                "Output": "A7",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "MTF-E11-SR",
+        "Very Fine": [
+            {
+                "Output": "Micro H.I.D.",
+                "Chance": 0.05
+            },
+            {
+                "Output": "Logicer",
+                "Chance": 0.25
+            },
+            {
+                "Output": "Shotgun",
+                "Chance": 0.1
+            },
+            {
+                "Output": "MTF-E11-SR",
+                "Chance": 0.3
+            },
+            {
+                "Output": "Crossvec",
+                "Chance": 0.3
+            }
+        ]
+    },
+    "Shotgun": {
+        "Rough": [
+            {
+                "Output": "COM-15",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "12/7 Buckshot Ammo",
+                    "Count": 2
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "AK",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "Logicer",
+        "Very Fine": [
+            {
+                "Output": "Micro H.I.D.",
+                "Chance": 0.05
+            },
+            {
+                "Output": "Logicer",
+                "Chance": 0.25
+            },
+            {
+                "Output": "AK",
+                "Chance": 0.4
+            },
+            {
+                "Output": "Crossvec",
+                "Chance": 0.3
+            }
+        ]
+    },
+    "SCP-2176": {
+        "Rough": {
+            "Action": "Immediately Shatters"
+        },
+        "Coarse": "Flashbang",
+        "1:1": {
+            "Output": {
+                "Item": "Coin",
+                "Count": 12
+            }
+        },
+        "Fine": "COM-18",
+        "Very Fine": [
+            {
+                "Output": "Flashlight",
+                "Chance": 0.8
+            },
+            "MTF-E11-SR"
+        ]
+    },
+    "SCP-244-A": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "Coin",
+        "1:1": "SCP-244-B",
+        "Fine": "SCP-244-A",
+        "Very Fine": "SCP-244-A"
+    },
+    "SCP-244-B": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": "Coin",
+        "1:1": "SCP-244-A",
+        "Fine": "SCP-244-B",
+        "Very Fine": "SCP-244-B"
+    },
+    "SCP-1853": {
+        "Rough": "Painkillers",
+        "Coarse": "Adrenaline",
+        "1:1": "SCP-1853",
+        "Fine": "SCP-207",
+        "Very Fine": [
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            },
+            {
+                "Item": "SCP-500",
+                "Chance": 0.5
+            }
+        ]
+    },
+    "3-X Particle Disruptor": {
+        "Rough": "Flashlight",
+        "Coarse": "MTF-E11-SR",
+        "1:1": "Jailbird",
+        "Fine": {
+            "Action": "Refills Ammo"
+        },
+        "Very Fine": {
+            "Item": "Micro H.I.D."
+        }
+    },
+    "COM-45": {
+        "Rough": [
+            {
+                "Output": {
+                    "Action": "Destroys the Item"
+                },
+                "Chance": 0.5
+            },
+            {
+                "Output": "9x19mm Ammo",
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "Output": "COM-15",
+                "Chance": 0.5
+            },
+            {
+                "Output": "9x19mm Ammo",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "Crossvec",
+        "Very Fine": ".44 Revolver"
+    },
+    "SCP-1576": {
+        "Rough": "Radio",
+        "Coarse": "SCP-2176",
+        "1:1": "SCP-1576",
+        "Fine": {
+            "Action": "Destroys the Item"
+        },
+        "Very Fine": {
+            "Action": "Destroys the Item"
+        }
+    },
+    "Jailbird": {
+        "Rough": "Flashlight",
+        "Coarse": "Jailbird",
+        "1:1": "3-X Particle Disruptor",
+        "Fine": "Jailbird",
+        "Very Fine": {
+            "Item": "Micro H.I.D."
+        }
+    },
+    "SCP-207?": {
+        "Rough": "Painkillers",
+        "Coarse": "Adrenaline",
+        "1:1": "SCP-207",
+        "Fine": "SCP-1853",
+        "Very Fine": {
+            "Action": "Destroys the Item"
+        }
+    },
+    "FR-MG-0": {
+        "Rough": [
+            {
+                "Output": "MTF-E11-SR",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "5.56x45mm Ammo",
+                    "Count": 4
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "MTF-E11-SR",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "Logicer",
+        "Very Fine": [
+            {
+                "Output": "Micro H.I.D.",
+                "Chance": 0.05
+            },
+            {
+                "Outputs": [
+                    "Crossvec",
+                    "COM-18"
+                ],
+                "Chance": 0.95
+            }
+        ]
+    },
+    "A7": {
+        "Rough": [
+            {
+                "Output": "COM-15",
+                "Chance": 0.5
+            },
+            {
+                "Output": {
+                    "Item": "7.62x39mm Ammo",
+                    "Count": 3
+                },
+                "Chance": 0.5
+            }
+        ],
+        "Coarse": "COM-18",
+        "1:1": {
+            "Action": "Randomizes Attachments"
+        },
+        "Fine": "AK",
+        "Very Fine": [
+            ".44 Revolver",
+            "Flashbang"
+        ]
+    }
+}

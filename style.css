@@ -1,0 +1,405 @@
+:root {
+    --ctx-btn-width: auto;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(200, 200, 200);
+    touch-action: manipulation;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#langToggle {
+    visibility: hidden;
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+    border: none;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(200, 200, 200);
+    user-select: none;
+    cursor: pointer;
+    padding: 0.2em;
+    outline: 0.1em solid transparent;
+    transition-duration: 0.2s;
+    transition-property: color, outline-color;
+}
+
+#langToggle:hover {
+    color: rgb(120, 50, 255);
+}
+
+#langToggle:focus {
+    outline-color: rgb(30, 220, 0);
+}
+
+#appInfoBtn {
+    visibility: hidden;
+    position: absolute;
+    top: 2em;
+    left: 0.2em;
+    font-size: 3em;
+    background-color: transparent;
+    width: 1.5em;
+    height: 1.5em;
+    color: rgb(200, 200, 200);
+    border-radius: 50%;
+    border: 0.1em solid rgb(50, 50, 255);
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    transition-property: color, background-color;
+}
+
+#settingsBtn {
+    visibility: hidden;
+    position: absolute;
+    top: 2em;
+    left: 0;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 0.2em;
+    outline: 0.1em solid transparent;
+    transition: outline-color 0.2s;
+}
+
+#settingsBtn path {
+    fill: rgb(200, 200, 200);
+    transition-duration: 0.2s;
+    transition: fill 0.2s;
+}
+
+#settingsBtn:hover path {
+    fill: rgb(120, 50, 255);
+}
+
+#loadingData {
+    font-size: 5vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+#loadingProgress {
+    font-size: 3vw;
+}
+
+#itemListContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    max-height: 60vh;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.iconCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.iconCont:hover > .basicIcon {
+    transform: scale(1.2);
+}
+
+.iconCont:hover .itemInfo {
+    opacity: 1;
+}
+
+.infoCont {
+    position: relative;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemInfo {
+    opacity: 0;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 5;
+    font-size: 2.5vh;
+    text-align: center;
+    pointer-events: none;
+    position: absolute;
+}
+
+.basicIcon {
+    transition: transform 0.3s;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.accessCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+#inputContainer {
+    margin-top: 2.5vh;
+    height: 20vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#primaryItem, #secondaryItem {
+    font-size: 2.5vh;
+    width: 256px;
+    max-width: 256px;
+    height: 256px;
+    max-height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#pathCont, #secondaryItem {
+    display: none;
+}
+
+#pathCont {
+    font-size: 2.5vh;
+    text-align: center;
+    max-width: 50vw;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+}
+
+.pathItem {
+    color: rgb(255, 180, 0);
+    padding: 0 0.5em;
+    display: block;
+}
+
+.pathChance {
+    color: lawngreen;
+    padding: 0 0.5em;
+    display: block;
+}
+
+.pathMode {
+    color: deepskyblue;
+    padding-left: 0.5em;
+    display: block;
+}
+
+.pathAction {
+    color: rgb(220, 50, 50);
+    display: block;
+    padding: 0 0.5em;
+}
+
+#contextMenuList {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(10, 10, 10);
+    position: absolute;
+    z-index: 10;
+    padding: 0.5vh;
+    overflow: hidden;
+}
+
+.ctxButton {
+    border: none;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    cursor: pointer;
+    font-size: 2vh;
+    width: var(--ctx-btn-width);
+    transition-duration: 0.2s;
+    transition-property: background-color, color, outline-color;
+    white-space: nowrap;
+    outline: 0.1em solid transparent;
+}
+
+.ctxButton:not(:first-child, :last-child) {
+    border-top: 0.1vh solid gray;
+    border-bottom: 0.1vh solid gray;
+}
+
+.ctxButton:hover {
+    background-color: rgb(50, 50, 50);
+    color: rgb(200, 50, 255);
+}
+
+.ctxButton:focus {
+    outline-color: rgb(60, 130, 210);
+    z-index: 1;
+}
+
+#ctxSortByButton, #ctxSetAsSecondary {
+    display: none;
+}
+
+#outputCont, #unitGraphCont, #appInfoCont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 80vh;
+    padding: 10vh 10vw;
+    background-color: rgba(10, 10, 10, 0.8);
+    visibility: hidden;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vh;
+    overflow-y: auto;
+}
+
+#unitGraphCont {
+    width: 90vw;
+    height: 90vh;
+    padding: 5vh 5vw;
+}
+
+#appInfoCont {
+    padding: 2vh 5vw;
+    width: 90vw;
+    height: 96vh;
+}
+
+.outputRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.3em;
+}
+
+.outputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 0.3em;
+}
+
+#notice {
+    position: absolute;
+    bottom: 0.2em;
+    left: 0.2em;
+}
+
+.chanceCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.3em;
+}
+
+#outputCont > .pathItem {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#outputCont > .pathMode {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+#outputCont > br {
+    user-select: none;
+}
+
+.ammoUnit {
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(200, 0, 255);
+}
+
+#graphTitle {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(255, 180, 0);
+}
+
+#unitGraphTable {
+    border-collapse: collapse;
+    /*display: block;*/
+    overflow: scroll;
+}
+
+tr, td {
+    border: none;
+}
+
+.graphRow {
+    padding: 0.2em;
+}
+
+.graphInput {
+    color: rgb(255, 180, 0);
+    padding: 0.2em;
+    border-top: 0.1em solid rgb(255, 50, 0);
+    border-right: 0.1em solid rgb(0, 255, 50);
+    word-wrap: anywhere;
+}
+
+.graphHeader {
+    color: rgb(255, 180, 0);
+    text-align: center;
+    border-right: 0.1em solid rgb(0, 255, 50);
+    word-wrap: anywhere;
+}
+
+.graphHeaderItem {
+    color: deepskyblue;
+    border-left: 0.1em solid rgb(0, 255, 255);
+    padding: 0.2em;
+    word-wrap: anywhere;
+}
+
+.graphCell {
+    border-top: 0.1em solid rgb(255, 100, 0);
+    border-left: 0.1em solid rgb(150, 150, 150);
+}
+
+#appInfoCont a {
+    cursor: pointer;
+    text-decoration: rgb(20, 50, 255) underline 0.1em;
+    color: dodgerblue;
+}
+
+#appInfoCont button {
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: transparent;
+    color: dodgerblue;
+}
+
+#graphInfo {
+    max-width: 80vw;
+}
