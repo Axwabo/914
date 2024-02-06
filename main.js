@@ -40,15 +40,6 @@ const outputMapper = x => {
     return items.length < 1 && action == null ? null : new RecipeOutput(items, chance, action);
 };
 
-/**
- * @type {Array<Scp914Recipe>}
- * */
-let recipes = [];
-
-let items = [];
-
-let translations = {};
-
 const access = [
     { id: "SCP1", img: "" },
     { id: "SCP2", img: "" },
@@ -295,8 +286,7 @@ class Scp914Recipe {
     }
 }
 
-function parseRecipes(jsonText) {
-    const json = JSON.parse(jsonText);
+function parseRecipes(json) {
     const outObj = [];
     for (const itemName of Object.keys(json)) {
         const itemRecipes = json[itemName];
@@ -468,11 +458,12 @@ function loadApp() {
     $("#unitGraphCont").on("mousedown", () => outputMouseDownTime = Date.now());
     $("#graphInfo").html(translate("ammoProcessing"));
     $("#appInfoCont").html(translate("appInfo"));
+    $("#loading").css("animation-name", "fadeOut");
+    $("#app").css("animation-name", "fadeIn").css("display", "grid");
     const cont = $("#itemListContainer").get(0);
     const w = window.innerWidth;
     const h = window.innerHeight;
     const scale = 256 * (w > h ? h / 1080 : w / 1920);
-    cont.style.padding = `${scale * 0.25}px`;
     $("#primaryItem, #secondaryItem").css("width", `${scale}px`).css("max-width", `${scale}px`)
     .css("height", `${scale}px`).css("max-height", `${scale}px`);
     for (const e of createItemList().sort(itemSorting.currentFunction))
@@ -523,9 +514,7 @@ function getScale() {
 
 function onResize() {
     // scale and position objects depending on window size
-    const cont = $("#itemListContainer").get(0);
     const scale = getScale();
-    cont.style.padding = `${scale * 0.25}px`;
     const sp = resizeImages(scale);
     $("#primaryItem, #secondaryItem").css("width", sp).css("max-width", sp).css("height", sp).css("max-height", sp);
     $("#langToggle, #settingsBtn").css("font-size", `${scale * 0.15}px`).css("padding", `${scale * 0.03}px`);
@@ -640,43 +629,20 @@ const allModes = Object.freeze([ "Rough", "Coarse", "1:1", "Fine", "Very Fine" ]
 window.addEventListener("load", onReady);
 
 function onReady() {
-    try {
-        $("#siteDescription").remove();
-        // load JSON objects from DOM
-        const translate = document.getElementById("translationsObj");
-        translations = JSON.parse(translate.contentDocument.body.innerText);
-        translate.remove();
-        const json = document.getElementById("jsonObj");
-        recipes = parseRecipes(json.contentDocument.body.innerText);
-        for (const recipe of recipes) {
-            for (const r of recipe.allRecipes)
-                allUpgradeCombinations.add(`${recipe.name}${recipe.getRecipeMode(r)}`);
-        }
-        json.remove();
-        const item = document.getElementById("itemsObj");
-        items = JSON.parse(item.contentDocument.body.innerText).map(e => {
-            e.icon = null;
-            return e;
-        });
-        item.remove();ä
-        $("#loadingProgress").text("Loading image...");
-        const img = new Image();
-        img.onload = async () => {
-            loadAtlas(img);
-            $("#loadingData, #loadingProgress").remove();
-            img.remove();
-            $("#inputContainer").css("display", "flex");
-            if (lang !== "en")
-                reloadLanguage();
-            loadApp();
-            onResize();
-        };
-        img.src = "data/textureAtlas.png";
-
-    } catch (e) {
-        alert("Load failed!\nBetöltés sikertelen!");
-        console.error(e);
+    $("#logo").css("filter", "hue-rotate(120deg) saturate(1) brightness(3)");
+    const img = $("#atlas").get(0);
+    for (const recipe of recipes) {
+        for (const r of recipe.allRecipes)
+            allUpgradeCombinations.add(`${recipe.name}${recipe.getRecipeMode(r)}`);
     }
+    loadAtlas(img);
+    $("#loadingData, #loadingProgress").remove();
+    img.remove();
+    $("#inputContainer").css("display", "flex");
+    if (lang !== "en")
+        reloadLanguage();
+    loadApp();
+    onResize();
 }
 
 /**
@@ -1317,6 +1283,14 @@ function showContextMenu(element, showListOptions = false) {
     return false;
 }
 
+function setAsSecondary() {
+    const was = targetIsSecondary;
+    targetIsSecondary = true;
+    selectItem($(`.iconCont[item-name='${ctxItemName}']`).get(0));
+    closeContextMenu();
+    targetIsSecondary = was;
+}
+
 function closeContextMenu() {
     ctxActive = false;
     const list = $("#contextMenuList").get(0);
@@ -1401,7 +1375,7 @@ function createInfo(i) {
             // access levels
             for (const level of i.access) {
                 const acc = access.find(e => e.id === level);
-                if (acc == null || (acc.img?.length ?? 0) < 1) {
+                if (acc == null || !acc.img) {
                     accessCont.append(level); // fallback to raw value if the image is not loaded
                     continue;
                 }

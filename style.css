@@ -10,18 +10,55 @@
 
 body {
     background-color: rgb(30, 30, 30);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    margin: 0;
+}
+
+#loading {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(30, 30, 30);
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+#logo {
+    height: 10vh;
+    animation: logoSpin 3s linear infinite;
+    transform-origin: center;
+    filter: hue-rotate(120deg) saturate(0) brightness(3);
+    transition: filter 0.3s;
+}
+
+#app {
+    display: none;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    position: relative;
+}
+
+#sidebar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     flex-direction: column;
+    z-index: 2;
 }
 
 #langToggle {
     visibility: hidden;
-    position: absolute;
-    top: 0.2em;
-    left: 0.2em;
     border: none;
     font-size: 3rem;
     background-color: rgba(0, 0, 0, 0.5);
@@ -44,9 +81,6 @@ body {
 
 #appInfoBtn {
     visibility: hidden;
-    position: absolute;
-    top: 2em;
-    left: 0.2em;
     font-size: 3em;
     background-color: transparent;
     width: 1.5em;
@@ -93,14 +127,32 @@ body {
     font-size: 3vw;
 }
 
+#itemsContainer {
+    min-height: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    position: relative;
+}
+
 #itemListContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80vw;
-    max-height: 60vh;
     flex-wrap: wrap;
     overflow-y: auto;
+}
+
+#overlays {
+    background-color: rgba(10, 10, 10, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#overlays > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .iconCont {
@@ -156,8 +208,6 @@ body {
 }
 
 #inputContainer {
-    margin-top: 2.5vh;
-    height: 20vh;
     display: none;
     justify-content: center;
     align-items: center;
@@ -260,13 +310,6 @@ body {
 }
 
 #outputCont, #unitGraphCont, #appInfoCont {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80vw;
-    height: 80vh;
-    padding: 10vh 10vw;
-    background-color: rgba(10, 10, 10, 0.8);
     visibility: hidden;
     display: grid;
     justify-content: center;
@@ -275,18 +318,6 @@ body {
     text-align: center;
     font-size: 3vh;
     overflow-y: auto;
-}
-
-#unitGraphCont {
-    width: 90vw;
-    height: 90vh;
-    padding: 5vh 5vw;
-}
-
-#appInfoCont {
-    padding: 2vh 5vw;
-    width: 90vw;
-    height: 96vh;
 }
 
 .outputRow {
@@ -306,9 +337,9 @@ body {
 }
 
 #notice {
-    position: absolute;
-    bottom: 0.2em;
-    left: 0.2em;
+    width: 0;
+    white-space: nowrap;
+    z-index: 1;
 }
 
 .chanceCont {
@@ -402,4 +433,33 @@ tr, td {
 
 #graphInfo {
     max-width: 80vw;
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        display: grid;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
 }
