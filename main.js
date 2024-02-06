@@ -490,7 +490,7 @@ function loadApp() {
             document.activeElement.blur();
             return;
         }
-        if (infoActive) {
+        if ($("#appInfoCont.visible").get(0)) {
             toggleInfo();
             return;
         }
@@ -498,7 +498,7 @@ function loadApp() {
             closeContextMenu();
             return;
         }
-        if (graphActive) {
+        if ($("#unitGraphCont.visible").get(0)) {
             closeGraph(true);
             return;
         }
@@ -533,8 +533,7 @@ function resizeImages(scale) {
         img.width = img.height = scale * 0.25;
     const sp = `${scale}px`;
     for (const info of $(".itemInfo").css("width", sp).css("max-width", sp).css("padding", `${scale / 50}px`).get()) {
-        const multiplier = parseFloat(info.parentElement.parentElement.querySelector(".basicIcon")
-        ?.getAttribute("icon-scale"));
+        const multiplier = parseFloat(info.parentElement.parentElement.querySelector(".basicIcon")?.getAttribute("icon-scale"));
         info.style.transform = `translateY(-${scale * (isNaN(multiplier) ? 0.5 : multiplier * 0.5)}px)`;
         info.style.padding = `translateY(-${scale * (isNaN(multiplier) ? 0.02 : multiplier * 0.02)}px)`;
         info.style.width = `${scale}px`;
@@ -1316,8 +1315,6 @@ function closeContextMenu() {
 let preventGuiFromClosing = false;
 let outputMouseDownTime = 0;
 let outputActive = false;
-let graphActive = false;
-let infoActive = false;
 
 // closes the output container after a double click (400ms tolerance) or if forced
 function closeOutput(override = false) {
@@ -1331,7 +1328,7 @@ function closeOutput(override = false) {
     outputMouseDownTime = now;
     outputActive = false;
     if (!preventGuiFromClosing || override)
-        $("#outputCont").css("visibility", "hidden");
+        $("#outputCont").removeClass("visible");
     preventGuiFromClosing = false;
 }
 
@@ -1339,8 +1336,7 @@ function closeOutput(override = false) {
 function unitPriceGraph() {
     preventGuiFromClosing = true;
     closeContextMenu();
-    $("#unitGraphCont").css("visibility", "visible");
-    graphActive = true;
+    $("#unitGraphCont").addClass("visible");
 }
 
 function closeGraph(overrideClicks = false) {
@@ -1352,9 +1348,8 @@ function closeGraph(overrideClicks = false) {
         return;
     }
     outputMouseDownTime = now;
-    graphActive = false;
     if (!preventGuiFromClosing || overrideClicks)
-        $("#unitGraphCont").css("visibility", "hidden");
+        $("#unitGraphCont").removeClass("visible");
     preventGuiFromClosing = false;
 }
 
@@ -1445,7 +1440,7 @@ function itemInfo() {
     outputActive = true;
     closeContextMenu();
     const descKey = `desc-${ctxItemName}`;
-    const cont = $("#outputCont").css("visibility", "visible").css("align-content", "center")
+    const cont = $("#outputCont").addClass("visible").css("align-content", "center")
     .attr("shown-data", "itemInfo")
     .attr("shown-item", ctxItemName).html(`<span class="pathItem">${translate(ctxItemName)}</span>`).get(0);
     const icon = document.createElement("img");
@@ -1473,7 +1468,7 @@ function obtaining() {
         return;
     outputActive = true;
     closeContextMenu();
-    const cont = $("#outputCont").css("visibility", "visible").css("align-content", "unset")
+    const cont = $("#outputCont").addClass("visible").css("align-content", "unset")
     .attr("shown-data", "obtaining")
     .attr("shown-item", ctxItemName).html(`<span class="pathItem">${translate(ctxItemName)}</span><br><br>`).get(0);
     if (!canBeMade(ctxItemName)) {
@@ -1520,7 +1515,7 @@ function outputs() {
         return;
     outputActive = true;
     closeContextMenu();
-    const cont = $("#outputCont").css("visibility", "visible").css("align-content", "unset").attr("shown-data", "outputs")
+    const cont = $("#outputCont").addClass("visible").css("align-content", "unset").attr("shown-data", "outputs")
     .attr("shown-item", ctxItemName).html(`<span class="pathItem">${translate(ctxItemName)}</span>`).get(0);
     if (i.category === "ammo") {
         const span = document.createElement("span");
@@ -1625,7 +1620,7 @@ function reloadLanguage() {
         cont.getElementsByClassName("itemInfo")[0].innerText = translate(cont.getAttribute("item-name"));
     const out = $("#outputCont");
     const scroll = out.scrollTop();
-    if (ctxItemName != null && out.css("visibility") === "visible")
+    if (ctxItemName != null && out.hasClass("visible"))
         switch (out.attr("shown-data")) {
             case "itemInfo":
                 itemInfo();
@@ -1788,9 +1783,6 @@ function calculateExchangedAmmo(amount, fromPrice, toPrice) {
 }
 
 function toggleInfo() {
-    infoActive = !infoActive;
+    $("#appInfoCont").toggleClass("visible");
     preventGuiFromClosing = false;
-    $("#appInfoCont").css("visibility", infoActive ? "visible" : "hidden");
-    $("#appInfoBtn").css("background-color", infoActive ? "rgba(50, 50, 200, 0.4)" : "transparent")
-    .css("color", infoActive ? "rgb(200, 50, 100)" : "rgb(200, 200, 200)");
 }
