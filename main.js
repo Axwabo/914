@@ -471,7 +471,7 @@ function loadApp() {
 function getScale() {
     const w = window.innerWidth;
     const h = window.innerHeight;
-    return Math.max(0.7, w > h ? h / 1080 : w / 1920);
+    return Math.max(0.4, w > h ? h / 1080 : w / 1920);
 }
 
 function onResize() {
@@ -530,6 +530,7 @@ function selectItem(div) {
     }
     targetIsSecondary = false;
     const clone = div.cloneNode(true);
+    clone.querySelector(".basicIcon")?.classList.add("scale-05");
     clone.setAttribute("data-item-name", item);
     const cont = $(s ? "#secondaryItem" : "#primaryItem").html("").append(clone);
     clone.addEventListener("click", () => {
@@ -937,8 +938,7 @@ function unitPriceGraph() {
     preventGuiFromClosing = true;
     closeContextMenu();
     $("#unitGraphCont").addClass("visible");
-    if ($("#appInfoCont.visible").get(0))
-        $("#appInfoCont").removeClass("visible");
+    $("#appInfoCont, #outputCont").removeClass("visible");
 }
 
 function closeGraph(overrideClicks = false) {
@@ -970,7 +970,7 @@ function addKeycard(infoCont, i) {
         const img = document.createElement("img");
         img.src = acc.img;
         img.draggable = false;
-        img.classList.add("basicIcon, scale-035");
+        img.classList.add("basicIcon", "scale-035");
         img.alt = level;
         accessCont.append(img);
     }
@@ -1010,6 +1010,7 @@ function addAmmo(infoCont, i) {
         if (item.category !== "firearm" || item.ammo !== i.name)
             continue;
         const clone = interactableItemClone(item.name, null, "info");
+        clone.querySelector(".basicIcon")?.classList.add("scale-05");
         firearmsCont.append(clone);
     }
     infoCont.append(firearmsCont);
