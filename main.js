@@ -1381,6 +1381,7 @@ function calculateExchangedAmmo(amount, fromPrice, toPrice) {
 }
 
 function toggleInfo() {
+    $("#outputCont").removeClass("visible");
     if ($("#unitGraphCont.visible").get(0))
         $("#unitGraphCont").removeClass("visible");
     else

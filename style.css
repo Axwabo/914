@@ -166,7 +166,7 @@ body {
     display: grid;
     justify-content: center;
     justify-items: center;
-    align-items: center;
+    align-items: start;
     text-align: center;
     font-size: 3vh;
 }
