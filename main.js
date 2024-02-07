@@ -749,17 +749,17 @@ function getPathInTree(tree, to) {
                 lastMode = cur[0].Mode;
             break;
         }
-        carryAmmo = calculateExchangedAmmo(carryAmmo, prevItem.unitPrice, curItem.unitPrice);
-        path.push(`${curItem.name}*${curItem.category === "ammo" ? prevItem.category === "ammo" ? carryAmmo : curItem.defaultAmount : getRecipe(prevItem.name)
-        .findRecipeWithOutput(curItem.name, cur[0].Mode).items.find(x => x.item === to)?.count ?? 1}`);
+        const count = getRecipe(prevItem.name).findRecipeWithOutput(curItem.name, cur[0].Mode).items.find(x => x.item === to)?.Count ?? 1;
+        carryAmmo = prevItem.category === "ammo" ? calculateExchangedAmmo(carryAmmo, prevItem.unitPrice, curItem.unitPrice) : count * (curItem.defaultAmount ?? 1);
+        path.push(`${curItem.name}*${curItem.category === "ammo" ? prevItem.category === "ammo" ? carryAmmo : curItem.defaultAmount : count}`);
         cur = [ ...(cur[0]?.Outputs ?? []) ];
         if (++i > 1000)
             break;
         prevItem = curItem;
     }
     const lastItem = getItem(to);
-    path.push(`${lastItem.name}*${lastItem.category === "ammo" ? prevItem.category === "ammo" ? calculateExchangedAmmo(carryAmmo, prevItem.unitPrice, lastItem.unitPrice) : lastItem.defaultAmount : getRecipe(prevItem.name)
-    .findRecipeWithOutput(lastItem.name, lastMode).items.find(x => x.item === to)?.count ?? 1}`);
+    const count = getRecipe(prevItem.name).findRecipeWithOutput(lastItem.name, lastMode).items.find(x => x.item === to)?.Count ?? 1;
+    path.push(`${lastItem.name}*${lastItem.category === "ammo" ? prevItem.category === "ammo" ? calculateExchangedAmmo(carryAmmo, prevItem.unitPrice, lastItem.unitPrice) : lastItem.defaultAmount : count}`);
     return path;
 }
 
@@ -783,7 +783,6 @@ function findPath(from, to, used = [], outUnused = [], outScore = [ 0 ]) {
     while (unused.size > 0) {
         if (doExpand(tree, unused, to, outScore)) {
             outUnused[0] = unused;
-            // return null;
             return getPathInTree(tree, to);
         }
         if (++i > recipes.length)
