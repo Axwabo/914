@@ -425,7 +425,9 @@ function loadApp() {
     $("#unitGraphCont").on("mousedown", () => outputMouseDownTime = Date.now());
     $("#graphInfo").html(translate("ammoProcessing"));
     $("#appInfoCont").html(translate("appInfo"));
-    $("#loading").css("animation-name", "fadeOut");
+    const loadingElement = $("#loading");
+    loadingElement.css("animation-name", "fadeOut");
+    setTimeout(() => loadingElement.css("display", "none"), 500);
     $("#app").css("animation-name", "fadeIn").css("display", "grid");
     const cont = $("#itemListContainer").get(0);
     for (const e of createItemList().sort(itemSorting.currentFunction))
