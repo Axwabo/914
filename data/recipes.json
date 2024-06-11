@@ -414,10 +414,10 @@
     },
     "Micro H.I.D.": {
         "Rough": "MTF-E11-SR",
-        "Coarse / 1:1 / Fine": {
+        "1:1 / Fine / Very Fine": {
             "Action": "Recharges the Micro H.I.D."
         },
-        "Very Fine": [
+        "Coarse": [
             {
                 "Output": "3-X Particle Disruptor",
                 "Chance": 0.5
@@ -488,14 +488,14 @@
         "1:1": {
             "Action": "Randomizes Attachments"
         },
-        "Fine": "FR-MG-0",
+        "Fine": "AK",
         "Very Fine": [
             {
                 "Output": "Micro H.I.D.",
                 "Chance": 0.05
             },
             {
-                "Output": "Logicer",
+                "Output": "FR-MG-0",
                 "Chance": 0.25
             },
             {
@@ -575,19 +575,7 @@
                 "Chance": 0.5
             }
         ],
-        "Coarse": [
-            {
-                "Output": "COM-18",
-                "Chance": 0.5
-            },
-            {
-                "Output": {
-                    "Item": "9x19mm Ammo",
-                    "Count": 2
-                },
-                "Chance": 0.5
-            }
-        ],
+        "Coarse": "COM-18",
         "1:1": {
             "Action": "Randomizes Attachments"
         },
@@ -775,11 +763,11 @@
         "Fine": "SCP-500",
         "Very Fine": [
             {
-                "Action": "Destroys the Item",
+                "Item": "Painkillers",
                 "Chance": 0.6666667
             },
             {
-                "Item": "SCP-1853",
+                "Item": "SCP-500",
                 "Chance": 0.333333343
             }
         ]
@@ -1202,6 +1190,33 @@
         "Very Fine": [
             ".44 Revolver",
             "Flashbang"
+        ]
+    },
+    "Lantern": {
+        "Rough": {
+            "Action": "Destroys the Item"
+        },
+        "Coarse": [
+            {
+                "Item": "Lantern",
+                "Chance": 0.5
+            },
+            {
+                "Action": "Destroys the Item",
+                "Chance": 0.5
+            }
+        ],
+        "1:1": "Flashlight",
+        "Fine": "Radio",
+        "Very Fine": [
+            {
+                "Item": "Flashbang",
+                "Chance": 0.9
+            },
+            {
+                "Item": "SCP-2176",
+                "Chance": 0.1
+            }
         ]
     }
 }

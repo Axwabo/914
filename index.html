@@ -8,15 +8,69 @@
     <meta name="author" content="Axwabo">
     <meta name="keywords" content="SCP, SCPSL, SCP:SL, SCP Secret Lab, SCP Secret Laboratory, 914, SCP-914, SCP SL, Secret Lab, SCP Universe, SCP games, SCP:CB, SCP: Containment Breach, SCPCB, SCP CB, Containment Breach, SCP 914, SCP:SL 914, SCPSL Recipes, SCP:SL Recipes">
     <title>SCP:SL 914 Recipes</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="jQuery.js"></script>
-    <script src="main.js"></script>
+    <style>
+        :root {
+            --image-scale: 256px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(200, 200, 200);
+            touch-action: manipulation;
+        }
+
+        body {
+            background-color: rgb(30, 30, 30);
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            height: 100svh;
+            margin: 0;
+        }
+
+        #loading {
+            display: grid;
+            place-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100svh;
+            background-color: rgb(30, 30, 30);
+            animation-fill-mode: forwards;
+            animation-duration: 0.5s;
+        }
+
+        #logo {
+            max-width: 20vw;
+            animation: logoSpin 3s linear infinite;
+            transform-origin: center;
+            filter: hue-rotate(120deg) saturate(0) brightness(3);
+            transition: filter 0.3s;
+        }
+
+        @keyframes logoSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
 <div style="display: none;" id="siteDescription">
     SCP-914 recipe list for SCP: Secret Laboratory. Find upgrade paths between items,
     check how to obtain an item or its outputs & more! This website is not affiliated with Northwood Studios.
 </div>
+<div id="loading">
+    <img src="SCP.png" alt="" id="logo">
+</div>
+<link rel="stylesheet" href="style.css">
 <div id="app">
     <div id="sidebar">
         <button id="langToggle" onclick="toggleLanguage();">EN</button>
@@ -60,16 +114,15 @@
     <button class="ctxButton" id="ctxObtaining" onclick="obtaining();">Obtaining in 914</button>
     <button class="ctxButton" id="ctxOutputs" onclick="outputs();">914 Outputs</button>
 </div>
-<div id="loading">
-    <img src="SCP.png" alt="" id="logo">
-</div>
 <img src="data/textureAtlas.png" alt="" id="atlas" style="display: none;">
 <script>
     let lang = localStorage.getItem("914lang") ?? (navigator.language ?? navigator.userLanguage).split("-")[0];
     localStorage.setItem("914lang", lang);
-    $("#notice").text(lang === "hu" ? "Ez a weboldal nincs kapcsolatban a következővel: Northwood Studios" : "This website is not affiliated with Northwood Studios");
-    $("#langToggle").text(lang.toUpperCase());
+    document.getElementById("notice").innerText = lang === "hu" ? "Ez a weboldal nincs kapcsolatban a következővel: Northwood Studios" : "This website is not affiliated with Northwood Studios";
+    document.getElementById("langToggle").innerText = lang.toUpperCase();
 </script>
+<script src="jQuery.js"></script>
+<script src="main.js"></script>
 <script src="data/dataBundle.js"></script>
 </body>
 </html>
