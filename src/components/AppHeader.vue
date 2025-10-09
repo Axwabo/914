@@ -1,11 +1,22 @@
-﻿<template>
+﻿<script setup lang="ts">
+import { defineAsyncComponent } from "vue";
+
+const info = defineAsyncComponent(() => import("./InfoButton.vue"));
+</script>
+
+<template>
     <header>
         <button class="header-button hidden"></button>
         <div class="text">
             <h1>SCP-914 Recipes</h1>
             Not affiliated with <a href="https://scpslgame.com" target="SCP: Secret Laboratory">Northwood Studios</a>
         </div>
-        <button class="header-button">ℹ</button>
+        <Suspense>
+            <info />
+            <template #fallback>
+                <button class="header-button">ℹ</button>
+            </template>
+        </Suspense>
     </header>
 </template>
 
@@ -24,14 +35,6 @@ header {
 .text h1 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-}
-
-.header-button {
-    font-size: 2em;
-    width: 2.5em;
-    height: 2.5em;
-    text-align: center;
-    padding: 0;
 }
 
 .hidden {

@@ -4,8 +4,8 @@ import AppHeader from "./components/AppHeader.vue";
 import LoadingSpinner from "./components/LoadingSpinner.vue";
 import { defineAsyncComponent } from "vue";
 
-const list = defineAsyncComponent({
-    loader: () => import("./components/ItemList.vue"),
+const content = defineAsyncComponent({
+    loader: () => import("./components/Content.vue"),
     delay: 0,
     loadingComponent: LoadingSpinner
 });
@@ -13,6 +13,6 @@ const list = defineAsyncComponent({
 
 <template>
     <AppHeader />
-    <list />
+    <content />
     <PWABadge />
 </template>
