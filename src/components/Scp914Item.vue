@@ -20,6 +20,7 @@ const { type } = defineProps<{ type: ItemType; }>();
     background-color: rgba(0, 0, 0, 0.2);
     padding: 1rem;
     width: 10rem;
+    border-radius: 8px;
 }
 
 .item img {

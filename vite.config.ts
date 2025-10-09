@@ -16,7 +16,7 @@ export default defineConfig({
         },
 
         manifest: {
-            name: "SCP-914 Recipes",
+            name: "SCP:SL 914 Recipes",
             short_name: "914",
             description: "SCP-914 recipe viewer for SCP:SL",
             theme_color: "#111111"

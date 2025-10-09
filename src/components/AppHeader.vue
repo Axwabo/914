@@ -12,6 +12,8 @@
 <style scoped>
 header {
     display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .text {
@@ -26,7 +28,8 @@ header {
 
 .header-button {
     font-size: 2em;
-    width: 3em;
+    width: 2.5em;
+    height: 2.5em;
     text-align: center;
     padding: 0;
 }
