@@ -59,7 +59,8 @@ button:focus-visible {
     flex: 1;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    margin: 1rem;
+    margin: 0.5rem;
+    gap: 1rem;
 }
 
 @supports (height: 100svh) {
