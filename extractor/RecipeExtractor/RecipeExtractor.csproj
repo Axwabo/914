@@ -27,8 +27,4 @@
         <Reference Include="UnityEngine.CoreModule" />
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Extensions\" />
-    </ItemGroup>
-
 </Project>
