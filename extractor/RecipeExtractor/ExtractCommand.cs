@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using CommandSystem;
 using InventorySystem;
 using InventorySystem.Items;
+using RecipeExtractor.Converters;
 
 namespace RecipeExtractor;
 
@@ -12,7 +13,12 @@ public sealed class ExtractCommand : ICommand
 
     private static readonly JsonSerializerOptions Options = new(JsonSerializerDefaults.Web)
     {
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        Converters =
+        {
+            new KnobSettingListConverter(),
+            new KnobSettingConverter()
+        }
     };
 
     public string Command => "914recipes";
@@ -21,11 +27,16 @@ public sealed class ExtractCommand : ICommand
 
     public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
     {
-        var recipes = new Dictionary<string, Scp914Recipe>();
+        var recipes = new Dictionary<string, Recipe>();
 
         foreach (var kvp in InventoryItemLoader.AvailableItems)
-            if (kvp.Value.TryGetComponent(out Scp914ItemProcessor processor))
-                recipes[kvp.Key.GetName()] = RecipeTransformer.GetRecipe(processor);
+        {
+            if (!kvp.Value.TryGetComponent(out Scp914ItemProcessor processor))
+                continue;
+            var recipe = RecipeTransformer.GetRecipe(processor);
+            if (recipe != null)
+                recipes[kvp.Key.GetName()] = recipe;
+        }
 
         using (var writer = File.Create("scp914.json"))
             JsonSerializer.Serialize(writer, recipes, Options);

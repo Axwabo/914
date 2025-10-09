@@ -2,4 +2,4 @@
 global using System.Collections.Generic;
 global using System.Text.Json;
 global using Scp914.Processors;
-global using OutputList = System.Collections.Generic.IReadOnlyList<RecipeExtractor.Outputs.Scp914Output>;
+global using Recipe = System.Collections.Generic.Dictionary<RecipeExtractor.KnobSettingList, System.Collections.Generic.IReadOnlyList<RecipeExtractor.Output>>;
