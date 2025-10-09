@@ -4,43 +4,30 @@
 
 namespace RecipeExtractor;
 
+public sealed record Item(ItemType Type, int Count = 1);
+
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "kind")]
 [JsonDerivedType(typeof(ItemTypeOutput), "item")]
-[JsonDerivedType(typeof(MultiItemOutput), "multipleItems")]
 [JsonDerivedType(typeof(DestroyOutput), "destroy")]
-[JsonDerivedType(typeof(RefillAmmoOutput), "refill")]
+[JsonDerivedType(typeof(RandomizeAttachmentsOutput), "randomize")]
 [JsonDerivedType(typeof(RechargeOutput), "recharge")]
-public abstract record Output(float Chance);
+[JsonDerivedType(typeof(BreakOutput), "break")]
+public abstract record Output(double Chance = 1);
 
-public sealed record ItemTypeOutput(ItemType Item, float Chance = 1) : Output(Chance)
+public sealed record ItemTypeOutput(List<Item> Items, double Chance = 1) : Output(Chance)
 {
 
-    public static Output From(ItemType type, float chance = 1)
+    public static Output From(ItemType type, double chance = 1)
         => type == ItemType.None
             ? new DestroyOutput(chance)
-            : new ItemTypeOutput(type, chance);
+            : new ItemTypeOutput([new Item(type)], chance);
 
 }
 
-public sealed record MultiItemOutput(float Chance = 1) : Output(Chance);
+public sealed record DestroyOutput(double Chance = 1) : Output(Chance);
 
-public sealed record DestroyOutput(float Chance = 1) : Output(Chance)
-{
+public sealed record RandomizeAttachmentsOutput(double Chance = 1) : Output(Chance);
 
-    public static DestroyOutput Certain { get; } = new();
+public sealed record RechargeOutput : Output;
 
-}
-
-public sealed record RefillAmmoOutput(float Chance = 1) : Output(Chance)
-{
-
-    public static RefillAmmoOutput Certain { get; } = new();
-
-}
-
-public sealed record RechargeOutput(float Chance = 1) : Output(Chance)
-{
-
-    public static RechargeOutput Certain { get; } = new();
-
-}
+public sealed record BreakOutput : Output;

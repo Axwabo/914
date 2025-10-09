@@ -29,13 +29,13 @@ public sealed class ExtractCommand : ICommand
     {
         var recipes = new Dictionary<ItemType, Recipe>();
 
-        foreach (var kvp in InventoryItemLoader.AvailableItems)
+        foreach (var (itemType, item) in InventoryItemLoader.AvailableItems)
         {
-            if (!kvp.Value.TryGetComponent(out Scp914ItemProcessor processor))
+            if (!item.TryGetComponent(out Scp914ItemProcessor processor))
                 continue;
-            var recipe = RecipeTransformer.GetRecipe(processor);
+            var recipe = RecipeTransformer.GetRecipe(processor, itemType);
             if (recipe != null)
-                recipes[kvp.Key] = recipe;
+                recipes[itemType] = recipe;
         }
 
         using (var writer = File.Create("scp914.json"))

@@ -7,13 +7,13 @@ namespace RecipeExtractor;
 public static class RecipeTransformer
 {
 
-    public static Recipe? GetRecipe(Scp914ItemProcessor processor) => processor switch
+    public static Recipe? GetRecipe(Scp914ItemProcessor processor, ItemType itemType) => processor switch
     {
         AmmoItemProcessor ammo => Ammo(ammo),
         DisruptorItemProcessor => Disruptor(),
-        FirearmItemProcessor firearm => Firearm(firearm),
-        // MicroHidItemProcessor microHidItemProcessor => throw new NotImplementedException(),
-        // Scp1344ItemProcessor scp1344ItemProcessor => throw new NotImplementedException(),
+        FirearmItemProcessor firearm => Firearm(firearm, itemType),
+        MicroHidItemProcessor micro => Micro(micro),
+        Scp1344ItemProcessor scp1344 => Scp1344(scp1344),
         // Scp2176ItemProcessor scp2176ItemProcessor => throw new NotImplementedException(),
         // Scp244ItemProcessor scp244ItemProcessor => throw new NotImplementedException(),
         // UsableItemProcessor usableItemProcessor => throw new NotImplementedException(),
@@ -42,33 +42,43 @@ public static class RecipeTransformer
         {ItemType.Flashlight, Scp914KnobSetting.Rough},
         {ItemType.GunE11SR, Scp914KnobSetting.Coarse},
         {ItemType.Jailbird, Scp914KnobSetting.OneToOne},
-        {RefillAmmoOutput.Certain, Scp914KnobSetting.Fine, Scp914KnobSetting.VeryFine}
+        {new RechargeOutput(), Scp914KnobSetting.Fine, Scp914KnobSetting.VeryFine}
     };
 
-    private static Recipe Firearm(FirearmItemProcessor firearm) => new()
+    private static Recipe Firearm(FirearmItemProcessor firearm, ItemType itemType) => new()
     {
-        {firearm._roughOutputs, Scp914KnobSetting.Rough},
-        {firearm._coarseOutputs, Scp914KnobSetting.Coarse},
-        {firearm._oneToOneOutputs, Scp914KnobSetting.OneToOne},
-        {firearm._fineOutputs, Scp914KnobSetting.Fine},
-        {firearm._veryFineOutputs, Scp914KnobSetting.VeryFine}
+        {firearm._roughOutputs, itemType, Scp914KnobSetting.Rough},
+        {firearm._coarseOutputs, itemType, Scp914KnobSetting.Coarse},
+        {firearm._oneToOneOutputs, itemType, Scp914KnobSetting.OneToOne},
+        {firearm._fineOutputs, itemType, Scp914KnobSetting.Fine},
+        {firearm._veryFineOutputs, itemType, Scp914KnobSetting.VeryFine}
     };
 
-    private static void Add(this Recipe recipe, IEnumerable<FirearmItemProcessor.FirearmOutput> outputs, Scp914KnobSetting setting)
-        => recipe.Add(outputs.Select(Transform).ToList(), setting);
-
-    private static Output Transform(this FirearmItemProcessor.FirearmOutput output)
+    private static Recipe Micro(MicroHidItemProcessor micro)
     {
-        switch (output.TargetItems)
-        {
-            case [var single]:
-                return ItemTypeOutput.From(single, output.Chance);
-            case []:
-                return new DestroyOutput(output.Chance);
-            default:
-                // TODO
-                return RefillAmmoOutput.Certain;
-        }
+        var recipe = Standard(micro);
+        recipe.Add(new BreakOutput(), Scp914KnobSetting.Coarse);
+        recipe.Add(new RechargeOutput(), Scp914KnobSetting.Fine, Scp914KnobSetting.VeryFine);
+        return recipe;
     }
+
+    private static Recipe Scp1344(Scp1344ItemProcessor scp1344)
+    {
+        var recipe = Standard(scp1344);
+        recipe.Add(new ItemTypeOutput([new Item(ItemType.GrenadeFlash), new Item(ItemType.Adrenaline)]), Scp914KnobSetting.OneToOne);
+        recipe.Add(new ItemTypeOutput([new Item(ItemType.Adrenaline, 2), new Item(ItemType.SCP2176)]), Scp914KnobSetting.VeryFine);
+        return recipe;
+    }
+
+    private static void Add(this Recipe recipe, FirearmItemProcessor.FirearmOutput[] outputs, ItemType originalType, Scp914KnobSetting setting)
+        => recipe.Add(outputs.Select(e => e.Transform(originalType)).ToList(), setting);
+
+    private static Output Transform(this FirearmItemProcessor.FirearmOutput output, ItemType originalType) => output.TargetItems switch
+    {
+        [var single] when single == originalType => new RandomizeAttachmentsOutput(output.Chance),
+        [var single] => ItemTypeOutput.From(single, output.Chance),
+        [] => new RandomizeAttachmentsOutput(output.Chance),
+        _ => new RandomizeAttachmentsOutput()
+    };
 
 }
