@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Scp914;
+﻿using Scp914;
 
 namespace RecipeExtractor.Extensions;
 
@@ -15,10 +14,5 @@ public static class EnumExtensions
         Scp914KnobSetting.VeryFine => "Very Fine",
         _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
     };
-
-    public static List<Item> GroupAsItems(this IEnumerable<ItemType> items)
-        => items.GroupBy(e => e)
-            .Select(group => new Item(group.Key, group.Count()))
-            .ToList();
 
 }

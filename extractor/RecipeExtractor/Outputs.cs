@@ -12,6 +12,7 @@ public sealed record Item(ItemType Type, int Count = 1);
 [JsonDerivedType(typeof(RandomizeAttachmentsOutput), "randomize")]
 [JsonDerivedType(typeof(RechargeOutput), "recharge")]
 [JsonDerivedType(typeof(BreakOutput), "break")]
+[JsonDerivedType(typeof(NothingOutput), "nothing")]
 public abstract record Output(double Chance = 1);
 
 public sealed record ItemTypeOutput(List<Item> Items, double Chance = 1) : Output(Chance)
@@ -31,3 +32,5 @@ public sealed record RandomizeAttachmentsOutput(double Chance = 1) : Output(Chan
 public sealed record RechargeOutput : Output;
 
 public sealed record BreakOutput : Output;
+
+public sealed record NothingOutput(double Chance) : Output(Chance);

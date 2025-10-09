@@ -70,15 +70,26 @@ public static class RecipeTransformer
         return recipe;
     }
 
-    private static void Add(this Recipe recipe, FirearmItemProcessor.FirearmOutput[] outputs, ItemType originalType, Scp914KnobSetting setting)
-        => recipe.Add(outputs.Select(e => e.Transform(originalType)).ToList(), setting);
+    private static void Add(this Recipe recipe, FirearmItemProcessor.FirearmOutput[] outputs, ItemType originalType, Scp914KnobSetting setting) => recipe.Add(
+        outputs.Length == 0
+            ? [new RandomizeAttachmentsOutput()]
+            : outputs.Select(e => e.Transform(originalType)).ToList(),
+        setting
+    );
 
     private static Output Transform(this FirearmItemProcessor.FirearmOutput output, ItemType originalType) => output.TargetItems switch
     {
+        [] => new NothingOutput(output.Chance),
         [var single] when single == originalType => new RandomizeAttachmentsOutput(output.Chance),
         [var single] => ItemTypeOutput.From(single, output.Chance),
-        [] => new RandomizeAttachmentsOutput(output.Chance),
-        _ => new RandomizeAttachmentsOutput()
+        _ => TransformMultiItem(output)
     };
+
+    private static Output TransformMultiItem(FirearmItemProcessor.FirearmOutput output) => new ItemTypeOutput(
+        output.TargetItems.GroupBy(e => e)
+            .Select(group => new Item(group.Key, group.Count()))
+            .ToList(),
+        output.Chance
+    );
 
 }
