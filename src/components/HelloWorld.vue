@@ -1,41 +1,45 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import a7 from "../assets/images/A7.webp";
+import adrenaline from "../assets/images/Adrenaline.webp";
+import ak from "../assets/images/AK.webp";
+import antiScp207 from "../assets/images/Anti-SCP-207.webp";
+import coal from "../assets/images/Coal.webp";
+import coin from "../assets/images/Coin.webp";
+import com15 from "../assets/images/COM-15.webp";
+import com18 from "../assets/images/COM-18.webp";
+import com45 from "../assets/images/COM-45.webp";
+import crossvector from "../assets/images/Crossvec.webp";
+import flashbang from "../assets/images/Flashbang.webp";
+import flashlight from "../assets/images/Flashlight.webp";
+import frMg0 from "../assets/images/FR-MG-0.webp";
+import fsp9 from "../assets/images/FSP-9.webp";
+import jailbird from "../assets/images/Jailbird.webp";
+import lantern from "../assets/images/Lantern.webp";
 
-defineProps<{ msg: string }>()
+import recipes from "../assets/data/recipes.json";
 
-const count = ref(0)
+const sources = [
+    a7,
+    adrenaline,
+    ak,
+    antiScp207,
+    coal,
+    coin,
+    com15,
+    com18,
+    com45,
+    crossvector,
+    flashbang,
+    flashlight,
+    frMg0,
+    fsp9,
+    jailbird,
+    lantern,
+
+];
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Learn more about IDE Support for Vue in the
-    <a
-      href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
-      target="_blank"
-      >Vue Docs Scaling up Guide</a
-    >.
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+    <img v-for="src in sources" :src="src" alt="">
+    <pre>{{ recipes }}</pre>
 </template>
-
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>

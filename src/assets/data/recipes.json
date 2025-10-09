@@ -1,0 +1,3946 @@
+{
+    "Janitor Keycard": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Zone Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "Scientist Keycard": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Janitor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Janitor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Zone Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "Research Supervisor Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Janitor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "Zone Manager Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Janitor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.40000000000000002
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Zone Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.40000000000000002
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Chaos Insurgency Access Device",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.20000000000000001
+            }
+        ]
+    },
+    "Guard Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Janitor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "MTF Private Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "Containment Engineer Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Scientist Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.66666666666666663
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "MTF Operative Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Private Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Private Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "MTF Captain Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Chaos Insurgency Access Device",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.75
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.25
+            }
+        ]
+    },
+    "Facility Manager Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Zone Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Chaos Insurgency Access Device",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.75
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.25
+            }
+        ]
+    },
+    "Chaos Insurgency Access Device": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Operative Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.75
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.25
+            }
+        ]
+    },
+    "O5-level Keycard": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Guard Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF Captain Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.75
+            }
+        ]
+    },
+    "Radio": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.75
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1576",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            }
+        ]
+    },
+    "COM-15": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "randomize",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": ".44 Revolver",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.29499998688697815
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "FSP-9",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.55500000715255737
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-45",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.15000000596046448
+            }
+        ]
+    },
+    "First Aid Kit": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.33333333333333331
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-500",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "Flashlight": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.90000000000000002
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-2176",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.10000000000000001
+            }
+        ]
+    },
+    "Micro H.I.D.": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Jailbird",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "3-X Particle Disruptor",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "break",
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "recharge",
+                "chance": 1
+            }
+        ]
+    },
+    "SCP-500": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-500",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-500",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ]
+    },
+    "SCP-207": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Anti-Cola",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1853",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ]
+    },
+    "Ammo12gauge": {
+        "Rough, Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo762x39",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo44cal",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "MTF-E11-SR": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-15",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo556x45",
+                        "count": 2
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Micro H.I.D.",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.05000000074505806
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "FR-MG-0",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Shotgun",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.10000000149011612
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            }
+        ]
+    },
+    "Crossvec": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 4
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "FSP-9",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.60000002384185791
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.40000000596046448
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Shotgun",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.69999998807907104
+            }
+        ]
+    },
+    "Ammo556x45": {
+        "Rough, Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo762x39",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "FSP-9": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 3
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.69999998807907104
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            }
+        ]
+    },
+    "Logicer": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo762x39",
+                        "count": 4
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "FR-MG-0",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Shotgun",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Micro H.I.D.",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.10000000149011612
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    },
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 2
+                    }
+                ],
+                "chance": 0.60000002384185791
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": ".44 Revolver",
+                        "count": 1
+                    },
+                    {
+                        "type": "Shotgun",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            }
+        ]
+    },
+    "High-Explosive Grenade": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-018",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            }
+        ]
+    },
+    "Flashbang Grenade": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 0.75
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-207",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            }
+        ]
+    },
+    "Ammo44cal": {
+        "Rough, Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo12gauge",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo762x39",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Ammo762x39": {
+        "Rough, Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo44cal",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo556x45",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo12gauge",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Ammo9x19": {
+        "Rough, Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo556x45",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo44cal",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo556x45",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "COM-18": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 2
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-15",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "FSP-9",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": ".44 Revolver",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.44999998807907104
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.55000001192092896
+            }
+        ]
+    },
+    "SCP-018": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-018",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "SCP-268": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-268",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-268",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-268",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-268",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Adrenaline": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-500",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.66666666666666663
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-500",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "Painkillers": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "Coin": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Light Armor": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Light Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Combat Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Combat Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Heavy Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "Combat Armor": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Light Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Light Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Combat Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Heavy Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Heavy Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Heavy Armor": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Combat Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Light Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Combat Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Heavy Armor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    ".44 Revolver": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo44cal",
+                        "count": 2
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.80000001192092896
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.20000000298023224
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "High-Explosive Grenade",
+                        "count": 2
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Zone Manager Keycard",
+                        "count": 1
+                    },
+                    {
+                        "type": "COM-15",
+                        "count": 1
+                    },
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    },
+                    {
+                        "type": "First Aid Kit",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "AK": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-15",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo762x39",
+                        "count": 3
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "A7",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Micro H.I.D.",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.05000000074505806
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Logicer",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Shotgun",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.10000000149011612
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            }
+        ]
+    },
+    "Shotgun": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo12gauge",
+                        "count": 2
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Logicer",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Micro H.I.D.",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.05000000074505806
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Logicer",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.25
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.40000000596046448
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
+            }
+        ]
+    },
+    "SCP-2176": {
+        "Rough": [
+            {
+                "kind": "break",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 12
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "nothing",
+                "chance": 0.79999999701976776
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.20000000298023224
+            }
+        ]
+    },
+    "SCP-244-A": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-244-B",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-244-A",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-244-A",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "SCP-244-B": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Coin",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-244-A",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-244-B",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-244-B",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "SCP-1853": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1853",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-207",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-500",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ]
+    },
+    "3-X Particle Disruptor": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Jailbird",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine, Very Fine": [
+            {
+                "kind": "recharge",
+                "chance": 1
+            }
+        ]
+    },
+    "COM-45": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-15",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo9x19",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": ".44 Revolver",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "SCP-1576": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-2176",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1576",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ]
+    },
+    "Jailbird": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Jailbird",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "3-X Particle Disruptor",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Jailbird",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Micro H.I.D.",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Anti-Cola": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-207",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1853",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ]
+    },
+    "FR-MG-0": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo556x45",
+                        "count": 4
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Logicer",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Micro H.I.D.",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.05000000074505806
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    },
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.94999998807907104
+            }
+        ]
+    },
+    "A7": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-15",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Ammo762x39",
+                        "count": 3
+                    }
+                ],
+                "chance": 0.5
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "randomize",
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "AK",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": ".44 Revolver",
+                        "count": 1
+                    },
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Lantern": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Lantern",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.5
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.5
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashlight",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.90000000000000002
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-2176",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.10000000000000001
+            }
+        ]
+    },
+    "SCP-1344": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Radio",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1853",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Flashbang Grenade",
+                        "count": 1
+                    },
+                    {
+                        "type": "Adrenaline",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Adrenaline",
+                        "count": 2
+                    },
+                    {
+                        "type": "SCP-2176",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    },
+    "Surface Access Pass": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Zone Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Research Supervisor Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Facility Manager Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "destroy",
+                "chance": 0.66666666666666663
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "O5-level Keycard",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.33333333333333331
+            }
+        ]
+    },
+    "SCP-127": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "COM-18",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "FSP-9",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "MTF-E11-SR",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
+    }
+}

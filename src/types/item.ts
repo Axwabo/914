@@ -1,63 +1,66 @@
-﻿export interface Item {
+﻿export const itemTypes = [
+    "Janitor Keycard",
+    "Scientist Keycard",
+    "Research Supervisor Keycard",
+    "Zone Manager Keycard",
+    "Guard Keycard",
+    "MTF Private Keycard",
+    "Containment Engineer Keycard",
+    "MTF Operative Keycard",
+    "MTF Captain Keycard",
+    "Facility Manager Keycard",
+    "Chaos Insurgency Access Device",
+    "O5-level Keycard",
+    "Radio",
+    "COM-15",
+    "First Aid Kit",
+    "Flashlight",
+    "Micro H.I.D.",
+    "SCP-500",
+    "SCP-207",
+    "Ammo12gauge",
+    "MTF-E11-SR",
+    "Crossvec",
+    "Ammo556x45",
+    "FSP-9",
+    "Logicer",
+    "High-Explosive Grenade",
+    "Flashbang Grenade",
+    "Ammo44cal",
+    "Ammo762x39",
+    "Ammo9x19",
+    "COM-18",
+    "SCP-018",
+    "SCP-268",
+    "Adrenaline",
+    "Painkillers",
+    "Coin",
+    "Light Armor",
+    "Combat Armor",
+    "Heavy Armor",
+    ".44 Revolver",
+    "AK",
+    "Shotgun",
+    "SCP-2176",
+    "SCP-244-A",
+    "SCP-244-B",
+    "SCP-1853",
+    "3-X Particle Disruptor",
+    "COM-45",
+    "SCP-1576",
+    "Jailbird",
+    "Anti-Cola",
+    "FR-MG-0",
+    "A7",
+    "Lantern",
+    "SCP-1344",
+    "Surface Access Pass",
+    "SCP-127"
+] as const;
+
+export interface Item {
     type: ItemType;
     count: number;
 }
 
-export type ItemType =
-    "Janitor Keycard"
-    | "Scientist Keycard"
-    | "Research Supervisor Keycard"
-    | "Zone Manager Keycard"
-    | "Guard Keycard"
-    | "MTF Private Keycard"
-    | "Containment Engineer Keycard"
-    | "MTF Operative Keycard"
-    | "MTF Captain Keycard"
-    | "Facility Manager Keycard"
-    | "Chaos Insurgency Access Device"
-    | "O5-level Keycard"
-    | "Radio"
-    | "COM-15"
-    | "First Aid Kit"
-    | "Flashlight"
-    | "Micro H.I.D."
-    | "SCP-500"
-    | "SCP-207"
-    | "Ammo12gauge"
-    | "MTF-E11-SR"
-    | "Crossvec"
-    | "Ammo556x45"
-    | "FSP-9"
-    | "Logicer"
-    | "High-Explosive Grenade"
-    | "Flashbang Grenade"
-    | "Ammo44cal"
-    | "Ammo762x39"
-    | "Ammo9x19"
-    | "COM-18"
-    | "SCP-018"
-    | "SCP-268"
-    | "Adrenaline"
-    | "Painkillers"
-    | "Coin"
-    | "Light Armor"
-    | "Combat Armor"
-    | "Heavy Armor"
-    | ".44 Revolver"
-    | "AK"
-    | "Shotgun"
-    | "SCP-2176"
-    | "SCP-244-A"
-    | "SCP-244-B"
-    | "SCP-1853"
-    | "3-X Particle Disruptor"
-    | "COM-45"
-    | "SCP-1576"
-    | "Jailbird"
-    | "Anti-Cola"
-    | "FR-MG-0"
-    | "A7"
-    | "Lantern"
-    | "SCP-1344"
-    | "Surface Access Pass"
-    | "SCP-127";
+export type ItemType = (typeof itemTypes)[number];
