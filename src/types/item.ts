@@ -29,6 +29,7 @@ import mtfE11 from "../assets/images/MTF-E11-SR.webp";
 import painkillers from "../assets/images/Painkillers.webp";
 import radio from "../assets/images/Radio.webp";
 import revolver from "../assets/images/Revolver.webp";
+import shotgun from "../assets/images/Shotgun.webp";
 import scp018 from "../assets/images/SCP-018.webp";
 import scp127 from "../assets/images/SCP-127.webp";
 import scp207 from "../assets/images/SCP-207.webp";
@@ -83,7 +84,7 @@ export const itemImages: Record<string, string> = {
     "Heavy Armor": heavyArmor,
     ".44 Revolver": revolver,
     "AK": ak,
-    "Shotgun": "",
+    "Shotgun": shotgun,
     "SCP-2176": scp2176,
     "SCP-244-A": scp244a,
     "SCP-244-B": scp244b,

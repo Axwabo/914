@@ -2,6 +2,8 @@ import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 
+const base = "/914/";
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [vue(), VitePWA({
@@ -33,7 +35,7 @@ export default defineConfig({
             type: "module"
         },
 
-        base: "914"
+        base
     })],
-    base: "914"
+    base
 })
