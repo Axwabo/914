@@ -1,34 +1,31 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import PWABadge from './components/PWABadge.vue'
+import PWABadge from './components/PWABadge.vue';
+import scp from "./assets/images/SCP.svg";
+import { defineAsyncComponent } from "vue";
+
+const HelloWorld = defineAsyncComponent(() => import("./components/HelloWorld.vue"));
 </script>
 
 <template>
-    <div>
-        <a href="https://vite.dev" target="_blank">
-            <img src="/favicon.svg" class="logo" alt="SCP-914 Recipes logo" />
-        </a>
-        <a href="https://vuejs.org/" target="_blank">
-            <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-        </a>
-    </div>
-    <HelloWorld />
+    <Suspense>
+        <HelloWorld />
+        <template #fallback>
+            <img :src="scp" alt="Loading..." class="spinner" width="135" height="135">
+        </template>
+    </Suspense>
     <PWABadge />
 </template>
 
 <style scoped>
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+.spinner {
+    filter: invert(1);
+    object-position: -0.2px -4px;
+    animation: spin 2s linear infinite;
 }
 
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
+@keyframes spin {
+    to {
+        rotate: 1turn;
+    }
 }
 </style>
