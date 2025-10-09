@@ -19,9 +19,9 @@ public static class RecipeExtensions
     }
 
     public static void Add(this Recipe recipe, Output output, params Scp914KnobSetting[] settings)
-        => recipe[new KnobSettingList(settings)] = [output];
+        => recipe[(settings)] = [output];
 
     public static void Add(this Recipe recipe, List<Output> outputs, Scp914KnobSetting setting)
-        => recipe[new KnobSettingList(setting)] = outputs;
+        => recipe[setting] = outputs;
 
 }
