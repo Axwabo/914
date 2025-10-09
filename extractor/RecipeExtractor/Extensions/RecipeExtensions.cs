@@ -6,8 +6,8 @@ namespace RecipeExtractor.Extensions;
 public static class RecipeExtensions
 {
 
-    public static void Add(this Recipe recipe, ItemType type, double chance, params Scp914KnobSetting[] settings)
-        => recipe[new KnobSettingList(settings)] = [ItemTypeOutput.From(type, chance)];
+    public static void Add(this Recipe recipe, ItemType type, params Scp914KnobSetting[] settings)
+        => recipe[new KnobSettingList(settings)] = [ItemTypeOutput.From(type)];
 
     public static void Add(this Recipe recipe, ItemType[] outputs, Scp914KnobSetting setting)
     {

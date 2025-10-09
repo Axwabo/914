@@ -31,9 +31,9 @@ public static class RecipeTransformer
 
     private static Recipe Ammo(AmmoItemProcessor processor) => new()
     {
-        {processor._previousAmmo, 1, Scp914KnobSetting.Rough, Scp914KnobSetting.Coarse},
-        {processor._oneToOne, 1, Scp914KnobSetting.OneToOne},
-        {processor._nextAmmo, 1, Scp914KnobSetting.Fine, Scp914KnobSetting.VeryFine}
+        {processor._previousAmmo, Scp914KnobSetting.Rough, Scp914KnobSetting.Coarse},
+        {processor._oneToOne, Scp914KnobSetting.OneToOne},
+        {processor._nextAmmo, Scp914KnobSetting.Fine, Scp914KnobSetting.VeryFine}
     };
 
 }

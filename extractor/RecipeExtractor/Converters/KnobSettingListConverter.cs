@@ -1,12 +1,17 @@
-﻿namespace RecipeExtractor.Converters;
+﻿using System.Linq;
+using RecipeExtractor.Extensions;
+
+namespace RecipeExtractor.Converters;
 
 public sealed class KnobSettingListConverter : WriteOnlyJsonConverter<KnobSettingList>
 {
 
     public override void Write(Utf8JsonWriter writer, KnobSettingList value, JsonSerializerOptions options)
-        => JsonSerializer.Serialize(writer, string.Join(",", value.Settings), options);
+        => JsonSerializer.Serialize(writer, Join(value), options);
 
     public override void WriteAsPropertyName(Utf8JsonWriter writer, KnobSettingList value, JsonSerializerOptions options)
-        => writer.WritePropertyName(string.Join(",", value.Settings));
+        => writer.WritePropertyName(Join(value));
+
+    private static string Join(KnobSettingList value) => string.Join(",", value.Settings.Select(EnumExtensions.FriendlyName));
 
 }

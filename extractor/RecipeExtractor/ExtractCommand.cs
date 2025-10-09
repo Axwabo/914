@@ -17,7 +17,8 @@ public sealed class ExtractCommand : ICommand
         {
             new KnobSettingListConverter(),
             new KnobSettingConverter(),
-            new ItemTypeConverter()
+            new ItemTypeConverter(),
+            new ChanceConverter()
         }
     };
 
