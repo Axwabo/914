@@ -2,7 +2,6 @@
 using System.Text.Json.Serialization;
 using CommandSystem;
 using InventorySystem;
-using InventorySystem.Items;
 using RecipeExtractor.Converters;
 
 namespace RecipeExtractor;
@@ -17,7 +16,8 @@ public sealed class ExtractCommand : ICommand
         Converters =
         {
             new KnobSettingListConverter(),
-            new KnobSettingConverter()
+            new KnobSettingConverter(),
+            new ItemTypeConverter()
         }
     };
 
@@ -27,7 +27,7 @@ public sealed class ExtractCommand : ICommand
 
     public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
     {
-        var recipes = new Dictionary<string, Recipe>();
+        var recipes = new Dictionary<ItemType, Recipe>();
 
         foreach (var kvp in InventoryItemLoader.AvailableItems)
         {
@@ -35,7 +35,7 @@ public sealed class ExtractCommand : ICommand
                 continue;
             var recipe = RecipeTransformer.GetRecipe(processor);
             if (recipe != null)
-                recipes[kvp.Key.GetName()] = recipe;
+                recipes[kvp.Key] = recipe;
         }
 
         using (var writer = File.Create("scp914.json"))

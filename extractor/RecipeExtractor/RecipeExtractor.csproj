@@ -5,10 +5,19 @@
         <LangVersion>13</LangVersion>
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Northwood.LabAPI" Version="1.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="mscorlib" />
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Memory" />
     </ItemGroup>
 
     <ItemGroup>
