@@ -7,15 +7,21 @@ public static class RecipeExtensions
 {
 
     public static void Add(this Recipe recipe, ItemType type, params Scp914KnobSetting[] settings)
-        => recipe[new KnobSettingList(settings)] = [ItemTypeOutput.From(type)];
+        => recipe.Add(ItemTypeOutput.From(type), settings);
 
     public static void Add(this Recipe recipe, ItemType[] outputs, Scp914KnobSetting setting)
     {
         var list = new List<Output>();
-        double total = outputs.Length;
+        float total = outputs.Length;
         foreach (var group in outputs.GroupBy(e => e))
             list.Add(ItemTypeOutput.From(group.Key, group.Count() / total));
-        recipe[new KnobSettingList(setting)] = list;
+        recipe.Add(list, setting);
     }
+
+    public static void Add(this Recipe recipe, Output output, params Scp914KnobSetting[] settings)
+        => recipe[new KnobSettingList(settings)] = [output];
+
+    public static void Add(this Recipe recipe, IReadOnlyList<Output> outputs, Scp914KnobSetting setting)
+        => recipe[new KnobSettingList(setting)] = outputs;
 
 }
