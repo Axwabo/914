@@ -15,7 +15,6 @@ public sealed class ExtractCommand : ICommand
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         Converters =
         {
-            new KnobSettingConverter(),
             new ItemTypeConverter()
         }
     };
