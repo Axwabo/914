@@ -1,37 +1,18 @@
 <script setup lang="ts">
 import PWABadge from './components/PWABadge.vue';
-import scp from "./assets/images/SCP.svg";
+import AppHeader from "./components/AppHeader.vue";
+import LoadingSpinner from "./components/LoadingSpinner.vue";
 import { defineAsyncComponent } from "vue";
 
-const HelloWorld = defineAsyncComponent(() => import("./components/ItemList.vue"));
+const list = defineAsyncComponent({
+    loader: () => import("./components/ItemList.vue"),
+    delay: 0,
+    loadingComponent: LoadingSpinner
+});
 </script>
 
 <template>
-    <h1>SCP-914 Recipes</h1>
-    <Suspense>
-        <HelloWorld />
-        <template #fallback>
-            <img :src="scp" alt="Loading..." class="spinner" width="135" height="135">
-        </template>
-    </Suspense>
+    <AppHeader />
+    <list />
     <PWABadge />
 </template>
-
-<style scoped>
-h1 {
-    text-align: center;
-    margin-top: 0;
-}
-
-.spinner {
-    filter: invert(1);
-    object-position: -0.2px -4px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        rotate: 1turn;
-    }
-}
-</style>

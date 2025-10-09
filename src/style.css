@@ -23,6 +23,12 @@ a:hover {
     color: #535bf2;
 }
 
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
@@ -47,4 +53,17 @@ button:hover {
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+#app {
+    flex: 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 1rem;
+}
+
+@supports (height: 100svh) {
+    body {
+        height: 100svh;
+    }
 }

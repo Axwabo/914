@@ -13,8 +13,9 @@ import Scp914Item from "./Scp914Item.vue";
 .item-list {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
 }
 </style>

@@ -13,13 +13,17 @@ const { type } = defineProps<{ type: ItemType; }>();
 
 <style scoped>
 .item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 10rem auto;
     text-align: center;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 10rem;
 }
 
 .item img {
-    width: 10rem;
+    height: 10rem;
     -webkit-user-drag: none;
 }
 </style>
