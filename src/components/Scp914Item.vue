@@ -6,6 +6,8 @@ import useStore from "../store.ts";
 
 const { type } = defineProps<{ type: ItemType; }>();
 
+const src = `url("${ itemImages[type] }")`;
+
 const container = useTemplateRef("container");
 
 const { showOutputs } = useStore();
@@ -18,7 +20,6 @@ function openContext(event: MouseEvent) {
 
 <template>
     <div class="item" v-on:contextmenu="openContext" v-on:click="showOutputs(type)">
-        <img :src="itemImages[type]" alt="" draggable="false">
         <span>{{ type }}</span>
         <ItemContextMenu :type ref="container" />
     </div>
@@ -27,18 +28,22 @@ function openContext(event: MouseEvent) {
 <style scoped>
 .item {
     position: relative;
-    display: grid;
-    grid-template-rows: 10rem auto;
-    text-align: center;
-    gap: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    width: 12rem;
+    height: 12rem;
     border-radius: 8px;
+    background-image: v-bind(src);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.item img {
-    height: 10rem;
-    -webkit-user-drag: none;
+.item span {
+    padding: 0.5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 </style>
