@@ -7,8 +7,8 @@ const { type } = defineProps<{ type: ItemType; }>();
 
 const container = useTemplateRef("container");
 
-function openContext(event: Event) {
-    container.value?.open();
+function openContext(event: MouseEvent) {
+    container.value?.open(event.x, event.y);
     event.preventDefault();
 }
 </script>

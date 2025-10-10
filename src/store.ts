@@ -1,17 +1,22 @@
 ﻿import type { DialogType } from "./types/dialogs.ts";
 import { defineStore } from "pinia";
-import type { Component } from "vue";
 
 interface State {
     dialogType: DialogType;
-    contextMenu: Component | null;
 }
 
 const store = defineStore("dialogs", {
-    state: (): State => ({ dialogType: "none", contextMenu: null }),
+    state: (): State => ({ dialogType: "none" }),
     actions: {
         showModal(type: DialogType) {
             this.dialogType = type;
+        },
+        openContextMenu(menu: HTMLDialogElement | null) {
+            const current = document.querySelector("dialog.context-menu[open]") as HTMLDialogElement;
+            if (current === menu)
+                return;
+            current?.close();
+            menu?.show();
         }
     }
 });
