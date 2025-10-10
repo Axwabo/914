@@ -28,7 +28,7 @@ const chanceString = fraction < 0.0001 || fraction > 0.9999 ? Math.round(chanceP
 .output {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
     gap: 0.25rem;
 }
 

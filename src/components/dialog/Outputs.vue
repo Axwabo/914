@@ -2,10 +2,12 @@
 import useStore from "../../store.ts";
 import { recipes } from "../../cache.ts";
 import OutputContainer from "./OutputContainer.vue";
+import { storeToRefs } from "pinia";
+import { computed } from "vue";
 
-const { outputs: type } = useStore();
+const { outputs: type } = storeToRefs(useStore());
 
-const outputs = type ? recipes[type] : {};
+const outputs = computed(() => type.value ? recipes[type.value] : {});
 </script>
 
 <template v-if="!!type">
@@ -14,7 +16,8 @@ const outputs = type ? recipes[type] : {};
         <template v-for="key in Object.keys(outputs)">
             <h3>{{ key }}</h3>
             <section>
-                <OutputContainer v-for="output in outputs[key]" :input="type!" :output="output" />
+                <OutputContainer v-for="(output, index) in outputs[key]" :key="`${type}-${key}-${output.kind}-${index}`"
+                                 :input="type!" :output="output" />
             </section>
         </template>
     </div>
@@ -39,5 +42,9 @@ const outputs = type ? recipes[type] : {};
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.outputs section:not(:last-of-type) {
+    border-bottom: 1px solid gray;
 }
 </style>

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-// ReSharper disable NotAccessedPositionalProperty.Global
+﻿// ReSharper disable NotAccessedPositionalProperty.Global
 
 namespace RecipeExtractor;
 

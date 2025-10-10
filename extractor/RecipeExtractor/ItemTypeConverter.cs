@@ -1,9 +1,12 @@
 ﻿using InventorySystem.Items;
 
-namespace RecipeExtractor.Converters;
+namespace RecipeExtractor;
 
-public sealed class ItemTypeConverter : WriteOnlyJsonConverter<ItemType>
+public sealed class ItemTypeConverter : JsonConverter<ItemType>
 {
+
+    public override ItemType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        => throw new NotSupportedException();
 
     public override void Write(Utf8JsonWriter writer, ItemType value, JsonSerializerOptions options)
         => writer.WriteStringValue(Translate(value));

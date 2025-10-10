@@ -1019,7 +1019,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1035,7 +1035,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1407,13 +1407,13 @@
             }
         ]
     },
-    "Ammo12gauge": {
+    "12/70 Buckshot Ammo": {
         "Rough, Coarse": [
             {
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo762x39",
+                        "type": "7.62x39mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1425,7 +1425,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1437,7 +1437,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo44cal",
+                        "type": ".44 Mag Ammo",
                         "count": 1
                     }
                 ],
@@ -1461,7 +1461,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo556x45",
+                        "type": "5.56x45mm Ammo",
                         "count": 2
                     }
                 ],
@@ -1561,7 +1561,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 4
                     }
                 ],
@@ -1631,13 +1631,13 @@
             }
         ]
     },
-    "Ammo556x45": {
+    "5.56x45mm Ammo": {
         "Rough, Coarse": [
             {
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1649,7 +1649,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo762x39",
+                        "type": "7.62x39mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1661,7 +1661,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1679,7 +1679,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 3
                     }
                 ],
@@ -1755,7 +1755,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo762x39",
+                        "type": "7.62x39mm Ammo",
                         "count": 4
                     }
                 ],
@@ -1963,13 +1963,13 @@
             }
         ]
     },
-    "Ammo44cal": {
+    ".44 Mag Ammo": {
         "Rough, Coarse": [
             {
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo12gauge",
+                        "type": "12/70 Buckshot Ammo",
                         "count": 1
                     }
                 ],
@@ -1981,7 +1981,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -1993,7 +1993,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo762x39",
+                        "type": "7.62x39mm Ammo",
                         "count": 1
                     }
                 ],
@@ -2001,13 +2001,13 @@
             }
         ]
     },
-    "Ammo762x39": {
+    "7.62x39mm Ammo": {
         "Rough, Coarse": [
             {
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo44cal",
+                        "type": ".44 Mag Ammo",
                         "count": 1
                     }
                 ],
@@ -2019,7 +2019,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo556x45",
+                        "type": "5.56x45mm Ammo",
                         "count": 1
                     }
                 ],
@@ -2031,7 +2031,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo12gauge",
+                        "type": "12/70 Buckshot Ammo",
                         "count": 1
                     }
                 ],
@@ -2039,13 +2039,13 @@
             }
         ]
     },
-    "Ammo9x19": {
+    "9x19mm Ammo": {
         "Rough, Coarse": [
             {
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo556x45",
+                        "type": "5.56x45mm Ammo",
                         "count": 1
                     }
                 ],
@@ -2057,7 +2057,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo44cal",
+                        "type": ".44 Mag Ammo",
                         "count": 1
                     }
                 ],
@@ -2069,7 +2069,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo556x45",
+                        "type": "5.56x45mm Ammo",
                         "count": 1
                     }
                 ],
@@ -2083,7 +2083,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -2093,7 +2093,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 2
                     }
                 ],
@@ -2723,7 +2723,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo44cal",
+                        "type": ".44 Mag Ammo",
                         "count": 2
                     }
                 ],
@@ -2821,7 +2821,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo762x39",
+                        "type": "7.62x39mm Ammo",
                         "count": 3
                     }
                 ],
@@ -2937,7 +2937,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo12gauge",
+                        "type": "12/70 Buckshot Ammo",
                         "count": 2
                     }
                 ],
@@ -3309,7 +3309,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -3331,7 +3331,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo9x19",
+                        "type": "9x19mm Ammo",
                         "count": 1
                     }
                 ],
@@ -3553,7 +3553,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo556x45",
+                        "type": "5.56x45mm Ammo",
                         "count": 4
                     }
                 ],
@@ -3633,7 +3633,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Ammo762x39",
+                        "type": "7.62x39mm Ammo",
                         "count": 3
                     }
                 ],
