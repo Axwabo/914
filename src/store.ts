@@ -1,15 +1,17 @@
 ﻿import type { DialogType } from "./types/dialogs.ts";
 import { defineStore } from "pinia";
+import type { Component } from "vue";
 
 interface State {
-    type: DialogType;
+    dialogType: DialogType;
+    contextMenu: Component | null;
 }
 
 const store = defineStore("dialogs", {
-    state: (): State => ({ type: "none" }),
+    state: (): State => ({ dialogType: "none", contextMenu: null }),
     actions: {
-        open(type: DialogType) {
-            this.type = type;
+        showModal(type: DialogType) {
+            this.dialogType = type;
         }
     }
 });
