@@ -1,27 +1,19 @@
 ﻿<script setup lang="ts">
 import { itemImages, type ItemType } from "../types/item.ts";
 import ItemContextMenu from "./ItemContextMenu.vue";
-import { useTemplateRef } from "vue";
 import useStore from "../store.ts";
 
-const { type } = defineProps<{ type: ItemType; }>();
+const { type, small } = defineProps<{ type: ItemType; small?: boolean; }>();
 
 const src = `url("${ itemImages[type] }")`;
 
-const container = useTemplateRef("container");
-
 const { showOutputs } = useStore();
-
-function openContext(event: MouseEvent) {
-    container.value?.open(event.x, event.y);
-    event.preventDefault();
-}
 </script>
 
 <template>
-    <div class="item" v-on:contextmenu="openContext" v-on:click="showOutputs(type)">
+    <div :class="{'item': true, small: !!small}" v-on:click="showOutputs(type)">
         <span>{{ type }}</span>
-        <ItemContextMenu :type ref="container" />
+        <ItemContextMenu :type />
     </div>
 </template>
 
@@ -41,9 +33,18 @@ function openContext(event: MouseEvent) {
     background-position: center;
 }
 
+.item.small {
+    width: 8rem;
+    height: 8rem;
+}
+
 .item span {
     padding: 0.5rem;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.item.small span {
+    padding: 0.2rem;
 }
 </style>

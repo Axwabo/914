@@ -10,8 +10,8 @@ const { outputs: type } = storeToRefs(useStore());
 const outputs = computed(() => type.value ? recipes[type.value] : {});
 </script>
 
-<template v-if="!!type">
-    <h2>{{ type }} outputs</h2>
+<template v-if="type && outputs">
+    <h2 class="title">{{ type }} outputs</h2>
     <div class="outputs">
         <template v-for="key in Object.keys(outputs)">
             <h3>{{ key }}</h3>
@@ -24,11 +24,15 @@ const outputs = computed(() => type.value ? recipes[type.value] : {});
 </template>
 
 <style scoped>
+.title {
+    margin: 0;
+}
+
 .outputs {
     display: grid;
     grid-template-columns: auto 1fr;
     padding-right: 1rem;
-    gap: 3rem;
+    gap: 1rem;
     overflow-y: auto;
 }
 
