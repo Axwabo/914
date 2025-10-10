@@ -18,7 +18,10 @@ const chanceString = fraction < 0.0001 || fraction > 0.9999 ? Math.round(chanceP
         <span v-else-if="output.kind === 'randomize'">Randomizes attachments</span>
         <span v-else-if="output.kind === 'recharge'">Recharges the {{ input }}</span>
         <template v-else-if="output.kind ==='item'">
-            <Scp914Item v-for="item in output.items" :type="item.type" small />
+            <div v-for="item in output.items" :key="item.type" class="item">
+                <Scp914Item :type="item.type" small />
+                <span v-if="item.count !== 1">x{{ item.count }}</span>
+            </div>
         </template>
         <span v-else>Nothing happens</span>
     </div>
@@ -32,11 +35,25 @@ const chanceString = fraction < 0.0001 || fraction > 0.9999 ? Math.round(chanceP
     gap: 0.25rem;
 }
 
+.output:has(:only-child) {
+    justify-content: center;
+}
+
 .chance {
     font-weight: bold;
 }
 
 .destroy {
     color: red;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.item span {
+    align-self: center;
 }
 </style>

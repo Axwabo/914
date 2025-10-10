@@ -13,11 +13,14 @@ const outputs = computed(() => type.value ? recipes[type.value] : {});
 <template v-if="type && outputs">
     <h2 class="title">{{ type }} outputs</h2>
     <div class="outputs">
-        <template v-for="key in Object.keys(outputs)">
+        <template v-for="(key, index) in Object.keys(outputs)">
+            <div v-if="index !== 0" class="horizontal-separator"></div>
             <h3>{{ key }}</h3>
             <section>
-                <OutputContainer v-for="(output, index) in outputs[key]" :key="`${type}-${key}-${output.kind}-${index}`"
-                                 :input="type!" :output="output" />
+                <template v-for="(output, index) in outputs[key]" :key="`${type}-${key}-${output.kind}-${index}`">
+                    <div class="vertical-separator" v-if="index !== 0"></div>
+                    <OutputContainer :input="type!" :output="output" />
+                </template>
             </section>
         </template>
     </div>
@@ -48,7 +51,16 @@ const outputs = computed(() => type.value ? recipes[type.value] : {});
     gap: 1rem;
 }
 
-.outputs section:not(:last-of-type) {
-    border-bottom: 1px solid gray;
+.horizontal-separator {
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    grid-column: span 2;
+}
+
+.vertical-separator {
+    width: 1px;
+    height: 100%;
+    background-color: gray;
 }
 </style>
