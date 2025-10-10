@@ -41,10 +41,11 @@ const { showOutputs } = useStore();
 .item span {
     padding: 0.5rem;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .item.small span {
     padding: 0.2rem;
+    font-size: 0.9em;
 }
 </style>
