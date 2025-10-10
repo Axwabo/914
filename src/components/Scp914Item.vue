@@ -2,10 +2,13 @@
 import { itemImages, type ItemType } from "../types/item.ts";
 import ItemContextMenu from "./ItemContextMenu.vue";
 import { useTemplateRef } from "vue";
+import useStore from "../store.ts";
 
 const { type } = defineProps<{ type: ItemType; }>();
 
 const container = useTemplateRef("container");
+
+const { showOutputs } = useStore();
 
 function openContext(event: MouseEvent) {
     container.value?.open(event.x, event.y);
@@ -14,7 +17,7 @@ function openContext(event: MouseEvent) {
 </script>
 
 <template>
-    <div class="item" v-on:contextmenu="openContext">
+    <div class="item" v-on:contextmenu="openContext" v-on:click="showOutputs(type)">
         <img :src="itemImages[type]" alt="" draggable="false">
         <span>{{ type }}</span>
         <ItemContextMenu :type ref="container" />

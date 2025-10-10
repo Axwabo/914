@@ -1,1 +1,1 @@
-﻿export type DialogType = "none" | "info";
+﻿export type DialogType = "none" | "info" | "outputs";
