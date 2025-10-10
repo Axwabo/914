@@ -14,7 +14,7 @@ watch(dialogType, value => {
         element.value?.close();
     else
         element.value?.showModal();
-});
+}, { flush: "sync" });
 </script>
 
 <template>
@@ -33,5 +33,10 @@ dialog {
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+dialog[open] {
+    display: flex;
+    flex-direction: column;
 }
 </style>
