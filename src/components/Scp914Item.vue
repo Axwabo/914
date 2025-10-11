@@ -1,6 +1,5 @@
 ﻿<script setup lang="ts">
 import { itemImages, type ItemType } from "../types/item.ts";
-import ItemContextMenu from "./ItemContextMenu.vue";
 import useStore from "../store.ts";
 
 const { type, small } = defineProps<{ type: ItemType; small?: boolean; }>();
@@ -13,7 +12,6 @@ const { showOutputs } = useStore();
 <template>
     <div :class="{'item': true, small: !!small}" v-on:click="showOutputs(type)">
         <span>{{ type }}</span>
-        <ItemContextMenu :type />
     </div>
 </template>
 
@@ -42,10 +40,16 @@ const { showOutputs } = useStore();
     padding: 0.5rem;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
 .item.small span {
     padding: 0.2rem;
     font-size: 0.9em;
+}
+
+.item:hover span {
+    opacity: 1;
 }
 </style>
