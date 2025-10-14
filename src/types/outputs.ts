@@ -1,4 +1,4 @@
-﻿import type { Item } from "./item.ts";
+﻿import type { Item, ItemType } from "./item.ts";
 
 export type OutputKind = Extract<Output, { type: string }>["type"];
 
@@ -17,4 +17,10 @@ interface ItemOutput {
 
 interface KindOutput<T extends string> {
     kind: T;
+}
+
+export interface ObtainingMethod {
+    from: ItemType;
+    mode: string;
+    chance: number;
 }

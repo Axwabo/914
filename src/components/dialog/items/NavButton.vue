@@ -1,16 +1,16 @@
 ﻿<script setup lang="ts">
 import { storeToRefs } from "pinia";
 import useStore from "../../../store.ts";
-import type { ItemType } from "../../../types/item.ts";
+import type { ItemPage } from "../../../types/dialogs.ts";
 
-const { type } = defineProps<{ type: ItemType; }>();
+const { page } = defineProps<{ page: ItemPage; }>();
 
 const { itemPage } = storeToRefs(useStore());
 </script>
 
 <template>
-    <button :class="{'nav-button': true, active: itemPage === type}">
-        {{ type.charAt(0).toUpperCase() }}{{ type.substring(1) }}
+    <button :class="{'nav-button': true, active: itemPage === page}" v-on:click="itemPage = page">
+        {{ page.charAt(0).toUpperCase() }}{{ page.substring(1) }}
     </button>
 </template>
 

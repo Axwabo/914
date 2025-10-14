@@ -11,7 +11,7 @@ const outputs = computed(() => type ? recipes[type] : {});
 
 <template>
     <div class="outputs">
-        <template v-for="(key, index) in Object.keys(outputs)">
+        <template v-for="(key, index) in Object.keys(outputs)" :key>
             <div v-if="index !== 0" class="horizontal-separator"></div>
             <h3>{{ key }}</h3>
             <section>

@@ -5,9 +5,9 @@ import NavButton from "./NavButton.vue";
 
 <template>
     <nav>
-        <NavButton type="details" />
-        <NavButton type="outputs" />
-        <NavButton type="obtaining" />
+        <NavButton page="details" />
+        <NavButton page="outputs" />
+        <NavButton page="obtaining" />
         <Close />
     </nav>
 </template>
