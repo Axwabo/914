@@ -1,11 +1,13 @@
 ﻿<script setup lang="ts">
-import NavButton from "./NavButton.vue";
 import Close from "../Close.vue";
+import NavButton from "./NavButton.vue";
 </script>
 
 <template>
     <nav>
-        <NavButton type="outputs">Outputs</NavButton>
+        <NavButton type="details" />
+        <NavButton type="outputs" />
+        <NavButton type="obtaining" />
         <Close />
     </nav>
 </template>

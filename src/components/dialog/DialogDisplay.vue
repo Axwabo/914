@@ -1,11 +1,11 @@
 ﻿<script setup lang="ts">
-import { ref, watch } from "vue";
 import { storeToRefs } from "pinia";
+import { ref, watch } from "vue";
 import useStore from "../../store.ts";
 import About from "./About.vue";
-import Outputs from "./Outputs.vue";
+import Item from "./Item.vue";
 
-const { dialogType } = storeToRefs(useStore());
+const { dialogType, item } = storeToRefs(useStore());
 
 const element = ref<HTMLDialogElement>();
 
@@ -19,8 +19,8 @@ watch(dialogType, value => {
 
 <template>
     <dialog ref="element" v-on:close="dialogType = 'none'">
-        <About v-if="dialogType === 'info'" />
-        <Outputs v-else-if="dialogType === 'outputs'" />
+        <Item v-if="item != null && dialogType === 'item'" :type="item" />
+        <About v-else-if="dialogType === 'info'" />
     </dialog>
 </template>
 

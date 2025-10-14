@@ -1,1 +1,3 @@
-﻿export type DialogType = "none" | "info" | "outputs";
+﻿export type DialogType = "none" | "info" | "item";
+
+export type ItemPage = "details" | "outputs" | "obtaining";

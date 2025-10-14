@@ -1,14 +1,15 @@
-﻿import type { DialogType } from "./types/dialogs.ts";
-import { defineStore } from "pinia";
+﻿import { defineStore } from "pinia";
+import type { DialogType, ItemPage } from "./types/dialogs.ts";
 import type { ItemType } from "./types/item.ts";
 
 interface State {
     dialogType: DialogType;
-    outputs: ItemType | null;
+    itemPage: ItemPage;
+    item: ItemType | null;
 }
 
 const store = defineStore("dialogs", {
-    state: (): State => ({ dialogType: "none", outputs: null }),
+    state: (): State => ({ dialogType: "none", itemPage: "info", item: null }),
     actions: {
         showModal(type: DialogType) {
             this.dialogType = type;
@@ -21,9 +22,10 @@ const store = defineStore("dialogs", {
             menu?.show();
         },
         showOutputs(type: ItemType) {
-            this.dialogType = "outputs";
-            this.outputs = type;
-        },
+            this.dialogType = "item";
+            this.item = type;
+            this.itemPage = "outputs";
+        }
     }
 });
 

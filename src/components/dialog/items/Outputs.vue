@@ -1,19 +1,15 @@
 ﻿<script setup lang="ts">
-import useStore from "../../store.ts";
-import { recipes } from "../../cache.ts";
-import OutputContainer from "./OutputContainer.vue";
-import { storeToRefs } from "pinia";
 import { computed } from "vue";
-import ItemNavbar from "./nav/ItemNavbar.vue";
+import { recipes } from "../../../cache.ts";
+import type { ItemType } from "../../../types/item.ts";
+import OutputContainer from "../items/OutputContainer.vue";
 
-const { outputs: type } = storeToRefs(useStore());
+const { type } = defineProps<{ type: ItemType; }>();
 
-const outputs = computed(() => type.value ? recipes[type.value] : {});
+const outputs = computed(() => type ? recipes[type] : {});
 </script>
 
-<template v-if="type && outputs">
-    <h2 class="title">{{ type }}</h2>
-    <ItemNavbar />
+<template>
     <div class="outputs">
         <template v-for="(key, index) in Object.keys(outputs)">
             <div v-if="index !== 0" class="horizontal-separator"></div>
@@ -21,7 +17,7 @@ const outputs = computed(() => type.value ? recipes[type.value] : {});
             <section>
                 <template v-for="(output, index) in outputs[key]" :key="`${type}-${key}-${output.kind}-${index}`">
                     <div class="vertical-separator" v-if="index !== 0"></div>
-                    <OutputContainer :input="type!" :output="output" />
+                    <OutputContainer :input="type" :output="output" />
                 </template>
             </section>
         </template>
@@ -29,10 +25,6 @@ const outputs = computed(() => type.value ? recipes[type.value] : {});
 </template>
 
 <style scoped>
-.title {
-    margin: 0;
-}
-
 .outputs {
     display: grid;
     grid-template-columns: auto 1fr;

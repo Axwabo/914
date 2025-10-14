@@ -1,7 +1,7 @@
 ﻿<script setup lang="ts">
-import type { Output } from "../../types/outputs.ts";
-import type { ItemType } from "../../types/item.ts";
-import Scp914Item from "../Scp914Item.vue";
+import type { ItemType } from "../../../types/item.ts";
+import type { Output } from "../../../types/outputs.ts";
+import Scp914Item from "../../Scp914Item.vue";
 
 const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
 
