@@ -10,7 +10,7 @@ namespace RecipeExtractor;
 [JsonDerivedType(typeof(FirearmItem), "firearm")]
 public record Item(ItemCategory Category, string? Description);
 
-public sealed record Ammo(int UnitPrice, string? Description) : Item(ItemCategory.Ammo, Description);
+public sealed record Ammo(int UnitPrice, ushort RoundsPerMag, string? Description) : Item(ItemCategory.Ammo, Description);
 
 public sealed record SingleUseKeycard(DoorPermissionFlags Permissions, string? Description) : Item(ItemCategory.Keycard, Description);
 

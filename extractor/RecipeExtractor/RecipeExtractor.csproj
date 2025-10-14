@@ -23,6 +23,7 @@
     <ItemGroup>
         <Reference Include="Assembly-CSharp" />
         <Reference Include="CommandSystem.Core" />
+        <Reference Include="Mirror" />
         <Reference Include="System.Text.Json" />
         <Reference Include="UnityEngine.CoreModule" />
     </ItemGroup>

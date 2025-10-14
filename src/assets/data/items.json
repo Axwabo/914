@@ -67,6 +67,7 @@
     "12/70 Buckshot Ammo": {
         "kind": "ammo",
         "unitPrice": 5,
+        "roundsPerMag": 14,
         "category": "Ammo"
     },
     "MTF-E11-SR": {
@@ -82,6 +83,7 @@
     "5.56x45mm Ammo": {
         "kind": "ammo",
         "unitPrice": 3,
+        "roundsPerMag": 40,
         "category": "Ammo"
     },
     "FSP-9": {
@@ -105,16 +107,19 @@
     ".44 Mag Ammo": {
         "kind": "ammo",
         "unitPrice": 7,
+        "roundsPerMag": 6,
         "category": "Ammo"
     },
     "7.62x39mm Ammo": {
         "kind": "ammo",
         "unitPrice": 3,
+        "roundsPerMag": 30,
         "category": "Ammo"
     },
     "9x19mm Ammo": {
         "kind": "ammo",
         "unitPrice": 2,
+        "roundsPerMag": 15,
         "category": "Ammo"
     },
     "COM-18": {
