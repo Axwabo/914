@@ -2,6 +2,7 @@
 import { storeToRefs } from "pinia";
 import useStore from "../../store.ts";
 import type { ItemType } from "../../types/item.ts";
+import Details from "./items/Details.vue";
 import ItemNavbar from "./items/ItemNavbar.vue";
 import Obtaining from "./items/Obtaining.vue";
 import Outputs from "./items/Outputs.vue";
@@ -15,8 +16,9 @@ const { itemPage } = storeToRefs(useStore());
 <template>
     <h2 class="title">{{ type }}</h2>
     <ItemNavbar />
-    <Outputs v-if="itemPage === 'outputs'" :type />
-    <Obtaining v-if="itemPage === 'obtaining'" :type />
+    <Details v-if="itemPage === 'details'" :type />
+    <Outputs v-else-if="itemPage === 'outputs'" :type />
+    <Obtaining v-else-if="itemPage === 'obtaining'" :type />
 </template>
 
 <style scoped>

@@ -1,4 +1,4 @@
-﻿import type { Item, ItemType } from "./item.ts";
+﻿import type { ItemType } from "./item.ts";
 
 export type Output = { chance: number } & (
     ItemOutput
@@ -10,11 +10,16 @@ export type Output = { chance: number } & (
 
 interface ItemOutput {
     kind: "item";
-    items: Item[];
+    items: OutputItem[];
 }
 
 interface KindOutput<T extends string> {
     kind: T;
+}
+
+export interface OutputItem {
+    type: ItemType;
+    count: number;
 }
 
 export interface ObtainingMethod {

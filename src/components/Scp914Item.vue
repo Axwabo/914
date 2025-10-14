@@ -2,7 +2,7 @@
 import useStore from "../store.ts";
 import { itemImages, type ItemType } from "../types/item.ts";
 
-const { type, small } = defineProps<{ type: ItemType; small?: boolean; }>();
+const { type, small, disabled } = defineProps<{ type: ItemType; small?: boolean; disabled?: boolean; }>();
 
 const src = `url("${ itemImages[type] }")`;
 
@@ -10,7 +10,7 @@ const { interact } = useStore();
 </script>
 
 <template>
-    <button :class="{'item': true, small: !!small}" v-on:click="interact(type)">
+    <button :class="{'item': true, small: !!small}" v-on:click="interact(type)" :disabled>
         <span>{{ type }}</span>
     </button>
 </template>
@@ -35,6 +35,14 @@ const { interact } = useStore();
     background-position: center;
 }
 
+.item[disabled] {
+    pointer-events: none;
+}
+
+.item[disabled] span {
+    visibility: hidden;
+}
+
 .item.small {
     width: 8rem;
     height: 8rem;
@@ -53,7 +61,7 @@ const { interact } = useStore();
     font-size: 0.9em;
 }
 
-.item:is(:hover, :focus-visible) span {
+.item:not([disabled]):is(:hover, :focus-visible) span {
     opacity: 1;
 }
 
