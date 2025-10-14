@@ -12,7 +12,7 @@ const outputs = computed(() => type ? recipes[type] : {});
 <template>
     <div class="outputs">
         <template v-for="(key, index) in Object.keys(outputs)" :key>
-            <div v-if="index !== 0" class="horizontal-separator"></div>
+            <hr v-if="index !== 0" class="horizontal-separator"></hr>
             <h3>{{ key }}</h3>
             <section>
                 <template v-for="(output, index) in outputs[key]" :key="`${type}-${key}-${output.kind}-${index}`">
@@ -29,7 +29,7 @@ const outputs = computed(() => type ? recipes[type] : {});
     display: grid;
     grid-template-columns: auto 1fr;
     padding-right: 1rem;
-    gap: 1rem;
+    gap: 0.5rem;
     overflow-y: auto;
 }
 
@@ -47,8 +47,7 @@ const outputs = computed(() => type ? recipes[type] : {});
 
 .horizontal-separator {
     width: 100%;
-    height: 1px;
-    background-color: gray;
+    margin: 0;
     grid-column: span 2;
 }
 

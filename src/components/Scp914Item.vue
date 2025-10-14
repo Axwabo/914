@@ -1,6 +1,6 @@
 ﻿<script setup lang="ts">
-import { itemImages, type ItemType } from "../types/item.ts";
 import useStore from "../store.ts";
+import { itemImages, type ItemType } from "../types/item.ts";
 
 const { type, small } = defineProps<{ type: ItemType; small?: boolean; }>();
 
@@ -10,9 +10,9 @@ const { showOutputs } = useStore();
 </script>
 
 <template>
-    <div :class="{'item': true, small: !!small}" v-on:click="showOutputs(type)">
+    <button :class="{'item': true, small: !!small}" v-on:click="showOutputs(type)">
         <span>{{ type }}</span>
-    </div>
+    </button>
 </template>
 
 <style scoped>
@@ -25,6 +25,10 @@ const { showOutputs } = useStore();
     width: 12rem;
     height: 12rem;
     border-radius: 8px;
+    border: none;
+    font-weight: initial;
+    padding: 0;
+    background-color: transparent;
     background-image: v-bind(src);
     background-size: contain;
     background-repeat: no-repeat;
