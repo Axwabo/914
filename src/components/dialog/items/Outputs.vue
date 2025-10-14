@@ -1,15 +1,21 @@
 ﻿<script setup lang="ts">
 import { computed } from "vue";
-import { recipes } from "../../../cache.ts";
+import { items, recipes } from "../../../cache.ts";
 import type { ItemType } from "../../../types/item.ts";
 import OutputContainer from "../items/OutputContainer.vue";
 
 const { type } = defineProps<{ type: ItemType; }>();
 
-const outputs = computed(() => type ? recipes[type] : {});
+const outputs = computed(() => recipes[type]);
+
+const count = computed(() => {
+    const item = items[type];
+    return item.kind === "ammo" ? item.roundsPerMag : 1;
+});
 </script>
 
 <template>
+    <span v-if="count !== 1" class="input-count">Default magazine of {{ count }} rounds</span>
     <div class="outputs">
         <template v-for="(key, index) in Object.keys(outputs)" :key>
             <hr v-if="index !== 0" class="horizontal-separator">
@@ -25,6 +31,11 @@ const outputs = computed(() => type ? recipes[type] : {});
 </template>
 
 <style scoped>
+.input-count {
+    color: #ff99ff;
+    font-weight: bold;
+}
+
 .outputs {
     display: grid;
     grid-template-columns: auto 1fr;

@@ -13,7 +13,10 @@ const item = items[type];
         <Scp914Item :type disabled />
         <span>Category: {{ item.category }}</span>
         <span v-if="item.description">{{ item.description }}</span>
-        <span v-if="item.kind === 'ammo'">Unit price: {{ item.unitPrice }}</span>
+        <template v-if="item.kind === 'ammo'">
+            <span>Rounds per magazine: {{ item.roundsPerMag }}</span>
+            <span>Unit price: {{ item.unitPrice }}</span>
+        </template>
         <span v-else-if="item.kind === 'keycard' && item.permissions">Permissions: {{ item.permissions }}</span>
         <span v-else-if="item.kind === 'firearm'">Magazine size: {{ item.magSize }}</span>
     </div>

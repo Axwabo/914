@@ -138,4 +138,5 @@ interface Firearm {
 interface Ammo {
     kind: "ammo";
     unitPrice: number;
+    roundsPerMag: number;
 }

@@ -1,8 +1,8 @@
 ﻿<script setup lang="ts">
 import type { ItemType } from "../../../types/item.ts";
 import type { Output } from "../../../types/outputs.ts";
-import { formatChanceValue } from "../../../utils/format.ts";
-import Scp914Item from "../../Scp914Item.vue";
+import { formatChanceValue } from "../../../utils/convert.ts";
+import OutputItem from "./OutputItem.vue";
 
 const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
 </script>
@@ -17,8 +17,7 @@ const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
         <div v-else-if="output.kind ==='item'" class="item-list">
             <template v-for="(item, index) in output.items" :key="item.type">
                 <span v-if="index !== 0">+</span>
-                <Scp914Item :type="item.type" small />
-                <span v-if="item.count !== 1" class="count">x{{ item.count }}</span>
+                <OutputItem :item :input />
             </template>
         </div>
         <span v-else>Nothing happens</span>
@@ -50,13 +49,5 @@ const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-}
-
-.item span {
-    align-self: center;
-}
-
-.count {
-    font-weight: bold;
 }
 </style>

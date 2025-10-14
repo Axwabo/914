@@ -14,8 +14,8 @@ const { itemPage } = storeToRefs(useStore());
 </script>
 
 <template>
-    <h2 class="title">{{ type }}</h2>
     <ItemNavbar />
+    <h2 class="title">{{ type }}</h2>
     <Details v-if="itemPage === 'details'" :type />
     <Outputs v-else-if="itemPage === 'outputs'" :type />
     <Obtaining v-else-if="itemPage === 'obtaining'" :type />
