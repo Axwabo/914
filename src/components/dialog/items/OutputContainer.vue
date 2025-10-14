@@ -15,11 +15,11 @@ const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
         <span v-else-if="output.kind === 'randomize'">Randomizes attachments</span>
         <span v-else-if="output.kind === 'recharge'">Recharges the {{ input }}</span>
         <div v-else-if="output.kind ==='item'" class="item-list">
-            <div v-for="(item, index) in output.items" :key="item.type" class="item">
+            <template v-for="(item, index) in output.items" :key="item.type">
                 <span v-if="index !== 0">+</span>
                 <Scp914Item :type="item.type" small />
-                <span v-if="item.count !== 1">x{{ item.count }}</span>
-            </div>
+                <span v-if="item.count !== 1" class="count">x{{ item.count }}</span>
+            </template>
         </div>
         <span v-else>Nothing happens</span>
     </div>
@@ -45,17 +45,18 @@ const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
     color: red;
 }
 
-.item {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
 .item-list {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .item span {
     align-self: center;
+}
+
+.count {
+    font-weight: bold;
 }
 </style>

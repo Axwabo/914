@@ -1,7 +1,5 @@
 ﻿import type { Item, ItemType } from "./item.ts";
 
-export type OutputKind = Extract<Output, { type: string }>["type"];
-
 export type Output = { chance: number } & (
     ItemOutput
     | KindOutput<"destroy">

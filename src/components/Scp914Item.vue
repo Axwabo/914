@@ -6,11 +6,11 @@ const { type, small } = defineProps<{ type: ItemType; small?: boolean; }>();
 
 const src = `url("${ itemImages[type] }")`;
 
-const { showOutputs } = useStore();
+const { interact } = useStore();
 </script>
 
 <template>
-    <button :class="{'item': true, small: !!small}" v-on:click="showOutputs(type)">
+    <button :class="{'item': true, small: !!small}" v-on:click="interact(type)">
         <span>{{ type }}</span>
     </button>
 </template>
@@ -53,7 +53,7 @@ const { showOutputs } = useStore();
     font-size: 0.9em;
 }
 
-.item:hover span {
+.item:is(:hover, :focus-visible) span {
     opacity: 1;
 }
 

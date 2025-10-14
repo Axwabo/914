@@ -71,6 +71,11 @@ button:focus-visible {
     padding: 0;
 }
 
+.method {
+    color: #ffde63;
+    font-weight: bold;
+}
+
 @supports (height: 100svh) {
     body {
         height: 100svh;

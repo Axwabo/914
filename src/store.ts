@@ -9,7 +9,7 @@ interface State {
 }
 
 const store = defineStore("dialogs", {
-    state: (): State => ({ dialogType: "none", itemPage: "info", item: null }),
+    state: (): State => ({ dialogType: "none", itemPage: "outputs", item: null }),
     actions: {
         showModal(type: DialogType) {
             this.dialogType = type;
@@ -21,10 +21,11 @@ const store = defineStore("dialogs", {
             current?.close();
             menu?.show();
         },
-        showOutputs(type: ItemType) {
+        interact(type: ItemType) {
+            if (this.dialogType === "none")
+                this.itemPage = "outputs";
             this.dialogType = "item";
             this.item = type;
-            this.itemPage = "outputs";
         }
     }
 });
