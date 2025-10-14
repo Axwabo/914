@@ -1,74 +1,38 @@
 {
     "Janitor Keycard": {
-        "containmentLevel": 1,
-        "armoryLevel": 0,
-        "adminLevel": 0,
         "category": "Keycard"
     },
     "Scientist Keycard": {
-        "containmentLevel": 2,
-        "armoryLevel": 0,
-        "adminLevel": 0,
         "category": "Keycard"
     },
     "Research Supervisor Keycard": {
-        "containmentLevel": 2,
-        "armoryLevel": 0,
-        "adminLevel": 1,
         "category": "Keycard"
     },
     "Zone Manager Keycard": {
-        "containmentLevel": 1,
-        "armoryLevel": 0,
-        "adminLevel": 1,
         "category": "Keycard"
     },
     "Guard Keycard": {
-        "containmentLevel": 1,
-        "armoryLevel": 1,
-        "adminLevel": 1,
         "category": "Keycard"
     },
     "MTF Private Keycard": {
-        "containmentLevel": 2,
-        "armoryLevel": 2,
-        "adminLevel": 1,
         "category": "Keycard"
     },
     "Containment Engineer Keycard": {
-        "containmentLevel": 3,
-        "armoryLevel": 0,
-        "adminLevel": 1,
         "category": "Keycard"
     },
     "MTF Operative Keycard": {
-        "containmentLevel": 2,
-        "armoryLevel": 2,
-        "adminLevel": 2,
         "category": "Keycard"
     },
     "MTF Captain Keycard": {
-        "containmentLevel": 2,
-        "armoryLevel": 3,
-        "adminLevel": 2,
         "category": "Keycard"
     },
     "Facility Manager Keycard": {
-        "containmentLevel": 3,
-        "armoryLevel": 0,
-        "adminLevel": 3,
         "category": "Keycard"
     },
     "Chaos Insurgency Access Device": {
-        "containmentLevel": 2,
-        "armoryLevel": 3,
-        "adminLevel": 2,
         "category": "Keycard"
     },
     "O5-level Keycard": {
-        "containmentLevel": 3,
-        "armoryLevel": 3,
-        "adminLevel": 3,
         "category": "Keycard"
     },
     "Radio": {
@@ -242,7 +206,7 @@
         "description": "A set of modified goggles that lets you perceive the positions of other players through walls. Once worn, they must never be removed!"
     },
     "Surface Access Pass": {
-        "permissions": 2,
+        "permissions": "ExitGates",
         "category": "Keycard",
         "description": "Single-use access pass for opening exit gates."
     },

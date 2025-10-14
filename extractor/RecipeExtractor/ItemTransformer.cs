@@ -19,18 +19,9 @@ public static class ItemTransformer
         {
             AmmoItem ammo => new Ammo(ammo.UnitPrice, description),
             SingleUseKeycardItem singleUseKeycard => new SingleUseKeycard(singleUseKeycard._singleUsePermissions, description),
-            KeycardItem keycard => TransformKeycard(keycard, description),
             Firearm firearm => new FirearmItem(firearm.Modules.OfType<IPrimaryAmmoContainerModule>().First().AmmoMax, item.Category, description),
             _ => new Item(item.Category, description)
         };
-    }
-
-    private static Keycard TransformKeycard(KeycardItem keycard, string? description)
-    {
-        var detail = keycard.Details.OfType<PredefinedPermsDetail>().FirstOrDefault();
-        return detail == null
-            ? new Keycard(0, 0, 0, description)
-            : new Keycard(detail._containmentLevel, detail._armoryLevel, detail._adminLevel, description);
     }
 
 }

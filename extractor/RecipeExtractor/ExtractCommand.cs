@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using CommandSystem;
+using Interactables.Interobjects.DoorUtils;
 using InventorySystem;
 using RecipeExtractor.Converters;
 
@@ -15,7 +16,8 @@ public sealed class ExtractCommand : ICommand
         Converters =
         {
             new ItemTypeConverter(),
-            new ItemCategoryConverter()
+            new ItemCategoryConverter(),
+            new JsonStringEnumConverter<DoorPermissionFlags>()
         }
     };
 
