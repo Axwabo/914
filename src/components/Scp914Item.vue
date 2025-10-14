@@ -52,4 +52,10 @@ const { showOutputs } = useStore();
 .item:hover span {
     opacity: 1;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .item span {
+        transition: none;
+    }
+}
 </style>

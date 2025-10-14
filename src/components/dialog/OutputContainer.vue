@@ -17,12 +17,13 @@ const chanceString = fraction < 0.0001 || fraction > 0.9999 ? Math.round(chanceP
         <span v-else-if="output.kind === 'break'" class="destroy">Breaks the {{ input }}</span>
         <span v-else-if="output.kind === 'randomize'">Randomizes attachments</span>
         <span v-else-if="output.kind === 'recharge'">Recharges the {{ input }}</span>
-        <template v-else-if="output.kind ==='item'">
-            <div v-for="item in output.items" :key="item.type" class="item">
+        <div v-else-if="output.kind ==='item'" class="item-list">
+            <div v-for="(item, index) in output.items" :key="item.type" class="item">
+                <span v-if="index !== 0">+</span>
                 <Scp914Item :type="item.type" small />
                 <span v-if="item.count !== 1">x{{ item.count }}</span>
             </div>
-        </template>
+        </div>
         <span v-else>Nothing happens</span>
     </div>
 </template>
@@ -51,6 +52,10 @@ const chanceString = fraction < 0.0001 || fraction > 0.9999 ? Math.round(chanceP
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+}
+
+.item-list {
+    display: flex;
 }
 
 .item span {
