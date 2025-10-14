@@ -59,14 +59,13 @@ button:focus-visible {
     flex: 1;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    margin: 0.5rem;
     gap: 1rem;
 }
 
 .header-button {
     font-size: 2em;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     text-align: center;
     padding: 0;
 }

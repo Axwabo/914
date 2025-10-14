@@ -25,6 +25,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin: 0 0.5rem;
 }
 
 .text {
