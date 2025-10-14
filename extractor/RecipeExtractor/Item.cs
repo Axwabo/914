@@ -4,9 +4,10 @@
 
 namespace RecipeExtractor;
 
-[JsonDerivedType(typeof(Ammo))]
-[JsonDerivedType(typeof(SingleUseKeycard))]
-[JsonDerivedType(typeof(FirearmItem))]
+[JsonPolymorphic(TypeDiscriminatorPropertyName = "kind", UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
+[JsonDerivedType(typeof(Ammo), "ammo")]
+[JsonDerivedType(typeof(SingleUseKeycard), "keycard")]
+[JsonDerivedType(typeof(FirearmItem), "firearm")]
 public record Item(ItemCategory Category, string? Description);
 
 public sealed record Ammo(int UnitPrice, string? Description) : Item(ItemCategory.Ammo, Description);

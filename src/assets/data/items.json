@@ -40,6 +40,7 @@
         "description": "Allows communication over long distances between devices. Range can be adjusted."
     },
     "COM-15": {
+        "kind": "firearm",
         "magSize": 12,
         "category": "Firearm"
     },
@@ -64,26 +65,32 @@
         "description": "Harmfully increases motor skills."
     },
     "12/70 Buckshot Ammo": {
+        "kind": "ammo",
         "unitPrice": 5,
         "category": "Ammo"
     },
     "MTF-E11-SR": {
+        "kind": "firearm",
         "magSize": 40,
         "category": "Firearm"
     },
     "Crossvec": {
+        "kind": "firearm",
         "magSize": 40,
         "category": "Firearm"
     },
     "5.56x45mm Ammo": {
+        "kind": "ammo",
         "unitPrice": 3,
         "category": "Ammo"
     },
     "FSP-9": {
+        "kind": "firearm",
         "magSize": 30,
         "category": "Firearm"
     },
     "Logicer": {
+        "kind": "firearm",
         "magSize": 100,
         "category": "Firearm"
     },
@@ -96,18 +103,22 @@
         "description": "Blinds and disorients your enemies. Detonates after a brief delay once thrown."
     },
     ".44 Mag Ammo": {
+        "kind": "ammo",
         "unitPrice": 7,
         "category": "Ammo"
     },
     "7.62x39mm Ammo": {
+        "kind": "ammo",
         "unitPrice": 3,
         "category": "Ammo"
     },
     "9x19mm Ammo": {
+        "kind": "ammo",
         "unitPrice": 2,
         "category": "Ammo"
     },
     "COM-18": {
+        "kind": "firearm",
         "magSize": 15,
         "category": "Firearm"
     },
@@ -141,14 +152,17 @@
         "category": "Armor"
     },
     ".44 Revolver": {
+        "kind": "firearm",
         "magSize": 6,
         "category": "Firearm"
     },
     "AK": {
+        "kind": "firearm",
         "magSize": 30,
         "category": "Firearm"
     },
     "Shotgun": {
+        "kind": "firearm",
         "magSize": 14,
         "category": "Firearm"
     },
@@ -169,11 +183,13 @@
         "description": "Increases dexterity and weapon handling when your life is in danger."
     },
     "3-X Particle Disruptor": {
+        "kind": "firearm",
         "magSize": 5,
         "category": "Special Weapon",
         "description": "A strange weapon that fires powerful, disintegrating energy beams."
     },
     "COM-45": {
+        "kind": "firearm",
         "magSize": 36,
         "category": "Firearm"
     },
@@ -190,10 +206,12 @@
         "description": "The result of an experiment with SCP-914. Good for your health, bad for your motor skills. Will save your life in a pinch."
     },
     "FR-MG-0": {
+        "kind": "firearm",
         "magSize": 100,
         "category": "Firearm"
     },
     "A7": {
+        "kind": "firearm",
         "magSize": 30,
         "category": "Firearm"
     },
@@ -206,11 +224,13 @@
         "description": "A set of modified goggles that lets you perceive the positions of other players through walls. Once worn, they must never be removed!"
     },
     "Surface Access Pass": {
+        "kind": "keycard",
         "permissions": "ExitGates",
         "category": "Keycard",
         "description": "Single-use access pass for opening exit gates."
     },
     "SCP-127": {
+        "kind": "firearm",
         "magSize": 60,
         "category": "Special Weapon"
     }
