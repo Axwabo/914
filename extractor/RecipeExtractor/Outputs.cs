@@ -2,7 +2,7 @@
 
 namespace RecipeExtractor;
 
-public sealed record Item(ItemType Type, int Count = 1);
+public sealed record OutputItem(ItemType Type, int Count = 1);
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "kind")]
 [JsonDerivedType(typeof(ItemOutput), "item")]
@@ -13,18 +13,18 @@ public sealed record Item(ItemType Type, int Count = 1);
 [JsonDerivedType(typeof(NothingOutput), "nothing")]
 public abstract record Output(double Chance = 1);
 
-public sealed record ItemOutput(List<Item> Items, double Chance = 1) : Output(Chance)
+public sealed record ItemOutput(List<OutputItem> Items, double Chance = 1) : Output(Chance)
 {
 
     public static Output Single(ItemType type, double chance = 1)
         => type == ItemType.None
             ? new DestroyOutput(chance)
-            : new ItemOutput([new Item(type)], chance);
+            : new ItemOutput([new OutputItem(type)], chance);
 
     public static Output Count(ItemType type, int count, double chance = 1)
         => type == ItemType.None
             ? new DestroyOutput(chance)
-            : new ItemOutput([new Item(type, count)], chance);
+            : new ItemOutput([new OutputItem(type, count)], chance);
 
 }
 

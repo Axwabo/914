@@ -59,8 +59,8 @@ public static partial class RecipeTransformer
     private static Recipe Scp1344(Scp1344ItemProcessor scp1344)
     {
         var recipe = Standard(scp1344);
-        recipe.Add(new ItemOutput([new Item(ItemType.GrenadeFlash), new Item(ItemType.Adrenaline)]), KnobSettings.OneToOne);
-        recipe.Add(new ItemOutput([new Item(ItemType.Adrenaline, 2), new Item(ItemType.SCP2176)]), KnobSettings.VeryFine);
+        recipe.Add(new ItemOutput([new OutputItem(ItemType.GrenadeFlash), new OutputItem(ItemType.Adrenaline)]), KnobSettings.OneToOne);
+        recipe.Add(new ItemOutput([new OutputItem(ItemType.Adrenaline, 2), new OutputItem(ItemType.SCP2176)]), KnobSettings.VeryFine);
         return recipe;
     }
 

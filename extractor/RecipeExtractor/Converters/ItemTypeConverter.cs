@@ -1,6 +1,6 @@
 ﻿using InventorySystem.Items;
 
-namespace RecipeExtractor;
+namespace RecipeExtractor.Converters;
 
 public sealed class ItemTypeConverter : JsonConverter<ItemType>
 {

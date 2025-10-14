@@ -44,7 +44,7 @@ public static partial class RecipeTransformer
 
     private static Output TransformMultiItem(FirearmItemProcessor.FirearmOutput output) => new ItemOutput(
         output.TargetItems.GroupBy(e => e)
-            .Select(group => new Item(group.Key, group.Count()))
+            .Select(group => new OutputItem(group.Key, group.Count()))
             .ToList(),
         output.Chance
     );
