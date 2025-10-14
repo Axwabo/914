@@ -1,4 +1,9 @@
-﻿<template>
+﻿<script setup lang="ts">
+import Close from "./Close.vue";
+</script>
+
+<template>
+    <Close />
     <p>This website is not affiliated with Northwood Studios.<br>SCP: Secret Laboratory is a free-to-play multiplayer game developed by Northwood Studios.
     </p>
     <a href="https://scpslgame.com" target="SCP: Secret Laboratory">Visit the official site for more information</a>

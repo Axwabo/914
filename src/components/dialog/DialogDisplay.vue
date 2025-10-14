@@ -19,7 +19,6 @@ watch(dialogType, value => {
 
 <template>
     <dialog ref="element" v-on:close="dialogType = 'none'">
-        <button v-on:click="dialogType = 'none'">Close</button>
         <About v-if="dialogType === 'info'" />
         <Outputs v-else-if="dialogType === 'outputs'" />
     </dialog>
@@ -29,6 +28,7 @@ watch(dialogType, value => {
 dialog {
     text-align: center;
     font-size: 1.25em;
+    padding: 1rem;
 }
 
 dialog::backdrop {

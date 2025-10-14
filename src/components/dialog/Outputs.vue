@@ -4,6 +4,7 @@ import { recipes } from "../../cache.ts";
 import OutputContainer from "./OutputContainer.vue";
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
+import ItemNavbar from "./nav/ItemNavbar.vue";
 
 const { outputs: type } = storeToRefs(useStore());
 
@@ -11,7 +12,8 @@ const outputs = computed(() => type.value ? recipes[type.value] : {});
 </script>
 
 <template v-if="type && outputs">
-    <h2 class="title">{{ type }} outputs</h2>
+    <h2 class="title">{{ type }}</h2>
+    <ItemNavbar />
     <div class="outputs">
         <template v-for="(key, index) in Object.keys(outputs)">
             <div v-if="index !== 0" class="horizontal-separator"></div>

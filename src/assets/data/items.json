@@ -1,0 +1,253 @@
+{
+    "Janitor Keycard": {
+        "containmentLevel": 1,
+        "armoryLevel": 0,
+        "adminLevel": 0,
+        "category": "Keycard"
+    },
+    "Scientist Keycard": {
+        "containmentLevel": 2,
+        "armoryLevel": 0,
+        "adminLevel": 0,
+        "category": "Keycard"
+    },
+    "Research Supervisor Keycard": {
+        "containmentLevel": 2,
+        "armoryLevel": 0,
+        "adminLevel": 1,
+        "category": "Keycard"
+    },
+    "Zone Manager Keycard": {
+        "containmentLevel": 1,
+        "armoryLevel": 0,
+        "adminLevel": 1,
+        "category": "Keycard"
+    },
+    "Guard Keycard": {
+        "containmentLevel": 1,
+        "armoryLevel": 1,
+        "adminLevel": 1,
+        "category": "Keycard"
+    },
+    "MTF Private Keycard": {
+        "containmentLevel": 2,
+        "armoryLevel": 2,
+        "adminLevel": 1,
+        "category": "Keycard"
+    },
+    "Containment Engineer Keycard": {
+        "containmentLevel": 3,
+        "armoryLevel": 0,
+        "adminLevel": 1,
+        "category": "Keycard"
+    },
+    "MTF Operative Keycard": {
+        "containmentLevel": 2,
+        "armoryLevel": 2,
+        "adminLevel": 2,
+        "category": "Keycard"
+    },
+    "MTF Captain Keycard": {
+        "containmentLevel": 2,
+        "armoryLevel": 3,
+        "adminLevel": 2,
+        "category": "Keycard"
+    },
+    "Facility Manager Keycard": {
+        "containmentLevel": 3,
+        "armoryLevel": 0,
+        "adminLevel": 3,
+        "category": "Keycard"
+    },
+    "Chaos Insurgency Access Device": {
+        "containmentLevel": 2,
+        "armoryLevel": 3,
+        "adminLevel": 2,
+        "category": "Keycard"
+    },
+    "O5-level Keycard": {
+        "containmentLevel": 3,
+        "armoryLevel": 3,
+        "adminLevel": 3,
+        "category": "Keycard"
+    },
+    "Radio": {
+        "category": "Radio",
+        "description": "Allows communication over long distances between devices. Range can be adjusted."
+    },
+    "COM-15": {
+        "magSize": 12,
+        "category": "Firearm"
+    },
+    "First Aid Kit": {
+        "category": "Medical",
+        "description": "Heals your injuries."
+    },
+    "Flashlight": {
+        "category": "None",
+        "description": "Let there be light!"
+    },
+    "Micro H.I.D.": {
+        "category": "Special Weapon",
+        "description": "Heavy electrical device designed for the termination of anomalies."
+    },
+    "SCP-500": {
+        "category": "SCP Item",
+        "description": "Instantly restores all health and cures most afflictions."
+    },
+    "SCP-207": {
+        "category": "SCP Item",
+        "description": "Harmfully increases motor skills."
+    },
+    "12/70 Buckshot Ammo": {
+        "unitPrice": 5,
+        "category": "Ammo"
+    },
+    "MTF-E11-SR": {
+        "magSize": 40,
+        "category": "Firearm"
+    },
+    "Crossvec": {
+        "magSize": 40,
+        "category": "Firearm"
+    },
+    "5.56x45mm Ammo": {
+        "unitPrice": 3,
+        "category": "Ammo"
+    },
+    "FSP-9": {
+        "magSize": 30,
+        "category": "Firearm"
+    },
+    "Logicer": {
+        "magSize": 100,
+        "category": "Firearm"
+    },
+    "High-Explosive Grenade": {
+        "category": "Grenade",
+        "description": "A high explosive dealing significant damage. Detonates after a brief delay once thrown."
+    },
+    "Flashbang Grenade": {
+        "category": "Grenade",
+        "description": "Blinds and disorients your enemies. Detonates after a brief delay once thrown."
+    },
+    ".44 Mag Ammo": {
+        "unitPrice": 7,
+        "category": "Ammo"
+    },
+    "7.62x39mm Ammo": {
+        "unitPrice": 3,
+        "category": "Ammo"
+    },
+    "9x19mm Ammo": {
+        "unitPrice": 2,
+        "category": "Ammo"
+    },
+    "COM-18": {
+        "magSize": 15,
+        "category": "Firearm"
+    },
+    "SCP-018": {
+        "category": "SCP Item",
+        "description": "Superball with the ability to bounce with extreme efficiency. Deadly ricochet at high speeds."
+    },
+    "SCP-268": {
+        "category": "SCP Item",
+        "description": "When worn, temporarily makes you invisible unless it is interrupted by any user interaction."
+    },
+    "Adrenaline": {
+        "category": "Medical",
+        "description": "Provides a temporary health boost and a short burst of stamina."
+    },
+    "Painkillers": {
+        "category": "Medical",
+        "description": "Slowly restores health over time."
+    },
+    "Coin": {
+        "category": "None",
+        "description": "You\u0027re not sure why you\u0027d want to carry this around..."
+    },
+    "Light Armor": {
+        "category": "Armor"
+    },
+    "Combat Armor": {
+        "category": "Armor"
+    },
+    "Heavy Armor": {
+        "category": "Armor"
+    },
+    ".44 Revolver": {
+        "magSize": 6,
+        "category": "Firearm"
+    },
+    "AK": {
+        "magSize": 30,
+        "category": "Firearm"
+    },
+    "Shotgun": {
+        "magSize": 14,
+        "category": "Firearm"
+    },
+    "SCP-2176": {
+        "category": "SCP Item",
+        "description": "Your very own Ghostlight! Caution: Fragile. Disrupts electronics when broken."
+    },
+    "SCP-244-A": {
+        "category": "SCP Item",
+        "description": "An ancient vase, freezing to the touch. Creates a large cloud of icy fog when placed."
+    },
+    "SCP-244-B": {
+        "category": "SCP Item",
+        "description": "An ancient vase, freezing to the touch. Creates a large cloud of icy fog when placed."
+    },
+    "SCP-1853": {
+        "category": "SCP Item",
+        "description": "Increases dexterity and weapon handling when your life is in danger."
+    },
+    "3-X Particle Disruptor": {
+        "magSize": 5,
+        "category": "Special Weapon",
+        "description": "A strange weapon that fires powerful, disintegrating energy beams."
+    },
+    "COM-45": {
+        "magSize": 36,
+        "category": "Firearm"
+    },
+    "SCP-1576": {
+        "category": "SCP Item",
+        "description": "Allows temporary communication with the dead. Can be used again after some time passes."
+    },
+    "Jailbird": {
+        "category": "Special Weapon",
+        "description": "What?!"
+    },
+    "Anti-Cola": {
+        "category": "SCP Item",
+        "description": "The result of an experiment with SCP-914. Good for your health, bad for your motor skills. Will save your life in a pinch."
+    },
+    "FR-MG-0": {
+        "magSize": 100,
+        "category": "Firearm"
+    },
+    "A7": {
+        "magSize": 30,
+        "category": "Firearm"
+    },
+    "Lantern": {
+        "category": "None",
+        "description": "A classic oil lantern, inscribed with the name \u0022Daniel\u0022."
+    },
+    "SCP-1344": {
+        "category": "SCP Item",
+        "description": "A set of modified goggles that lets you perceive the positions of other players through walls. Once worn, they must never be removed!"
+    },
+    "Surface Access Pass": {
+        "permissions": 2,
+        "category": "Keycard",
+        "description": "Single-use access pass for opening exit gates."
+    },
+    "SCP-127": {
+        "magSize": 60,
+        "category": "Special Weapon"
+    }
+}
