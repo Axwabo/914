@@ -28,7 +28,7 @@ const outputs = computed(() => type ? recipes[type] : {});
 .outputs {
     display: grid;
     grid-template-columns: auto 1fr;
-    padding-right: 1rem;
+    padding: 0.1rem 1rem 0.1rem 0;
     gap: 0.5rem;
     overflow-y: auto;
 }
