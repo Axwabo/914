@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { obtaining } from "../../../cache.ts";
 import type { ItemType } from "../../../types/item.ts";
-import { formatChanceValue } from "../../../utils/format.ts";
+import { formatChanceValue } from "../../../utils/convert.ts";
 import Scp914Item from "../../Scp914Item.vue";
 
 const { type } = defineProps<{ type: ItemType; }>();

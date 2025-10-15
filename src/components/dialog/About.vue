@@ -1,4 +1,5 @@
 ﻿<script setup lang="ts">
+import base from "../../utils/basePath.ts";
 import Close from "./Close.vue";
 </script>
 
@@ -10,6 +11,7 @@ import Close from "./Close.vue";
     <p>This app lets you view the SCP-914 recipes in SCP:SL.<br>All recipes were extracted from the server code and files.
     </p>
     <p>Currently, only output viewing is supported. Click on an item to display the dialog.</p>
-    <p>Found an issue? Report it on <a href="https://github.com/Axwabo/914-Remake" target="Axwabo/914-Remake">GitHub</a>
+    <p>Found an issue? Report it on
+        <a :href="`https://github.com/Axwabo${base}`" :target="`Axwabo/${base.replace('/', '')}`">GitHub</a>
     </p>
 </template>
