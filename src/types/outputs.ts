@@ -6,6 +6,7 @@ export type Output = { chance: number } & (
     | KindOutput<"randomize">
     | KindOutput<"recharge">
     | KindOutput<"break">
+    | KindOutput<"shatter">
     | KindOutput<"nothing">);
 
 interface ItemOutput {

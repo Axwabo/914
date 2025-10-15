@@ -67,7 +67,7 @@ public static partial class RecipeTransformer
     private static Recipe Scp2176(Scp2176ItemProcessor scp2176)
     {
         var recipe = Standard(scp2176);
-        recipe.Add(BreakOutput.Certain, KnobSettings.Rough);
+        recipe.Add(ShatterOutput.Certain, KnobSettings.Rough);
         recipe.Add(ItemType.Coin, (int) Scp2176ItemProcessor.NumOfCoins, KnobSettings.OneToOne);
         recipe.Add([
             new NothingOutput(1d - Scp2176ItemProcessor.FlashlightChance),

@@ -10,6 +10,7 @@ public sealed record OutputItem(ItemType Type, int Count = 1);
 [JsonDerivedType(typeof(RandomizeAttachmentsOutput), "randomize")]
 [JsonDerivedType(typeof(RechargeOutput), "recharge")]
 [JsonDerivedType(typeof(BreakOutput), "break")]
+[JsonDerivedType(typeof(ShatterOutput), "shatter")]
 [JsonDerivedType(typeof(NothingOutput), "nothing")]
 public abstract record Output(double Chance = 1);
 
@@ -43,6 +44,13 @@ public sealed record BreakOutput : Output
 {
 
     public static BreakOutput Certain { get; } = new();
+
+}
+
+public sealed record ShatterOutput : Output
+{
+
+    public static ShatterOutput Certain { get; } = new();
 
 }
 

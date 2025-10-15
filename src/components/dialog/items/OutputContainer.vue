@@ -12,6 +12,7 @@ const { input, output } = defineProps<{ input: ItemType; output: Output; }>();
         <span v-if="output.chance !== 1" class="chance">Chance: {{ formatChanceValue(output.chance) }}%</span>
         <span v-if="output.kind === 'destroy'" class="destroy">Destroys the item</span>
         <span v-else-if="output.kind === 'break'" class="destroy">Breaks the {{ input }}</span>
+        <span v-else-if="output.kind === 'shatter'" class="destroy">Shatters immediately</span>
         <span v-else-if="output.kind === 'randomize'">Randomizes attachments</span>
         <span v-else-if="output.kind === 'recharge'">Recharges the {{ input }}</span>
         <div v-else-if="output.kind ==='item'" class="item-list">
