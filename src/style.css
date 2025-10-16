@@ -58,8 +58,11 @@ button:focus-visible {
 #app {
     flex: 1;
     display: grid;
-    grid-template-rows: auto 1fr auto;
     gap: 1rem;
+}
+
+#app:not(:has(> .loading)) {
+    grid-template-rows: auto 1fr auto;
 }
 
 .header-button {
