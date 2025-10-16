@@ -1,11 +1,14 @@
 ﻿<script setup lang="ts">
-import { itemImages } from "../types/item.ts";
+import useStore from "../store.ts";
+import { itemTypes } from "../utils/keys.ts";
 import Scp914Item from "./Scp914Item.vue";
+
+const { interact } = useStore();
 </script>
 
 <template>
     <div class="item-list">
-        <Scp914Item v-for="type in Object.keys(itemImages)" :type="type" />
+        <Scp914Item v-for="type in itemTypes" :type v-on:click="interact(type)" />
     </div>
 </template>
 

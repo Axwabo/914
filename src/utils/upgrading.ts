@@ -2,6 +2,7 @@
 import type { ItemType } from "../types/item.ts";
 
 import type { UpgradeMode } from "../types/outputs.ts";
+import { keys } from "./keys.ts";
 
 type UpgradeStep = `${ ItemType } -> ${ UpgradeMode } -> ${ ItemType }`;
 
@@ -23,8 +24,7 @@ export default function findUpgradePath(from: ItemType, to: ItemType) {
 
 function addUpgradePaths(from: ItemType, tree: UpgradeTree, visited: Set<UpgradeStep>) {
     const outputs = recipes[from];
-    for (const modeKey in outputs) {
-        const mode = modeKey as UpgradeMode;
+    for (const mode of keys(outputs)) {
         for (const output of outputs[mode] ?? []) {
             if (output.kind !== "item")
                 continue;

@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import { items, recipes } from "../../../cache.ts";
 import type { ItemType } from "../../../types/item.ts";
+import { keys } from "../../../utils/keys.ts";
 import OutputContainer from "../items/OutputContainer.vue";
 
 const { type } = defineProps<{ type: ItemType; }>();
@@ -17,7 +18,7 @@ const count = computed(() => {
 <template>
     <span v-if="count !== 1" class="input-count">Default magazine of {{ count }} rounds</span>
     <div class="outputs">
-        <template v-for="(key, index) in Object.keys(outputs)" :key>
+        <template v-for="(key, index) in keys(outputs)" :key>
             <hr v-if="index !== 0" class="horizontal-separator">
             <h3 class="method">{{ key }}</h3>
             <section>
