@@ -56,7 +56,7 @@ import scp500 from "../assets/images/SCP-500.webp";
 import shotgun from "../assets/images/Shotgun.webp";
 import surfaceAccess from "../assets/images/SurfaceAccessPass.webp";
 
-export const itemImages: Record<string, string> = {
+export const itemImages = {
     "Janitor Keycard": janitor,
     "Scientist Keycard": scientist,
     "Research Supervisor Keycard": researchSupervisor,

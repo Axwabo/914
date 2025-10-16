@@ -1,9 +1,9 @@
 ﻿import itemsRaw from "./assets/data/items.json";
 import recipesRaw from "./assets/data/recipes.json";
 import type { Item, ItemType } from "./types/item.ts";
-import type { ObtainingMethod, Output } from "./types/outputs.ts";
+import type { ObtainingMethod, Output, UpgradeMode } from "./types/outputs.ts";
 
-export const recipes = recipesRaw as Record<ItemType, Record<string, Output[]>>;
+export const recipes = recipesRaw as Record<ItemType, Partial<Record<UpgradeMode, Output[]>>>;
 
 export const items = itemsRaw as Record<ItemType, Item>;
 
@@ -13,10 +13,12 @@ type ObtainingDictionary = Partial<Record<ItemType, ObtainingMethod[]>>;
 
 function computeObtaining(): ObtainingDictionary {
     const record: ObtainingDictionary = {};
-    for (const itemType of Object.keys(recipes)) {
+    for (const itemKey in recipes) {
+        const itemType = itemKey as ItemType;
         const modes = recipes[itemType];
-        for (const mode of Object.keys(modes)) {
-            for (const output of modes[mode]) {
+        for (const modeKey in modes) {
+            const mode = modeKey as UpgradeMode;
+            for (const output of modes[mode] ?? []) {
                 if (output.kind !== "item")
                     continue;
                 for (const item of output.items) {

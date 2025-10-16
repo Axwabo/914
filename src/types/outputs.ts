@@ -23,8 +23,10 @@ export interface OutputItem {
     count: number;
 }
 
+export type UpgradeMode = "Rough" | "Coarse" | "1:1" | "Fine" | "Very Fine" | "Rough, Coarse" | "Fine, Very Fine";
+
 export interface ObtainingMethod {
     from: ItemType;
-    mode: string;
+    mode: UpgradeMode;
     chance: number;
 }
