@@ -4,6 +4,7 @@ import { ref, watch } from "vue";
 import useStore from "../../store.ts";
 import About from "./About.vue";
 import Item from "./Item.vue";
+import UpgradeGraph from "./UpgradeGraph.vue";
 
 const { dialogType, item } = storeToRefs(useStore());
 
@@ -21,6 +22,7 @@ watch(dialogType, value => {
     <dialog ref="element" v-on:close="dialogType = 'none'">
         <Item v-if="item != null && dialogType === 'item'" :type="item" />
         <About v-else-if="dialogType === 'info'" />
+        <UpgradeGraph v-else-if="dialogType === 'graph'" />
     </dialog>
 </template>
 
@@ -29,6 +31,8 @@ dialog {
     text-align: center;
     font-size: 1.25em;
     padding: 1rem;
+    width: 100%;
+    height: 100%;
 }
 
 dialog::backdrop {

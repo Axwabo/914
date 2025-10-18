@@ -12,3 +12,10 @@ const { showModal } = useStore();
         </svg>
     </button>
 </template>
+
+<style scoped>
+.header-button svg {
+    width: 1em;
+    fill: white;
+}
+</style>
