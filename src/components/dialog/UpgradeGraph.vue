@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { VueFlow } from "@vue-flow/core";
+import { type Edge, VueFlow } from "@vue-flow/core";
 import { ref } from "vue";
 import { recipes } from "../../cache.ts";
 import { itemTypes, keys } from "../../utils/keys.ts";
@@ -9,7 +9,6 @@ const gridItems = Math.ceil(Math.sqrt(itemTypes.length));
 
 const nodes = ref(itemTypes.map((type, index) => ({
     id: type,
-    type: "input",
     position: {
         x: 300 * Math.floor(index / gridItems),
         y: 300 * (index % gridItems)
@@ -17,12 +16,14 @@ const nodes = ref(itemTypes.map((type, index) => ({
     data: { label: type }
 })));
 
-const edges = keys(recipes).map(type => {
+const edges: Edge[] = keys(recipes).map(type => {
     const recipe = recipes[type];
-    return keys(recipe).map(mode => recipe[mode]!.filter(e => e.kind === "item").map(output => output.items.map(item => ({
+    return keys(recipe).map(mode => recipe[mode]!.filter(e => e.kind === "item").map(output => output.items.map((item): Edge => ({
         id: `${type} -> ${mode} -> ${item.type}`,
         source: type,
-        target: item.type
+        target: item.type,
+        label: mode,
+        markerEnd: "arrow"
     }))));
 }).flat(3);
 </script>
