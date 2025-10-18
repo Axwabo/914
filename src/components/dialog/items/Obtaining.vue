@@ -1,11 +1,14 @@
 ﻿<script setup lang="ts">
 import { computed } from "vue";
 import { obtaining } from "../../../cache.ts";
+import useStore from "../../../store.ts";
 import type { ItemType } from "../../../types/item.ts";
 import { formatChanceValue } from "../../../utils/convert.ts";
 import Scp914Item from "../../Scp914Item.vue";
 
 const { type } = defineProps<{ type: ItemType; }>();
+
+const { interact } = useStore();
 
 const methods = computed(() => obtaining[type]);
 </script>
@@ -14,7 +17,7 @@ const methods = computed(() => obtaining[type]);
     <div class="obtaining">
         <div v-if="methods" v-for="method in methods" :key="`${method.from}->${method.mode} (${method.chance})`">
             From
-            <Scp914Item :type="method.from" small />
+            <Scp914Item :type="method.from" small v-on:click="interact(method.from)" />
             on
             <span class="method">{{ method.mode }}</span>
             <span v-if="method.chance !== 1"> ({{ formatChanceValue(method.chance) }}%)</span>
@@ -30,6 +33,7 @@ const methods = computed(() => obtaining[type]);
     flex-wrap: wrap;
     gap: 3rem;
     max-width: 50rem;
+    overflow-y: auto;
 }
 
 .obtaining p {
