@@ -1,12 +1,13 @@
 ﻿<script setup lang="ts">
 import { VueFlow } from "@vue-flow/core";
+import { ref } from "vue";
 import { recipes } from "../../cache.ts";
 import { itemTypes, keys } from "../../utils/keys.ts";
 import Close from "./Close.vue";
 
 const gridItems = Math.ceil(Math.sqrt(itemTypes.length));
 
-const nodes = itemTypes.map((type, index) => ({
+const nodes = ref(itemTypes.map((type, index) => ({
     id: type,
     type: "input",
     position: {
@@ -14,7 +15,7 @@ const nodes = itemTypes.map((type, index) => ({
         y: 300 * (index % gridItems)
     },
     data: { label: type }
-}));
+})));
 
 const edges = keys(recipes).map(type => {
     const recipe = recipes[type];
@@ -38,7 +39,7 @@ const edges = keys(recipes).map(type => {
 @import '@vue-flow/core/dist/theme-default.css';
 
 .graph {
-    width: 100vw;
-    height: 80vh;
+    width: 100%;
+    height: 100%;
 }
 </style>

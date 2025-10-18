@@ -19,7 +19,7 @@ watch(dialogType, value => {
 </script>
 
 <template>
-    <dialog ref="element" v-on:close="dialogType = 'none'">
+    <dialog ref="element" v-on:close="dialogType = 'none'" :class="{ max: dialogType !== 'info' }">
         <Item v-if="item != null && dialogType === 'item'" :type="item" />
         <About v-else-if="dialogType === 'info'" />
         <UpgradeGraph v-else-if="dialogType === 'graph'" />
@@ -31,6 +31,9 @@ dialog {
     text-align: center;
     font-size: 1.25em;
     padding: 1rem;
+}
+
+dialog.max {
     width: 100%;
     height: 100%;
 }
