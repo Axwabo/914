@@ -8,21 +8,30 @@ type UpgradeStep = `${ ItemType } -> ${ UpgradeMode } -> ${ ItemType }`;
 
 type UpgradeTree = Partial<Record<UpgradeStep, UpgradeNode>>;
 
+type UpgradePath = UpgradeNode[];
+
 interface UpgradeNode {
     from: ItemType;
+    to: ItemType;
     mode: UpgradeMode;
     chance: number;
     nodes: UpgradeTree;
 }
 
-export default function findUpgradePath(from: ItemType, to: ItemType) {
-    const set = new Set<UpgradeStep>();
+export function findUpgradePaths(from: ItemType, to: ItemType) {
     const tree: UpgradeTree = {};
-    addUpgradePaths(from, tree, set);
-    return tree;
+    const paths: UpgradePath[] = [];
+    addUpgradeGraph(from, to, tree);
+    mapUpgradePaths(tree, paths);
+    for (let i = paths.length - 1; i >= 0; i--) {
+        const path = paths[i];
+        if (path[path.length - 1].to !== to)
+            paths.splice(i, 1);
+    }
+    return paths;
 }
 
-function addUpgradePaths(from: ItemType, tree: UpgradeTree, visited: Set<UpgradeStep>) {
+function addUpgradeGraph(from: ItemType, to: ItemType, tree: UpgradeTree, visited?: Set<UpgradeStep>) {
     const outputs = recipes[from];
     for (const mode of keys(outputs)) {
         for (const output of outputs[mode] ?? []) {
@@ -30,18 +39,27 @@ function addUpgradePaths(from: ItemType, tree: UpgradeTree, visited: Set<Upgrade
                 continue;
             const chance = output.chance;
             for (const item of output.items) {
-                const step: UpgradeStep = `${ from } -> ${ mode } -> ${ item.type }`;
-                if (visited.has(step))
+                if (item.type === from)
                     continue;
+                const step: UpgradeStep = `${ from } -> ${ mode } -> ${ item.type }`;
+                if (visited?.has(step))
+                    continue;
+                visited?.add(step);
                 const nodes: UpgradeTree = {};
                 tree[step] = {
                     chance,
-                    from: item.type,
+                    from,
+                    to: item.type,
                     mode,
                     nodes
                 };
-                addUpgradePaths(item.type, nodes, visited);
+                if (item.type !== to)
+                    addUpgradeGraph(item.type, to, nodes, visited ?? new Set());
             }
         }
     }
+}
+
+function mapUpgradePaths(tree: UpgradeTree, paths: UpgradePath[], current?: UpgradePath) {
+    
 }
