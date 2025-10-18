@@ -10,8 +10,7 @@ const { from, to, selecting } = storeToRefs(useStore());
 watch([ from, to ], ([ from, to ]) => {
     if (from == null || to == null)
         return;
-    const path = findUpgradePaths(from, to);
-    debugger
+    void findUpgradePaths(from, to);
 });
 </script>
 

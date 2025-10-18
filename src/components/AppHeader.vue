@@ -1,7 +1,5 @@
 ﻿<script setup lang="ts">
-import { defineAsyncComponent } from "vue";
-
-const info = defineAsyncComponent(() => import("./InfoButton.vue"));
+import InfoButton from "./InfoButton.vue";
 </script>
 
 <template>
@@ -11,12 +9,7 @@ const info = defineAsyncComponent(() => import("./InfoButton.vue"));
             <h1>SCP-914 Recipes</h1>
             Not affiliated with <a href="https://scpslgame.com" target="SCP: Secret Laboratory">Northwood Studios</a>
         </div>
-        <Suspense>
-            <info />
-            <template #fallback>
-                <button class="header-button">ℹ</button>
-            </template>
-        </Suspense>
+        <InfoButton />
     </header>
 </template>
 
