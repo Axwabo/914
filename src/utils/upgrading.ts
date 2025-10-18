@@ -1,10 +1,9 @@
 ﻿import { recipes } from "../cache.ts";
 import type { ItemType } from "../types/item.ts";
-
 import type { UpgradeMode } from "../types/outputs.ts";
 import { keys } from "./keys.ts";
 
-type UpgradeStep = `${ ItemType } -> ${ UpgradeMode } -> ${ ItemType }`;
+type UpgradeStep = `${ItemType} -> ${UpgradeMode} -> ${ItemType}`;
 
 type UpgradeTree = Partial<Record<UpgradeStep, UpgradeNode>>;
 
@@ -41,7 +40,7 @@ function addUpgradeGraph(from: ItemType, to: ItemType, tree: UpgradeTree, visite
             for (const item of output.items) {
                 if (item.type === from)
                     continue;
-                const step: UpgradeStep = `${ from } -> ${ mode } -> ${ item.type }`;
+                const step: UpgradeStep = `${from} -> ${mode} -> ${item.type}`;
                 if (visited?.has(step))
                     continue;
                 visited?.add(step);
@@ -60,6 +59,20 @@ function addUpgradeGraph(from: ItemType, to: ItemType, tree: UpgradeTree, visite
     }
 }
 
-function mapUpgradePaths(tree: UpgradeTree, paths: UpgradePath[], current?: UpgradePath) {
-    
+function mapUpgradePaths(tree: UpgradeTree, paths: UpgradePath[]) {
+    for (const step of keys(tree)) {
+        const root = tree[step]!;
+        mapUpgradePathsRecursive(root, paths, [ root ]);
+    }
+}
+
+function mapUpgradePathsRecursive(node: UpgradeNode, paths: UpgradePath[], current: UpgradePath) {
+    const nodeKeys = keys(node.nodes);
+    if (!nodeKeys.length) {
+        paths.push(current);
+        return;
+    }
+
+    for (const step of nodeKeys)
+        mapUpgradePathsRecursive(node.nodes[step]!, paths, [ ...current, node.nodes[step]! ]);
 }
