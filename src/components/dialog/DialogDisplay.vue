@@ -3,8 +3,8 @@ import { storeToRefs } from "pinia";
 import { ref, watch } from "vue";
 import useStore from "../../store.ts";
 import About from "./About.vue";
+import UpgradeGraph from "./graph/UpgradeGraph.vue";
 import Item from "./Item.vue";
-import UpgradeGraph from "./UpgradeGraph.vue";
 
 const { dialogType, item } = storeToRefs(useStore());
 

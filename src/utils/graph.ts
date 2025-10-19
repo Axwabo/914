@@ -1,13 +1,21 @@
 ﻿import { graphlib, layout } from "@dagrejs/dagre";
 import type { Edge, Node } from "@vue-flow/core";
 import { recipes } from "../cache.ts";
+import type { ItemType } from "../types/item.ts";
+import { formatChanceValue } from "./convert.ts";
 import { itemTypes, keys } from "./keys.ts";
 
+export interface NodeData {
+    type: ItemType;
+}
+
 const zeroZero = { x: 0, y: 0 };
-export const nodes = itemTypes.map((type): Node<any> => ({
+
+export const nodes = itemTypes.map((type): Node<NodeData> => ({
     id: type,
     position: zeroZero,
-    data: { label: type }
+    data: { type },
+    type: "item"
 }));
 
 export const edges: Edge[] = keys(recipes).map(type => {
@@ -16,7 +24,7 @@ export const edges: Edge[] = keys(recipes).map(type => {
         id: `${type} -> ${mode} -> ${item.type}`,
         source: type,
         target: item.type,
-        label: mode,
+        label: `${mode} (${formatChanceValue(output.chance)}%)`,
         markerEnd: "arrow"
     }))));
 }).flat(3);
