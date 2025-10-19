@@ -10,9 +10,9 @@ const path = findPath(from!, to!);
 </script>
 
 <template>
-    <span v-if="path===null">No connection</span>
+    <span v-if="path === null">No upgrade path between the two items</span>
     <template v-else v-for="(node, index) in path">
-        <Scp914Item v-if="index !== 0" :type="node.from" small disabled />
+        <Scp914Item v-if="index !== 0" :type="node.from" small />
         →
         <MethodDisplay :method="node" />
         →

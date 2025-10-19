@@ -9,19 +9,18 @@ const { from, to, selecting } = storeToRefs(useStore());
 
 const upgrade = defineAsyncComponent({
     loader: () => import("./UpgradePath.vue"),
-    delay: 0,
     loadingComponent: LoadingSpinner
 });
 </script>
 
 <template>
     <div class="path-selector">
-        <Scp914Item v-if="from" :type="from" v-on:click="selecting = 'from'" />
-        <button v-else v-on:click="selecting = 'from'">From</button>
+        <button v-on:click="selecting = 'from'">{{ selecting === "from" ? "Select Item" : "From" }}</button>
+        <button v-on:click="selecting = 'to'">{{ selecting === "to" ? "Select Item" : "To" }}</button>
+        <button v-on:click="[from, to] = [to, from]">Swap</button>
+        <Scp914Item v-if="from" :type="from" small />
         <upgrade v-if="from && to && from !== to" :key="`${from} -> ${to}`" />
-        <span v-else>→</span>
-        <Scp914Item v-if="to" :type="to" v-on:click="selecting = 'to'" />
-        <button v-else v-on:click="selecting = 'to'">To</button>
+        <Scp914Item v-if="to" :type="to" small />
     </div>
 </template>
 
@@ -32,5 +31,6 @@ const upgrade = defineAsyncComponent({
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 </style>
