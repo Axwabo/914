@@ -36,9 +36,7 @@ export const edges: Edge[] = keys(recipes).map(type => {
 
 export const graph = createGraph();
 
-export type DijkstraNavigation = Partial<Record<ItemType, DijkstraResult>>;
-
-export const allPaths = graphlib.alg.dijkstraAll(graph, edgeWeight) as Record<ItemType, DijkstraNavigation>;
+export const allPaths = graphlib.alg.dijkstraAll(graph, edgeWeight) as Record<ItemType, Partial<Record<ItemType, DijkstraResult>>>;
 
 applyLayout();
 
