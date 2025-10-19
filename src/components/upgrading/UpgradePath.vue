@@ -1,8 +1,8 @@
 ﻿<script setup lang="ts">
-import useStore from "../store.ts";
-import { findPath } from "../utils/upgrading.ts";
-import MethodDisplay from "./dialog/items/MethodDisplay.vue";
-import Scp914Item from "./Scp914Item.vue";
+import useStore from "../../store.ts";
+import { findPath } from "../../utils/upgrading.ts";
+import MethodDisplay from "../dialog/items/MethodDisplay.vue";
+import Scp914Item from "../Scp914Item.vue";
 
 const { from, to } = useStore();
 

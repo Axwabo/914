@@ -1,11 +1,11 @@
 ﻿<script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { defineAsyncComponent } from "vue";
-import useStore from "../store.ts";
-import LoadingSpinner from "./LoadingSpinner.vue";
-import Scp914Item from "./Scp914Item.vue";
+import useStore from "../../store.js";
+import LoadingSpinner from "../LoadingSpinner.vue";
+import Scp914Item from "../Scp914Item.vue";
 
-const { from, to, selecting } = storeToRefs(useStore());
+const { from, to } = storeToRefs(useStore());
 
 const upgrade = defineAsyncComponent({
     loader: () => import("./UpgradePath.vue"),
@@ -14,10 +14,7 @@ const upgrade = defineAsyncComponent({
 </script>
 
 <template>
-    <div class="path-selector">
-        <button v-on:click="selecting = 'from'">{{ selecting === "from" ? "Select Item" : "From" }}</button>
-        <button v-on:click="selecting = 'to'">{{ selecting === "to" ? "Select Item" : "To" }}</button>
-        <button v-on:click="[from, to] = [to, from]">Swap</button>
+    <div class="upgrade-process">
         <Scp914Item v-if="from" :type="from" small />
         <upgrade v-if="from && to && from !== to" :key="`${from} -> ${to}`" />
         <Scp914Item v-if="to" :type="to" small />
@@ -25,8 +22,8 @@ const upgrade = defineAsyncComponent({
 </template>
 
 <style scoped>
-.path-selector {
-    padding: 0 1rem 0.5rem 1rem;
+
+.upgrade-process {
     display: flex;
     justify-content: center;
     align-items: center;

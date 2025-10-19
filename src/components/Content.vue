@@ -2,12 +2,12 @@
 import AppHeader from "./AppHeader.vue";
 import DialogDisplay from "./dialog/DialogDisplay.vue";
 import ItemList from "./ItemList.vue";
-import PathChooser from "./PathChooser.vue";
+import UpgradeView from "./UpgradeView.vue";
 </script>
 
 <template>
     <AppHeader />
     <ItemList />
-    <PathChooser />
+    <UpgradeView />
     <DialogDisplay />
 </template>
