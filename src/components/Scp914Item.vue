@@ -1,16 +1,17 @@
 ﻿<script setup lang="ts">
 import { computed } from "vue";
+import useStore from "../store.ts";
 import { itemImages, type ItemType } from "../types/item.ts";
 
 const { type, small, disabled } = defineProps<{ type: ItemType; small?: boolean; disabled?: boolean; }>();
 
 const src = computed(() => `url("${itemImages[type]}")`);
 
-const emit = defineEmits([ "click" ]);
+const { interact } = useStore();
 </script>
 
 <template>
-    <button :class="{'item': true, small: !!small}" v-on:click="emit('click')" :disabled>
+    <button :class="{'item': true, small: !!small}" v-on:click="interact(type)" :disabled>
         <span>{{ type }}</span>
     </button>
 </template>
