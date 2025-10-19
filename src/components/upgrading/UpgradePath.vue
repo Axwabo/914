@@ -14,7 +14,7 @@ const path = findPath(from!, to!);
     <template v-else v-for="(node, index) in path">
         <Scp914Item v-if="index !== 0" :type="node.from" small />
         →
-        <MethodDisplay :method="node" />
+        <span><MethodDisplay :method="node" /></span>
         →
     </template>
 </template>
