@@ -5,12 +5,12 @@ import InfoButton from "./InfoButton.vue";
 
 <template>
     <header>
-        <GraphButton />
+        <InfoButton />
         <div class="text">
             <h1>SCP-914 Recipes</h1>
             Not affiliated with <a href="https://scpslgame.com" target="SCP: Secret Laboratory">Northwood Studios</a>
         </div>
-        <InfoButton />
+        <GraphButton />
     </header>
 </template>
 
@@ -30,10 +30,6 @@ header {
 .text h1 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-}
-
-.hidden {
-    visibility: hidden;
 }
 
 @keyframes spin {

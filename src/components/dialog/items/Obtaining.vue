@@ -24,6 +24,7 @@ const methods = computed(() => obtaining[type]);
 
 <style scoped>
 .obtaining {
+    align-self: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
