@@ -1,6 +1,6 @@
-﻿import { graphlib, layout } from "@dagrejs/dagre";
+﻿import { type Edge as DagreEdge, graphlib, layout } from "@dagrejs/dagre";
 import type { Edge, Node } from "@vue-flow/core";
-import { recipes } from "../cache.ts";
+import { getObtainingMethods, recipes } from "../cache.ts";
 import type { ItemType } from "../types/item.ts";
 import { formatChanceValue } from "./convert.ts";
 import { itemTypes, keys } from "./keys.ts";
@@ -36,9 +36,15 @@ export const edges: Edge[] = keys(recipes).map(type => {
 
 export const graph = createGraph();
 
-export const allPaths = graphlib.alg.dijkstraAll(graph) as Record<ItemType, Partial<Record<ItemType, DijkstraResult>>>;
+export type DijkstraNavigation = Partial<Record<ItemType, DijkstraResult>>;
+
+export const allPaths = graphlib.alg.dijkstraAll(graph, edgeWeight) as Record<ItemType, DijkstraNavigation>;
 
 applyLayout();
+
+function edgeWeight(edge: DagreEdge) {
+    return 1 / getObtainingMethods(<ItemType>edge.v, <ItemType>edge.w).reduce((prev, curr) => prev + curr.chance, 0);
+}
 
 function createGraph(): graphlib.Graph {
     const graph = new graphlib.Graph();

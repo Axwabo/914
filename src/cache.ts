@@ -11,6 +11,10 @@ export const obtaining = Object.freeze(computeObtaining());
 
 type ObtainingDictionary = Partial<Record<ItemType, ObtainingMethod[]>>;
 
+export function getObtainingMethods(from: ItemType, to: ItemType) {
+    return obtaining[to]?.filter(e => e.from === from) ?? [];
+}
+
 function computeObtaining(): ObtainingDictionary {
     const record: ObtainingDictionary = {};
     for (const itemKey in recipes) {
