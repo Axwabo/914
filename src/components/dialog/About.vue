@@ -1,6 +1,9 @@
 ﻿<script setup lang="ts">
+import useStore from "../../store.ts";
 import base from "../../utils/basePath.ts";
 import Close from "./Close.vue";
+
+const { showModal } = useStore();
 </script>
 
 <template>
@@ -16,7 +19,7 @@ import Close from "./Close.vue";
         <br>
         All recipes were extracted from the server code and files.
     </p>
-    To view an item's outputs, obtaining methods or details, simply click it in the grid.
+    <span>To view an item's outputs, obtaining methods or details, simply click it in the grid.</span>
     <p>
         Click <b>Change Input</b> and select an item.
         <br>
@@ -24,7 +27,11 @@ import Close from "./Close.vue";
         <br>
         The closest* upgrade path from the input to the target.
     </p>
-    Click the branch icon in the top right to view a graph of all upgrades.
+    <span>Click the branch icon in the top right to view a graph of all upgrades.</span>
+    <div>
+        Ammo conversion works differently.
+        <button v-on:click="showModal('unitPrices')">See Unit Prices</button>
+    </div>
     <p>
         Found an issue? Report it on
         <a :href="`https://github.com/Axwabo${base}`" :target="`Axwabo${base}`">GitHub</a>
