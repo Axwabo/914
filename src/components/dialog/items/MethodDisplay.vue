@@ -6,6 +6,6 @@ const { method } = defineProps<{ method: ObtainingMethod; }>();
 </script>
 
 <template>
-    <span class="method">{{ method.mode }}</span>
+    <span class="method">{{ method.mode.replace(", ", " / ") }}</span>
     <span v-if="method.chance !== 1"> ({{ formatChanceValue(method.chance) }}%)</span>
 </template>
