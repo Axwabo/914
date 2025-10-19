@@ -12,9 +12,9 @@ importers:
 
   .:
     dependencies:
-      '@dagrejs/graphlib':
-        specifier: ^2.2.4
-        version: 2.2.4
+      '@dagrejs/dagre':
+        specifier: ^1.1.2
+        version: 1.1.2
       '@vue-flow/core':
         specifier: ^1.47.0
         version: 1.47.0(vue@3.5.22(typescript@5.7.3))
@@ -559,8 +559,11 @@ packages:
   '@canvas/image-data@1.0.0':
     resolution: {integrity: sha512-BxOqI5LgsIQP1odU5KMwV9yoijleOPzHL18/YvNqF9KFSGF2K/DLlYAbDQsWqd/1nbaFuSkYD/191dpMtNh4vw==}
 
-  '@dagrejs/graphlib@2.2.4':
-    resolution: {integrity: sha512-mepCf/e9+SKYy1d02/UkvSy6+6MoyXhVxP8lLDfA7BPE1X1d4dR0sZznmbM8/XVJ1GPM+Svnx7Xj6ZweByWUkw==}
+  '@dagrejs/dagre@1.1.2':
+    resolution: {integrity: sha512-F09dphqvHsbe/6C2t2unbmpr5q41BNPEfJCdn8Z7aEBpVSy/zFQ/b4SWsweQjWNsYMDvE2ffNUN8X0CeFsEGNw==}
+
+  '@dagrejs/graphlib@2.2.2':
+    resolution: {integrity: sha512-CbyGpCDKsiTg/wuk79S7Muoj8mghDGAESWGxcSyhHX5jD35vYMBZochYVFzlHxynpE9unpu6O+4ZuhrLxASsOg==}
     engines: {node: '>17.0.0'}
 
   '@esbuild/aix-ppc64@0.25.10':
@@ -2956,7 +2959,11 @@ snapshots:
 
   '@canvas/image-data@1.0.0': {}
 
-  '@dagrejs/graphlib@2.2.4': {}
+  '@dagrejs/dagre@1.1.2':
+    dependencies:
+      '@dagrejs/graphlib': 2.2.2
+
+  '@dagrejs/graphlib@2.2.2': {}
 
   '@esbuild/aix-ppc64@0.25.10':
     optional: true
