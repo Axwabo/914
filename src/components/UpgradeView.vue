@@ -16,5 +16,6 @@ import UpgradeProcess from "./upgrading/UpgradeProcess.vue";
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 0.5rem;
 }
 </style>

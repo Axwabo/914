@@ -8,8 +8,12 @@ const { from, to, selecting } = storeToRefs(useStore());
 
 <template>
     <div class="upgrade-options">
-        <button v-on:click="selecting = 'from'">{{ selecting === "from" ? "Select Input" : "Change Input" }}</button>
-        <button v-on:click="selecting = 'to'">{{ selecting === "to" ? "Select Target" : "Change Target" }}</button>
+        <button v-on:click="selecting = selecting === 'from' ? 'none' : 'from'">
+            {{ selecting === "from" ? "Select Input" : "Change Input" }}
+        </button>
+        <button v-on:click="selecting = selecting === 'to' ? 'none' : 'to'">
+            {{ selecting === "to" ? "Select Target" : "Change Target" }}
+        </button>
         <button v-on:click="[from, to] = [to, from]">Swap</button>
     </div>
 </template>
@@ -17,7 +21,7 @@ const { from, to, selecting } = storeToRefs(useStore());
 <style scoped>
 .upgrade-options {
     display: grid;
-    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    grid-template-columns: repeat(3, minmax(15vw, 1fr));
     gap: 0.5rem;
 }
 </style>
