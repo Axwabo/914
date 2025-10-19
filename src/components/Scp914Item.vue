@@ -1,9 +1,10 @@
 ﻿<script setup lang="ts">
+import { computed } from "vue";
 import { itemImages, type ItemType } from "../types/item.ts";
 
 const { type, small, disabled } = defineProps<{ type: ItemType; small?: boolean; disabled?: boolean; }>();
 
-const src = `url("${ itemImages[type] }")`;
+const src = computed(() => `url("${itemImages[type]}")`);
 
 const emit = defineEmits([ "click" ]);
 </script>

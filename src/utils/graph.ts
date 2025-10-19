@@ -5,6 +5,11 @@ import type { ItemType } from "../types/item.ts";
 import { formatChanceValue } from "./convert.ts";
 import { itemTypes, keys } from "./keys.ts";
 
+interface DijkstraResult {
+    distance: number;
+    predecessor: ItemType;
+}
+
 export interface NodeData {
     type: ItemType;
 }
@@ -30,6 +35,8 @@ export const edges: Edge[] = keys(recipes).map(type => {
 }).flat(3);
 
 export const graph = createGraph();
+
+export const allPaths = graphlib.alg.dijkstraAll(graph) as Record<ItemType, Partial<Record<ItemType, DijkstraResult>>>;
 
 applyLayout();
 
