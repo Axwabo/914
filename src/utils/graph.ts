@@ -49,7 +49,7 @@ function createGraph(): graphlib.Graph {
     graph.setDefaultEdgeLabel(() => ({}));
     graph.setGraph({ rankdir: "TB" });
     for (const node of nodes)
-        graph.setNode(node.id, { width: 100, height: 100 });
+        graph.setNode(node.id, { width: 150, height: 150 });
     const usedIDs = new Set<string>();
     for (const edge of edges) {
         if (edge.source === edge.target || usedIDs.has(edge.id))
