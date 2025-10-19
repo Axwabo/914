@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 import { ref, watch } from "vue";
 import useStore from "../../store.ts";
 import About from "./About.vue";
-import UpgradeGraph from "./graph/UpgradeGraph.vue";
+import GraphWrapper from "./GraphWrapper.vue";
 import Item from "./Item.vue";
 
 const { dialogType, item } = storeToRefs(useStore());
@@ -22,7 +22,7 @@ watch(dialogType, value => {
     <dialog ref="element" v-on:close="dialogType = 'none'" :class="{ max: dialogType !== 'info' }">
         <Item v-if="item != null && dialogType === 'item'" :type="item" />
         <About v-else-if="dialogType === 'info'" />
-        <UpgradeGraph v-else-if="dialogType === 'graph'" />
+        <GraphWrapper v-else-if="dialogType === 'graph'" />
     </dialog>
 </template>
 
