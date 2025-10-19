@@ -26,7 +26,7 @@ const upgrade = defineAsyncComponent({
 
 <style scoped>
 .path-selector {
-    padding: 0 1rem 0.5rem 1rem;
+    margin: 0 0.5rem 0.5rem 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;

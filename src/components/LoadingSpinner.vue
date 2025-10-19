@@ -7,7 +7,7 @@ import scp from "../assets/images/SCP.svg";
     <p class="loading text">Loading...</p>
 </template>
 
-<style scoped>
+<style>
 .loading {
     justify-self: center;
     align-self: center;
