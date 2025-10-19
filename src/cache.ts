@@ -38,3 +38,4 @@ function computeObtaining(): ObtainingDictionary {
     }
     return record;
 }
+

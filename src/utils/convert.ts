@@ -8,6 +8,6 @@ export function exchangeAmmo(inputPrice: number, outputPrice: number, amount: nu
     const exchanged = Math.floor(amount * (inputPrice / outputPrice));
     return {
         exchanged,
-        remaining: amount - exchanged * (outputPrice / inputPrice)
+        remaining: Math.ceil(amount - exchanged * (outputPrice / inputPrice))
     };
 }

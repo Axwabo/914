@@ -1,9 +1,12 @@
 ﻿<script setup lang="ts">
 import { items } from "../../../cache.ts";
+import useStore from "../../../store.ts";
 import type { ItemType } from "../../../types/item.ts";
 import Scp914Item from "../../Scp914Item.vue";
 
 const { type } = defineProps<{ type: ItemType; }>();
+
+const { showModal } = useStore();
 
 const item = items[type];
 </script>
@@ -16,6 +19,7 @@ const item = items[type];
         <template v-if="item.kind === 'ammo'">
             <span>Rounds per magazine: {{ item.roundsPerMag }}</span>
             <span>Unit price: {{ item.unitPrice }}</span>
+            <button v-on:click="showModal('unitPrices')">View unit prices</button>
         </template>
         <span v-else-if="item.kind === 'keycard' && item.permissions">Permissions: {{ item.permissions }}</span>
         <span v-else-if="item.kind === 'firearm'">Magazine size: {{ item.magSize }}</span>

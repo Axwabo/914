@@ -5,6 +5,7 @@ import useStore from "../../store.ts";
 import About from "./About.vue";
 import GraphWrapper from "./GraphWrapper.vue";
 import Item from "./Item.vue";
+import UnitPrices from "./UnitPrices.vue";
 
 const { dialogType, item } = storeToRefs(useStore());
 
@@ -23,6 +24,7 @@ watch(dialogType, value => {
         <Item v-if="item != null && dialogType === 'item'" :type="item" />
         <About v-else-if="dialogType === 'info'" />
         <GraphWrapper v-else-if="dialogType === 'graph'" />
+        <UnitPrices v-else-if="dialogType === 'unitPrices'" />
     </dialog>
 </template>
 

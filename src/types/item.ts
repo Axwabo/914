@@ -135,7 +135,7 @@ interface Firearm {
     magSize: number;
 }
 
-interface Ammo {
+export interface Ammo {
     kind: "ammo";
     unitPrice: number;
     roundsPerMag: number;
