@@ -20,4 +20,11 @@ import Scp914Item from "./Scp914Item.vue";
     overflow-y: auto;
     scrollbar-gutter: stable;
 }
+
+@media (max-width: 40rem) {
+    .item-list {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
 </style>

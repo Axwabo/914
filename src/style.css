@@ -83,3 +83,9 @@ button:focus-visible {
         height: 100svh;
     }
 }
+
+@media (max-width: 40rem) {
+    h1 {
+        font-size: 2rem;
+    }
+}

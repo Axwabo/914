@@ -71,4 +71,16 @@ const { interact } = useStore();
         transition: none;
     }
 }
+
+@media (max-width: 40rem) {
+    .item {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .item.small {
+        width: 6rem;
+        height: 6rem;
+    }
+}
 </style>
