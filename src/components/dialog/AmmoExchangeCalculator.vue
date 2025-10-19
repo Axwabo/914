@@ -24,12 +24,12 @@ const converted = computed(() => exchangeAmmo(
         <select v-model="input" id="input">
             <option v-for="type in ammo">{{ type }}</option>
         </select>
+        <label for="amount">Amount:</label>
+        <input type="number" v-model="amount" id="amount" min="1" />
         <label for="output">Output:</label>
         <select v-model="output" id="output">
             <option v-for="type in ammo">{{ type }}</option>
         </select>
-        <label for="amount">Amount:</label>
-        <input type="number" v-model="amount" id="amount" min="1" />
     </div>
     Exchanged: <span class="number">{{ converted.exchanged }}</span>
     <br>
