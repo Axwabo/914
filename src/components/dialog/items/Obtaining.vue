@@ -3,8 +3,8 @@ import { computed } from "vue";
 import { obtaining } from "../../../cache.ts";
 import useStore from "../../../store.ts";
 import type { ItemType } from "../../../types/item.ts";
-import { formatChanceValue } from "../../../utils/convert.ts";
 import Scp914Item from "../../Scp914Item.vue";
+import MethodDisplay from "./MethodDisplay.vue";
 
 const { type } = defineProps<{ type: ItemType; }>();
 
@@ -19,8 +19,7 @@ const methods = computed(() => obtaining[type]);
             From
             <Scp914Item :type="method.from" small v-on:click="interact(method.from)" />
             on
-            <span class="method">{{ method.mode }}</span>
-            <span v-if="method.chance !== 1"> ({{ formatChanceValue(method.chance) }}%)</span>
+            <MethodDisplay :method="method" />
         </div>
         <p v-else>{{ type }} cannot be obtained in SCP-914</p>
     </div>
