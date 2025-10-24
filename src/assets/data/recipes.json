@@ -1069,7 +1069,7 @@
                         "count": 1
                     }
                 ],
-                "chance": 0.29499998688697815
+                "chance": 0.40000000596046448
             },
             {
                 "kind": "item",
@@ -1079,7 +1079,7 @@
                         "count": 1
                     }
                 ],
-                "chance": 0.55500000715255737
+                "chance": 0.34999999403953552
             },
             {
                 "kind": "item",
@@ -1089,7 +1089,7 @@
                         "count": 1
                     }
                 ],
-                "chance": 0.15000000596046448
+                "chance": 0.25
             }
         ]
     },
@@ -1503,11 +1503,21 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Micro H.I.D.",
+                        "type": "AK",
                         "count": 1
                     }
                 ],
-                "chance": 0.05000000074505806
+                "chance": 0.30000001192092896
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Crossvec",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.30000001192092896
             },
             {
                 "kind": "item",
@@ -1527,27 +1537,7 @@
                         "count": 1
                     }
                 ],
-                "chance": 0.10000000149011612
-            },
-            {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": "AK",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.30000001192092896
-            },
-            {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": "Crossvec",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.30000001192092896
+                "chance": 0.15000000596046448
             }
         ]
     },
@@ -1804,32 +1794,8 @@
                 "chance": 0.10000000149011612
             },
             {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": "AK",
-                        "count": 1
-                    },
-                    {
-                        "type": "High-Explosive Grenade",
-                        "count": 2
-                    }
-                ],
-                "chance": 0.60000002384185791
-            },
-            {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": ".44 Revolver",
-                        "count": 1
-                    },
-                    {
-                        "type": "Shotgun",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.30000001192092896
+                "kind": "destroy",
+                "chance": 0.89999997615814209
             }
         ]
     },
@@ -2775,8 +2741,8 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "High-Explosive Grenade",
-                        "count": 2
+                        "type": "Chaos Insurgency Access Device",
+                        "count": 1
                     }
                 ],
                 "chance": 0.5
@@ -2785,19 +2751,7 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Zone Manager Keycard",
-                        "count": 1
-                    },
-                    {
-                        "type": "COM-15",
-                        "count": 1
-                    },
-                    {
-                        "type": "Painkillers",
-                        "count": 1
-                    },
-                    {
-                        "type": "First Aid Kit",
+                        "type": "High-Explosive Grenade",
                         "count": 1
                     }
                 ],
@@ -2873,21 +2827,11 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Micro H.I.D.",
+                        "type": "Crossvec",
                         "count": 1
                     }
                 ],
-                "chance": 0.05000000074505806
-            },
-            {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": "Logicer",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.25
+                "chance": 0.30000001192092896
             },
             {
                 "kind": "item",
@@ -2897,7 +2841,7 @@
                         "count": 1
                     }
                 ],
-                "chance": 0.10000000149011612
+                "chance": 0.20000000298023224
             },
             {
                 "kind": "item",
@@ -2913,11 +2857,11 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Crossvec",
+                        "type": "Logicer",
                         "count": 1
                     }
                 ],
-                "chance": 0.30000001192092896
+                "chance": 0.20000000298023224
             }
         ]
     },
@@ -2979,26 +2923,6 @@
                 "kind": "item",
                 "items": [
                     {
-                        "type": "Micro H.I.D.",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.05000000074505806
-            },
-            {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": "Logicer",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.25
-            },
-            {
-                "kind": "item",
-                "items": [
-                    {
                         "type": "AK",
                         "count": 1
                     }
@@ -3009,11 +2933,21 @@
                 "kind": "item",
                 "items": [
                     {
+                        "type": "Logicer",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.20000000298023224
+            },
+            {
+                "kind": "item",
+                "items": [
+                    {
                         "type": "Crossvec",
                         "count": 1
                     }
                 ],
-                "chance": 0.30000001192092896
+                "chance": 0.40000000596046448
             }
         ]
     },
@@ -3599,21 +3533,11 @@
                         "count": 1
                     }
                 ],
-                "chance": 0.05000000074505806
+                "chance": 0.10000000149011612
             },
             {
-                "kind": "item",
-                "items": [
-                    {
-                        "type": "Crossvec",
-                        "count": 1
-                    },
-                    {
-                        "type": "COM-18",
-                        "count": 1
-                    }
-                ],
-                "chance": 0.94999998807907104
+                "kind": "destroy",
+                "chance": 0.89999997615814209
             }
         ]
     },
@@ -3940,6 +3864,66 @@
                     }
                 ],
                 "chance": 1
+            }
+        ]
+    },
+    "SCP-1509": {
+        "Rough": [
+            {
+                "kind": "destroy",
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1576",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1509",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1509",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Jailbird",
+                        "count": 1
+                    }
+                ],
+                "chance": 0.10000000000000001
+            },
+            {
+                "kind": "destroy",
+                "chance": 0.90000000000000002
             }
         ]
     }

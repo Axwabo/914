@@ -55,6 +55,7 @@ import scp268 from "../assets/images/SCP-268.webp";
 import scp500 from "../assets/images/SCP-500.webp";
 import shotgun from "../assets/images/Shotgun.webp";
 import surfaceAccess from "../assets/images/SurfaceAccessPass.webp";
+import scp1509 from "../assets/images/SCP-1509.webp";
 
 export const itemImages = {
     "Janitor Keycard": janitor,
@@ -113,7 +114,8 @@ export const itemImages = {
     "Lantern": lantern,
     "SCP-1344": scp1344,
     "Surface Access Pass": surfaceAccess,
-    "SCP-127": scp127
+    "SCP-127": scp127,
+    "SCP-1509": scp1509
 } as const;
 
 export type ItemType = keyof typeof itemImages;

@@ -238,5 +238,9 @@
         "kind": "firearm",
         "magSize": 60,
         "category": "Special Weapon"
+    },
+    "SCP-1509": {
+        "category": "SCP Item",
+        "description": "A bladed weapon that deals moderate damage. Killing a human with it will resurrect an ally."
     }
 }
