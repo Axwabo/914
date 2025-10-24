@@ -3,7 +3,7 @@ import useStore from "../../store.ts";
 import base from "../../utils/basePath.ts";
 import Close from "./Close.vue";
 
-const { showModal } = useStore();
+const {showModal} = useStore();
 </script>
 
 <template>
@@ -14,6 +14,14 @@ const { showModal } = useStore();
         SCP: Secret Laboratory is a free-to-play multiplayer game developed by Northwood Studios.
     </p>
     <a href="https://scpslgame.com" target="SCP: Secret Laboratory">Visit the official site for more information</a>
+    <b>
+        Content relating to the SCP Foundation, including the SCP Foundation logo, is licensed under
+        <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons ShareAlike 3.0</a> and all concepts originate from the
+        <a href="https://scpwiki.com">SCP Wiki</a> and its authors.<br>
+        SCP: Secret Laboratory, being derived from this content, is hereby also released under Creative Commons ShareAlike 3.0.
+        <br>
+        This app uses assets from SCP:SL. SCP:SL assets not derived from SCP are not released under CC-BY-SA 3.0.
+    </b>
     <p>
         This app lets you view the SCP-914 recipes in SCP:SL.
         <br>
