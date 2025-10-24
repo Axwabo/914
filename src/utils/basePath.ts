@@ -1,3 +1,3 @@
-﻿const base = "/914-Remake/";
+﻿const base = "/914/";
 
 export default base;
