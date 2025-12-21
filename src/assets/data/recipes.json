@@ -3926,5 +3926,67 @@
                 "chance": 0.90000000000000002
             }
         ]
+    },
+    "SCP-021-J": {
+        "Rough": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Painkillers",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Coarse": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-1853",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "1:1": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-021-J",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "SCP-207",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ],
+        "Very Fine": [
+            {
+                "kind": "item",
+                "items": [
+                    {
+                        "type": "Anti-Cola",
+                        "count": 1
+                    }
+                ],
+                "chance": 1
+            }
+        ]
     }
 }

@@ -204,7 +204,7 @@
     },
     "Jailbird": {
         "category": "Special Weapon",
-        "description": "What?!"
+        "description": "A strange, unstable baton that can be swung at targets or charged to inflict massive damage."
     },
     "Anti-Cola": {
         "category": "SCP Item",
@@ -242,5 +242,9 @@
     "SCP-1509": {
         "category": "SCP Item",
         "description": "A bladed weapon that deals moderate damage. Killing a human with it will resurrect an ally."
+    },
+    "SCP-021-J": {
+        "category": "SCP Item",
+        "description": "A dark, dangorus energy radiates from the water botllef. You get the feeling that it may be impersobile to contein. Do you dare consume it?"
     }
 }
