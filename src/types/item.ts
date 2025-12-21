@@ -48,6 +48,7 @@ import scp1344 from "../assets/images/SCP-1344.webp";
 import scp1576 from "../assets/images/SCP-1576.webp";
 import scp1853 from "../assets/images/SCP-1853.webp";
 import scp207 from "../assets/images/SCP-207.webp";
+import scp021j from "../assets/images/SCP-021-J.webp";
 import scp2176 from "../assets/images/SCP-2176.webp";
 import scp244a from "../assets/images/SCP-244-A.webp";
 import scp244b from "../assets/images/SCP-244-B.webp";
@@ -115,8 +116,11 @@ export const itemImages = {
     "SCP-1344": scp1344,
     "Surface Access Pass": surfaceAccess,
     "SCP-127": scp127,
-    "SCP-1509": scp1509
+    "SCP-1509": scp1509,
+    "SCP-021-J": scp021j
 } as const;
+
+console.log(Object.keys(itemImages));
 
 export type ItemType = keyof typeof itemImages;
 
